@@ -215,7 +215,7 @@
 
 		<p class="text-justify"><b>Exemplo 24:</b> como vimos no <b>Exemplo 23</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
 
-		<p class="text-justify"><b>Proposição 25:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança aberta de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
+		<p class="text-justify"><b>Proposição 25:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
 		<p class="text-justify"><i>Demonstração:</i> bom, vamos supor que existe tal $\varepsilon > 0$ e trabalhar um pouco com nossa intuição, para que consigamos construi-lo de maneira esperta. Bom, sabemos que $f(x), g(x) \in Y$ para qualquer $x \in X$ e, além disso, se o objetivo é mostrar que $f \simeq g$, talvez adaptar a homotopia linear seja interessante (já que $\mathbb{R}^n$ é EVN). Bom, aqui temos um problema, pois não há como garantir que o segmento ligando $f(x)$ e $g(x)$ esteja inteiramente em $X$. Resolver isso parece complicado, mas se lembrarmos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, percebemos que basta garantir que esse segmento esteja dentro dessa vizinhança! Bom, isso é fácil, pois basta escolher um $\varepsilon$ que faça com que $B(y, \varepsilon) \subset V$ para qualquer $y \in Y$ (afinal, $g(x) \in B(f(x), \varepsilon)$ e portanto o segmento que liga ambos os pontos estaria automaticamente dentro de $V$).</p>
 
 		<p class="text-justify">Bom, sabemos que a distância de $Y$ até $\mathbb{R}^n \setminus V$ é positiva, pois a função $y \mapsto d(y, \mathbb{R}^n\setminus V)$ é contínua e como $Y$ é compacto, a função possui mínimo, que é positivo pois a função é positiva para todo $y$ (já que $y \not\in \mathbb{R}^n \setminus V$). Bom, basta que esse seja nosso $\varepsilon$! Escolha $\varepsilon = \min\{d(x,F) \colon x \in Y\} > 0$ e assim teremos que pra todo $y \in Y$, se $b \in B(y, \varepsilon)$ então $d(b,y) < \varepsilon$ e portanto $b \in V$. $\blacksquare$</p>
@@ -251,7 +251,23 @@
             H(x,t) & \mbox{se } (x,t) \in A \times [0,1]
         \end{array}
         \right.$$
-    	Pela <b>Proposição 27</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado).</p>
+    	Pela <b>Proposição 27</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado). Agora, como $[0,1]$ é compacto, existe $U$ vizinhança de $A$ tal que $U \times [0,1] \subset W$ (basta notar que a aplicação com domínio $[0,1]$ dada por $t \mapsto d(A \times \{t\}, X \times [0,1] \setminus W)$ é contínua).</p>
+
+    	<p class="text-justify">Pelo lema de Urysohn, como $A$ e $X \setminus U$ são fechados e $X$ é normal, então existe uma aplicação $\lambda \colon X \to [0,1]$ que satisfaz: 
+    	$$\lambda(x) = \left\{ \begin{array}{ll} 0 & \mbox{se } x \in A \\ 1 & \mbox{se } x \in X \setminus U \end{array}\right.$$
+    	Defina, portanto, $G \colon X \times [0,1] \to Y$ por $G(x,t) = H_0(x, \lambda(x)t)$. Temos que $G(a,t) = H_0(a, \lambda(a)t)$ $= H_0(a,t)$ $= H(a,t)$ para todo $a \in A$. Além disso, $G(x,0)$ $= H_0(x, \lambda(x)0)$ $= H_0(x,0)$ $= F(x)$ e ainda $G(x,1)$ $= H_0(x, \lambda(x))$ e se $x \in A$ temos $G(x,1)$ $= H_0(x,1)$ $= H(a,1)$ $= g(x)$ e assim $G(x,1)$ é extensão contínua de $g$.</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="bursuk-extension.png" alt="Responsive image">
+        <p class="text-center" >Ilustração do <b>Teorema 28</b>.</p>
+
+    	<p class="text-justify"><b>Corolário 29:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $Y$ é contrátil, quaisquer $f, g \colon A \to Y$ são homotópicas (<b>Corolário 17</b>) e portanto podemos tomar $g$ constante. Como $g$ admite extensão contínua, $f$ também admite pelo <b>Teorema 28</b>.</p>
+
+    	<p class="text-justify"><b>Corolário 30:</b>se $Y \subset \mathbb{R}^n$ é retrato de vizinhança uma vizinhança $V$ em $\mathbb{R}^n$, conexo por caminhos, e $A$ é subconjunto fechado contrátil de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> agora pelo <b>Corolário 18</b>, como $Y \subset \mathbb{R}^n$ é conexo por caminhos temos que $f$ é homotópico a qualquer mapa constante, que possui extensão contínua, portanto o <b>Teorema 28</b> nos diz que $f$ também possui.</p>
+
+    	<p class="text-justify"><b>Corolário 31:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança uma vizinhança $V$ em $\mathbb{R}^n$ e $A$ é subconjunto fechado de um espaço métrico contrátil $X$, uma aplicação contínua $f \colon A \to Y$ admite extensão contínua se, e somente se, for homotópica a uma constante.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $f$ for homotópica a uma constante o resultado segue do <b>Teorema 28</b>. Se $f$ possuir extensão contínua $F \colon X \to Y$, como $X$ é contrátil então $F$ é homotópica a uma constante e assim $f$ também será (basta restringir a homotopia).</p>
 
 	  </div> <!-- /container -->
     </main>
