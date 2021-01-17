@@ -1,0 +1,251 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="reals.ico">
+
+    <script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	</script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+  			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+
+    <title>Matemática com Desenhos</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Homotopia e Extensões Contínuas</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <h5 class="text-center">Aplicações Homotópicas</h5>
+        <p class="text-justify">Sejam $X, Y$ espaços topológicos e $f,g \colon X \to Y$ duas aplicações contínuas. Dizemos que $f$ e $g$ são homotópicas ou homotopicamente equivalentes se, e somente se, existe outra aplicação contínua $H \colon X \times [0,1] \to Y$ tal que $H(x,0) = f(x)$ e $H(x,1) = g(x)$ para todo $x$. Nesse caso, escrevemos $f \simeq g$ e chamamos $H$ de uma homotopia entre $f$ e $g$.</p>
+
+        <p class="text-justify"><b>Exemplo 01:</b> se $E$ é um espaço vetorial normado e $f,g \colon X \to E$ são duas aplicações contínuas, então $f$ e $g$ são homotópicas: podemos considerar a homotopia $H(x,t) = (1-t)f(x) + tg(x)$. Esse tipo de homotopia é chamada de homotopia linear.</b></p>
+
+        <img class="w-25 rounded mx-auto d-block" src="func-homotop-exemplo.png" alt="Responsive image">
+        <p class="text-center" >Homotopia entre duas funções $f,g \colon \mathbb{R} \to \mathbb{R}$.</p>
+
+        <p class="text-justify"><b>Observação 02:</b> a relação de homotopia depende do contradomínio. Por exemplo, duas aplicações $f,g \colon X \to E \setminus \{0\}$ podem não ser homotópicas. Em particular, se dado $x_0 \in X$, $E = \mathbb{R}^2$ e $f(x_0)$ e $g(x_0)$ forem opostos pela origem, então a homotopia linear é impossível, pois teríamos $H(x_0,1/2) = 0$.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="obs-codominio-r2.png" alt="Responsive image">
+        <p class="text-center" >Exemplo citado na observação.</p>
+
+        <p class="text-justify"><b>Exemplo 03:</b> se representarmos por $\mathbb{S}^n$ a esfera $n-$dimensional (note que $\mathbb{S}^n \subset \mathbb{R}^{n+1}$), dadas $f,g \colon X \to \mathbb{S}^n$ não antipodais, ou seja, tais que $f(x) \neq -g(x)$ para todo $x \in X$, então $f \simeq g$ pela aplicação $H \colon X \times [0,1] \to \mathbb{S}^n$ dada por: $$H(x,t) = \frac{(1-t)f(x) + tg(x)}{\mid (1-t)f(x) + tg(x) \mid}.$$ A intuição por trás dessa homotopia é a seguinte: dado $x_0 \in X$, $G_{x_0}(t) = (1-t)f(x_0) + tg(x_0)$ é o segmento de reta que liga os pontos $f(x_0)$ e $g(x_0)$. Dividir por $\mid G_{x_0}(t) \mid$ é a mesma coisa que projetar esse segmento na esfera, pois $H(x_0, t)$ acaba tendo norma $1$ para todo $t$.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="projecao-n-esfera.png" alt="Responsive image">
+        <p class="text-center" >Projeção do ponto $a$ do segmento que liga $f(x_0)$ em $g(x_0)$ na esfera de $1-$dimensão.</p>
+
+        <p class="text-justify"><b>Exemplo 04:</b> agora, vamos olhar dois casos particulares do exemplo anterior:</p>
+        <ol>
+        	<li>se $f(x) \neq x$ para todo $x \in X$, então podemos escolher $g(x) = -x$ e assim teremos que $f \simeq g = -Id_X$;</li>
+        	<li>se $f(x) \neq -x$ para todo $x \in X$, então podemos escolher $g(x) = x$ e assim teremos que $f \simeq g = Id_X$;</li>
+        </ol>
+
+        <p class="text-justify"><b>Exemplo 05:</b> ao longo do curso, veremos que a aplicação antipodal $\alpha \colon \mathbb{S}^n \to \mathbb{S}^n$ dada por $\alpha(x) = -x$ é homotópica à identidade se, e somente se, $n$ é ímpar.</p>
+
+        <hr>
+        <h5 class="text-center">Homotopias e Relações de Equivalência</h5>
+
+        <p class="text-justify"><b>Proposição 06:</b> a relação $\simeq$ é uma relação de equivalência:</p>
+        <p class="text-justify"><i>Demonstração:</i></p>
+        <ol>
+        	<li>
+        		<b>Reflexiva:</b> considere a homotopia $H(x,t) = f(x)$. Se o objetivo é transformar uma coisa nela mesma, podemos simplesmente não fazer nada;
+        	</li>
+        	<li>
+        		<b>Simétrica:</b> se $H(x,t)$ é homotopia de $f$ a $g$, então $K(x,t) = H(x,1-t)$ é homotopia de $g$ a $f$. A intuição aqui é que estamos utilizando a mesma transformação, mas ao contrário;
+        	</li>
+        	<li>
+        		<b>Transitiva:</b> se $H(x,t)$ é homotopia de $f$ a $g$ e $K(x,t)$ é homotopia de $g$ a $h$, então:
+        		$$L(x,t) = \left\{
+					\begin{array}{ll}
+						H(x,2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
+						K(x,2t-1) & \mbox{se } 1/2 \leq t \leq 1
+					\end{array}
+				\right.$$
+				Aqui a ideia é que estamos utilizando metade do tempo para transformar $f$ em $g$ e a outra metade para transformar $g$ em $h$. Como para $t = 1/2$ ambas as partes da definição coincidem, a homotopia é contínua. $\blacksquare$
+        	</li>
+        </ol> 
+
+        <img class="w-75 rounded mx-auto d-block" src="equiv-relac-homotop.png" alt="Responsive image">
+        <p class="text-center">Ser homotopicamente equivalente é uma relação de equivalência.</p>
+
+        <p class="text-justify">Perceba que na imagem acima, para facilitar a vida do desenhista (eu mesmo), representamos a homotopia para um ponto $x_0 \in X$ fixado, não para todo o domínio $X$ de $f$ e $g$.</p>
+
+        <p class="text-justify"><b>Proposição 07:</b> se $f, f' \colon X \to Y$ são homotópicas e $g, g' \colon Y \to Z$ também são, então $g \circ f, g' \circ f' \colon X \to Z$ são homotópicas.</p>
+        <p class="text-justify"><i>Demonstração:</i> sejam $H, K$ homotopias entre $f, f'$ e $g,g'$, respectivamente. A função $J \colon X \times [0,1] \to Z$ dada por $J(x,t) = K(H(x,t),t)$ é uma homotopia de $g \circ f$ para $g' \circ f'$. Como $K$ e $H$ são contínuas, $J$ é contínua e além disso temos $J(x,0) = K(H(x,0),0) = K(f(x),0) = g(f(x))$ e $J(x,1) = K(H(x,1),1) = K(f'(x),1) = g'(f'(x))$. Assim, $J$ é de fato uma homotopia entre as duas funções. $\blacksquare$</p>
+
+        <p class="text-justify">Dada $f \colon X \to Y$ contínua, definimos a classe de homotopia $[f]$ de $f$ como sendo o conjunto $\{g \colon f \simeq g\}$. A proposição acima apenas garante que a operação $[g] \circ [f] = [g \circ f]$ está bem definida.</p>
+
+        <hr>
+        <h5 class="text-center">Tipo de Homotopia</h5>
+        <p>Dizemos que $f \colon X \to Y$ contínua é uma equivalência homotópica se existe $g \colon Y \to X$ também contínua tal que $g \circ f \simeq Id_X$ e $f \circ g \simeq Id_Y$. Dizemos que $g$ é a inversa homotópica de $f$. Diremos que $X$ e $Y$ tem o mesmo tipo de homotopia.</p>
+
+        <p class="text-justify"><b>Exemplo 08:</b> todo homeomorfismo é equivalência homotópica.</p>
+        <p class="text-justify"><b>Exemplo 09:</b> todo espaço vetorial normado tem o tipo de homotopia de um ponto, pois dado um EVN $E$, note que $f \colon E \to \{0\}$ dada por $f(v) = 0$ para todo $v \in E$ é contínua, pois é constante. Ainda mais, se $i \colon \{0\} \to E$ é a inclusão, note que $f \circ i \simeq Id_{\{0\}}$ () e $i \circ f \simeq Id_E$ (quaisquer duas funções contínuas com contra-domínio num EVN são homotópicas).</p>
+        <p class="text-justify"><b>Exemplo 10:</b> considere a inclusão $i \colon \mathbb{S}^n \to \mathbb{R}^{n+1}\setminus\{0\}$ e a função $r \colon \mathbb{R}^{n+1}\setminus\{0\} \to \mathbb{S}^n$ dada por $r(x) = x/|x|$. Primeiro, note que ambas $i$ e $r$ são contínuas. Agora, claramente $r \circ i = Id_{\mathbb{S}^n}$ e, além disso, pela homotopia linear segue também que $i \circ r \simeq Id_{\mathbb{R}^{n+1}}$. Assim, $\mathbb{R}^{n+1}\setminus\{0\}$ e $\mathbb{S}^n$ tem o mesmo tipo de homotopia. A ideia aqui é que para cada $x \in \mathbb{R}^{n+1}$ podemos percorrer o a reta que liga $x$ em $0$ até chegarmos em $\mathbb{S}^n$ (o que não aconteceria no caso de incluirmos o $0$ pois essa reta não estaria bem definida).</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="homotop-sn-rnm1.png" alt="Responsive image">
+        <p class="text-center">Visualização de como funcionam as funções $i$ e $r$.</p>
+
+        <p class="text-justify">Note que homotopia é um conceito muito mais fraco que homeomorfismo entre espaços topológicos. Por exemplo, como $\mathbb{R}^{n+1}$ é um EVN, temos que $\mathbb{S}^n$ tem o tipo de homotopia de um ponto. Porém, perceba que $\mathbb{S}^n$ separa o espaço em dois subespaços desconexos, enquanto um ponto não faz isso.</p>
+
+        <hr>
+        <h5 class="text-center">Homotopia de Pares</h5>
+        <p class="text-justify">Um par de espaços topológicos é uma dupla $(X,A)$ onde $A$ é subespaço de $X$. Uma aplicação contínua de pares $f \colon (X,A) \to (Y,B)$ é uma função $f \colon X \to Y$ contínua tal que $f(A) \subset B$.</p>
+        <p class="text-justify">Uma homotopia de pares entre duas aplicações contínuas $f,g \colon (X,A) \to (Y,B)$ é uma aplicação contínua $H \colon (X \times [0,1], A \times [0,1]) \to (Y,B)$ tal que $H(x,0) = f(x)$. Note que por definição temos $H(x,1) = g(x)$ e $H(A \times [0,1]) \subset B$.</p>
+
+        <p class="text-justify"><b>Exemplo 11:</b> considere $J = [-1,1]$ com $\partial J = \{-1,1\}$. Temos as aplicações $Id_J$ e $-Id_J$, homotópicas pela homotopia linear $H(x,t) = (1-2t)x$. Porém, as aplicações $Id_{(J, \partial J)}$ e $-Id_{(J, \partial J)}$ não são, pois uma homotopia de pares $H$ teria que satisfazer $H(1,t) \in \partial J$ para todo$t \in [0,1]$, porém, como $H$ é contínua isso implicaria que a aplicação $t \mapsto H(1,t)$ fosse constante, o que é um absurdo pois $H(1,0) = 1$ e $H(1,1) = -1$.</p>
+
+        <p class="text-justify">Duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas relativamente a um subespaço $A \subset X$ se, e somente se, existe uma homotopia $H \colon X \times [0,1] \to Y$ entre $f$ e $g$ tal que $H(x,t) = f(x) = g(x)$ para todo $t \in [0,1]$ e para todo $x \in A$.</p>
+
+        <p class="text-justify"><b>Exemplo 12:</b> as funções $Id_{\mathbb{R}^{n+1}}$ e $r$ do <b>Exemplo 10</b> são homotópicas relativamente ao subconjunto $\mathbb{S}^n$, pois quando restritas a este, ambas se tornam a identidade $Id_{\mathbb{S}^n}$ e, além disso, a homotopia $H(x,t) = (1-t)x + tr(x)$ é tal que se $x_0 \in \mathbb{S}^n$, $r(x_0) = x_0$ e assim $H(x_0,t)$ $= (1-t)x_0 + tx_0$ $= x_0$ $= r(x_0)$ $= Id_{\mathbb{R}^{n+1}}(x_0)$.</p>
+
+        <hr>
+        <h5 class="text-center">Espaços Contráteis</h5>
+        <p class="text-justify">Um espaço topológico $X$ diz-se contrátil se, e somente se, tem o tipo de homotopia de um ponto (conjunto unitário).</p>
+
+        <p class="text-justify"><b>Proposição 13:</b> $X$ é contrátil se, e somente se, $Id_X$ é homotópica a uma aplicação constante $X \to X$.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $X$ é contrátil então existe uma equivalência homotópica $f \colon X \to \{p\}$. Perceba que $f$ obrigatoriamente é a função $p$ (constante igual a $p$). Agora, se denotarmos por $g \colon \{p\} \to X$ sua inversa homotópica, teremos $(g \circ f)(x) = g(p)$ para todo $x \in X$, portanto $g\circ f$ é constante e por definição de inversa homotópica temos $g \circ f \simeq Id_X$. Agora, se $Id_X \simeq p$, então $Id_X \simeq p \circ Id_X$ e $Id_X \circ p \simeq Id_X$. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Exemplo 14:</b> um subconjunto $X$ de um EVN $E$ é uma estrela de vértice $p$ se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="conj-estrela.png" alt="Responsive image">
+        <p class="text-center">Exemplo de estrela. Nesse caso, qualquer ponto dentro da área rachurada pode ser um vértice.</p>
+
+        <p class="text-justify"><b>Observação 15:</b> todo espaço contrátil é também conexo por caminhos. Afinal, fixado $p \in X$ com $Id_X \simeq K_p$, dados $x,y \in X$ temos os caminhos $f_x(t) = H(x,t)$ e $f_y(t) = H(y,1-t)$ onde $H$ é a homotopia entre $Id_X$ e $p$. Basta notar que a função $f$ descrita abaixo é um caminho de $x$ para $y$:
+        $$f(t) = \left\{
+			\begin{array}{ll}
+				f_x(2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
+				f_y(2t-1) & \mbox{se } 1/2 \leq t \leq 1
+			\end{array}
+		\right.$$</p>
+
+		<p class="text-justify"><b>Proposição 16:</b> se algum dos espaços $X$ ou $Y$ é contrátil, então toda aplicação contínua $f \colon X \to Y$ é homotópica a uma constante.</p>
+		<p class="text-justify"><i>Demonstração:</i> dada $f \colon X \to Y$ aplicação contínua, se $X$ for contrátil, então sabemos que $Id_X \simeq p$. Agora, podemos "compor dos dois lados" (pois $f \simeq f$ e pela <b>Proposição 07</b>) e assim temos $f \circ Id_X \simeq f \circ p$ e portanto $f \simeq f \circ p$. Basta notar que $f \circ p \colon X \to Y$ é a função $(f \circ p)(x) = f(p)$, que é constante, assim $f \simeq f(p)$. No caso de $Y$ ser contrátil, seja $H \colon Y \times [0,1] \to Y$ a homotopia entre $Id_Y$ e $q$. Temos que a aplicação $L \colon X \times [0,1] \to Y$ dada por $L(x,t) = K(f(x), t)$ é uma homotopia entre $f$ e $q$. $\blacksquare$</p>
+
+		<p class="text-justify"><b>Corolário 17:</b> se $Y$ é contrátil, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
+		<p class="text-justify"><i>Demonstração:</i> como $Y$ é contrátil, sabemos que $f \simeq q$ e $g \simeq q$. Assim, por ambas as propriedades simétrica e transitiva da <b>Proposição 06</b>, temos que $f \simeq g$ (note que a demonstração funciona pois ambas as funções são homotópicas à mesma constante). $\blacksquare$</p>
+
+		<p class="text-justify"><b>Corolário 18:</b> se $X$ é contrátil e $Y$ é conexo por caminhos, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
+		<p class="text-justify"><i>Demonstração:</i> a demonstração é similar à anterior, porém, nesse caso sabemos que $f \simeq f(p)$ e que $g \simeq g(p)$. Como estas duas constantes podem ser diferentes, precisamos que $Y$ seja um espaço que faça $f(p) \simeq g(p)$. A condição que utilizamos aqui é que $Y$ seja conexo por caminhos (tome $f \colon [0,1] \to Y$ caminho que conecta $f(p)$ em $g(p)$, temos que $H(x,t) = f(t)$ também as conecta). $\blacksquare$</p>
+
+		<hr>
+		<h5 class="text-center">Árvores</h5>
+
+		<p class="text-justify">Para definirmos a ideia de grafo, comecemos com um conjunto discreto de pontos $G^0$, chamaremos esses pontos de vértices. Agora, defina um conjunto $G^1$ onde todos os objetos são espaços $J_i$ homeomorfos ao intervalo $[0,1]$. Esses espaços serão chamados de arestas. Para cada aresta $J_i$, sabemos que $\partial J_i$ é um conjunto com dois elementos, que chamaremos de $u_i$ e $v_i$ (vamos padronizar que o homeomorfismo de $J_i$ em $[0,1]$ leva $u_i$ em $0$ e $v_i$ em $1$). Um grafo é um conjunto $G = G^0 \sqcup G^1 / \sim$, onde $\sim$ é a relação de equivalência que identifica todos os pontos $u_i$ e $v_i$ com elementos de $G^0$ (distintos ou não). A topologia em $G$ é aquela na qual $A \subset G$ é aberto se, e somente se, $A \cap J_i$ é aberto em $J_i$ para todo $i$. Um subgrafo de $G$ é um grafo composo de arestas e vértices de $G$.</p>
+
+		<img class="w-50 rounded mx-auto d-block" src="grafos-arvores-conexidade.png" alt="Responsive image">
+        <p class="text-center">Exemplos de um grafo $G$, um subgrafo de $G$ e de um grafo conexo gerado por $G$.</p>
+
+		<p class="text-justify">Um grafo $G$ é conexo se quaisquer dois vértices são ligados por uma quantidade finita de arestas (ou seja, dados $g,h$ vértices, existem $J_1, \dots, J_n$ distintas tais que $g \sim u_1$ e $h \sim v_n$ e, além disso, $v_i \sim u_{i+1}$ para todo $i < n$). Um circuito em $G$ é uma sequência finita de arestas distintas $J_1, \dots, J_n$ tal que $v_i \sim u_{i+1}$ para todo $i < n$ e $v_n \sim u_1$.</p>
+
+		<img class="w-50 rounded mx-auto d-block" src="grafos-arvores-conexidade-2.png" alt="Responsive image">
+        <p class="text-center">Exemplos de circuitos de $G$, de uma árvore e da remoção de uma aresta aberta, tornando a árvore desconexa.</p>
+
+		<p class="text-justify">Uma árvore $A$ é um grafo conexo que não ter circuitos. Dada $J$ uma aresta qualquer, chamamos de $J \setminus \partial J$ de aresta aberta. Dizemos também que um vértice $g \in G$ é livre se ele está ligado a uma única aresta.</p>
+
+		<p class="text-justify"><b>Lema 19:</b> remover uma aresta aberta de uma árvore a torna desconexa.</p>
+		<p class="text-justify"><i>Demonstração:</i> suponha que não, ou seja, tome $g, h$ vértices de $G$ uma árvore e a aresta $J_1$ que liga ambos. Se $G$ continua conexo após a remoção de $J_1$ aberta, então existem $J_2, \dots, J_n$ arestas que ligam $g$ e $h$. Basta notar que isso faz com que $J_1, J_2, \dots, J_n$ formem um ciclo, o que é um absurdo pois árvores não possuem ciclos. $\blacksquare$</p>
+
+		<p class="text-justify"><b>Lema 20:</b> toda árvore finita possui um vértice livre.</p>
+		<p class="text-justify"><i>Demonstração:</i> uma árvore de apenas uma aresta possui dois vértices livres, que são os seus únicos vértices. Se supusermos que toda árvore de $n-1$ arestas possui um vértice livre, como todo subgrafo de uma árvore é também uma árvore, toda árvore de $n$ arestas é construida adicionando uma aresta a uma árvore de $n-1$ vértices. Agora, dada uma árvore de $n-1$ vértices, podemos adicionar uma aresta a ela conectando-a de duas maneiras: se conectarmos apenas um vértice, o outro vértice dessa aresta será livre. Se conectarmos ambos os vértices $u, v$ dessa nova aresta em vértices $g,h$ já existentes na árvore, então o novo vértice junto com o caminho de $g$ para $h$ forma um ciclo, portanto o nosso novo grafo não é uma árvore. $\blacksquare$</p>
+
+		<p class="text-justify"><b>Teorema 21:</b> toda árvore finita é contrátil.</p>
+		<p class="text-justify"><i>Demonstração:</i> dada uma árvore finita $G$ com uma aresta, podemos contrair esta aresta para algum de seus vértices e assim $G$ é contrátil. Assuma que toda árvore com $n-1$ arestas é contrátil. Dada uma árvore $G$ com $n$ arestas, como $G$ possui um vértice livre $g$, podemos contrair a aresta de $g$ para o seu outro vértice, ficando assim com uma subarvore de $G$ (um subgrafo que também é uma árvore) que tem $n-1$ arestas. Por hipótese de indução, esta é contrátil. $\blacksquare$</p>
+
+		<p class="text-justify"><b>Teorema 22:</b> toda árvore enumerável é contrátil.</p>
+		<p class="text-justify"><i>Demonstração:</i> a demonstração desse teorema requer dois fatos principais: todo grafo enumerável mergulha em $\mathbb{R}^3$ e circuitos não são contráteis. Para provarmos a primeira, basta notar que a curva que é imagem do mapa $x \mapsto (1, x, x^2)$ tem a propriedade de que dados quaisquer três pontos nela, estes três pontos não são colineares. A demonstração disso se baseia no fato de que esses pontos seriam colineares se, e somente se, o determinante da matriz de suas coordenadas fosse $0$, o que não acontece pois este determinante é o determinante da matriz de Vandermonde, que é diferente de $0$. Agora, se $\{v_i\}_{i \in \mathbb{Z}_{\geq 0}}$ é uma enumeração para os vértices do nosso grafo, podemos identificar $v_i$ com o ponto $(1, i, i^2)$ e as arestas serão os segmentos de reta ligando esses pontos.</p>
+
+		<p class="text-justify">O segundo fato é bem mais fácil: basta notar que todo circuito é homotópico a uma aresta com ambas as suas extremidades conectadas no mesmo vértice (pois podemos contrair todas as outras arestas do circuito) e que essa aresta é claramente homotópica a um círculo, que não é contrátil. Agora que já sabemos disso, basta que dada uma árvore $G$, mergulhemos $G$ em $\mathbb{R}^3$. A lei que descreve o segmento que liga $v_i$ em $v_j$ é $f_{i \to j}(t) = (1-t)v_i + tv_j$. Agora, conforme o tempo passa podemos arrastar $v_j$ até $v_i$ por $f_{i \to j}$. Note que a parte chave aqui é que podemos fazer isso com todas as arestas de uma vez (já que não há circuitos em $G$), portanto $G$ é contrátil. $\blacksquare$</p>
+		
+		<hr>
+		<h5 class="text-center">Retrações</h5>
+
+		<p class="text-justify">Dado um espaço $X$ e $Y \subset X$, uma aplicação contínua $r \colon X \to Y$ é chamada de retração se $r(y) = y$ para todo $y \in Y$. Ou seja, $r$ é uma extensão contínua da aplicação identidade $Id_Y$. Se existe uma retração $r \colon X \to Y$, dizemos que $Y$ é um retrato de $X$.</p>
+
+		<p class="text-justify"><b>Exemplo 23:</b> a função $r$ dada no <b>Exemplo 10</b> é uma retração.</p>
+
+		<p class="text-justify">Dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$, dizemos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, se existir uma retração $r \colon V \to Y$.</p>
+
+		<p class="text-justify"><b>Exemplo 24:</b> como vimos no <b>Exemplo 23</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
+
+		<p class="text-justify"><b>Proposição 25:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança aberta de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
+		<p class="text-justify"><i>Demonstração:</i> bom, vamos supor que existe tal $\varepsilon > 0$ e trabalhar um pouco com nossa intuição, para que consigamos construi-lo de maneira esperta. Bom, sabemos que $f(x), g(x) \in Y$ para qualquer $x \in X$ e, além disso, se o objetivo é mostrar que $f \simeq g$, talvez adaptar a homotopia linear seja interessante (já que $\mathbb{R}^n$ é EVN). Bom, aqui temos um problema, pois não há como garantir que o segmento ligando $f(x)$ e $g(x)$ esteja inteiramente em $X$. Resolver isso parece complicado, mas se lembrarmos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, percebemos que basta garantir que esse segmento esteja dentro dessa vizinhança! Bom, isso é fácil, pois basta escolher um $\varepsilon$ que faça com que $B(y, \varepsilon) \subset V$ para qualquer $y \in Y$ (afinal, $g(x) \in B(f(x), \varepsilon)$ e portanto o segmento que liga ambos os pontos estaria automaticamente dentro de $V$).</p>
+
+		<p class="text-justify">Bom, sabemos que a distância de $Y$ até $\mathbb{R}^n \setminus V$ é positiva, pois a função $y \mapsto d(y, \mathbb{R}^n\setminus V)$ é contínua e como $Y$ é compacto, a função possui mínimo, que é positivo pois a função é positiva para todo $y$ (já que $y \not\in \mathbb{R}^n \setminus V$). Bom, basta que esse seja nosso $\varepsilon$! Escolha $\varepsilon = \min\{d(x,F) \colon x \in Y\} > 0$ e assim teremos que pra todo $y \in Y$, se $b \in B(y, \varepsilon)$ então $d(b,y) < \varepsilon$ e portanto $b \in V$. $\blacksquare$</p>
+
+        <hr>
+        <h5 class="text-center">Extensão de Aplicações</h5>
+
+        <p class="text-justify">Dada $f \colon A \to Y$ uma aplicação contínua, onde $A \subset X$, uma extensão contínua é uma aplicação contínua $F \colon X \to Y$ tal que $F(x) = f(x)$ se $x \in A$. O problema que queremos estudar é: quando que uma aplicação admite extensão contínua? O teorema de Tietze-Urysohn afirma que se $A$ é fechado, $X$ é normal e $Y = \mathbb{R}^n$, então essa extensão existe.</p>
+
+        <p class="text-justify"><b>Proposição 26:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
+        <p class="text-justify"><i>Demonstração:</i> primeiramente, vamos definir a aplicação contínua $\phi$ que "conifica" o cilindro $\mathbb{S}^n \times [0,1]$, ou seja, $\phi \colon \mathbb{S}^n \times [0,1] \to \mathbb{B}^{n+1}$ dada por $\phi(x,t) = (1-t)x$. Note que $\phi$ é injetiva em $\mathbb{S}^n \times [0,1)$, sobrejetora e contínua. Agora, se $f$ admite extensão contínua $F$, então podemos definir a homotopia $H \colon \mathbb{S}^n \times [0,1] \to Y$ dada por $H = F \circ \phi$. Note que $H(x,0)$ $= F(\phi(x,0))$ $= F(x)$ $= f(x)$ (pois $x \in \mathbb{S}^n$) e $H(x,1) = F(\phi(x,1)) = F(0)$, portanto temos que $f$ é homotópica a uma constante ($f \simeq F(0)$). Agora, se existe uma homotopia $H \colon \mathbb{S}^n \times [0,1] \to Y$ entre $f$ e uma constante $p$, podemos definir a função $F \colon \mathbb{B}^{n+1} \to Y$ como:
+        $$F(z) = \left\{
+            \begin{array}{ll}
+                H(\phi^{-1}(z))  & \mbox{se } z \neq 0 \\
+                H(x,1) & \mbox{se } z = 0
+            \end{array}
+        \right.$$
+        Note que se $s \in \mathbb{S}^n$, $F(s) = H(\phi^{-1}(s)) = H(s,0) = f(s)$, portanto $F$ é de fato uma extensão de $f$, basta provarmos que $F$ é contínua. Agora, como $\mathbb{B}^{n+1}$ é compacto hausdorff e $\mathbb{S}^n$ é compacto, então temos que $F$ é contínua, pois podemos escrever $H = F \circ \phi$ e, além disso, $H$ é contínua e $\phi$ é contínua e sobrejetora.</p>
+
+        <p class="text-justify"><b>Proposição:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
+        <p class="text-justify"><i>Demonstração:</i> </p>
+
+	  </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
