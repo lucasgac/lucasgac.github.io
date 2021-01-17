@@ -19,7 +19,7 @@
 		});
 	</script>
 
-    <title>Matemática com Desenhos</title>
+    <title>Homotopia e Extensões Contínuas</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
 
@@ -235,8 +235,23 @@
         \right.$$
         Note que se $s \in \mathbb{S}^n$, $F(s) = H(\phi^{-1}(s)) = H(s,0) = f(s)$, portanto $F$ é de fato uma extensão de $f$, basta provarmos que $F$ é contínua. Agora, como $\mathbb{B}^{n+1}$ é compacto hausdorff e $\mathbb{S}^n$ é compacto, então temos que $F$ é contínua, pois podemos escrever $H = F \circ \phi$ e, além disso, $H$ é contínua e $\phi$ é contínua e sobrejetora.</p>
 
-        <p class="text-justify"><b>Proposição:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
-        <p class="text-justify"><i>Demonstração:</i> </p>
+        <p class="text-justify"><b>Proposição 27:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
+        <p class="text-justify"><i>Demonstração:</i> primeiramente, perceba que podemos tomar o contra-domínio de $f$ como sendo todo o $\mathbb{R}^n$, sem perder nenhuma informação. Isso é importante pois agora temos que $f$ se enquadra nos requisitos para aplicarmos o teorema de Tietze-Urysohn! Fazendo isso, conseguimos uma extensão contínua $\phi \colon X \to \mathbb{R}^n$ de $f$. Agora, se $U = \phi^{-1}(V)$, perceba que $U$ é uma vizinhança de $A$ (pois $A \subset \phi^{-1}(Y) \subset \phi^{-1}(V)$). Por fim basta notar que $F = r \circ \phi_U \colon U \to Y$ é contínua (composição de funções contínuas) e se $x \in A$, então $F(x)$ $= r(\phi_U(a))$ $= r(f(a))$ $= f(a)$ (note que aqui denotamos por $\phi_U$ a restrição de $\phi$ ao conjunto $U$).</p>
+
+        <hr>
+        <h5 class="text-center">Teorema da Extensão de Borsuk</h5>
+
+        <p class="text-justify">Agora, provaremos um resultado que de certa maneira implica o teorema de Tietze-Urysohn (de certa maneira, pois precisamos supor algo que não é necessário no teorema descrito). Esse resultado, chamado de Teorema da Extensão de Borsuk, diz que a propriedade de admitir extensão contínua depende apenas da classe de homotopia da aplicação.</p>
+
+        <p class="text-justify"><b>Teorema 28:</b> sejam $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço métrico e $A \subset X$ fechado. Dadas $f,g \colon A \to Y$ aplicações contínuas homotópicas, se $F \colon X \to Y$ é uma extensão contínua de $f$, temos que toda homotopia entre $f$ e $g$ se estende para uma homotopia entre $F$ e uma extensão contínua de $g$.</p>
+        <p class="text-justify"><i>Demonstração:</i> seja $H \colon A \times [0,1] \to Y$ uma homotopia entre $f$ e $g$. Definiremos a extensão de $H$ primeiramente no conjunto $X \times \{0\}$: $$H_0 \colon (X \times \{0\}) \cup (A \times [0,1]) \to Y, \quad
+        H_0(x,t) = \left\{      
+        \begin{array}{ll}
+            F(x)  & \mbox{se } x \in X \mbox{ e } t = 0 \\
+            H(x,t) & \mbox{se } (x,t) \in A \times [0,1]
+        \end{array}
+        \right.$$
+    	Pela <b>Proposição 27</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado).</p>
 
 	  </div> <!-- /container -->
     </main>
