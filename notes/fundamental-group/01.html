@@ -218,24 +218,21 @@
 		<p class="text-justify"><b>Lema 21:</b> toda árvore finita possui um vértice livre.</p>
 		<p class="text-justify"><i>Demonstração:</i> uma árvore de apenas uma aresta possui dois vértices livres, que são os seus únicos vértices. Se supusermos que toda árvore de $n-1$ arestas possui um vértice livre, como todo subgrafo de uma árvore é também uma árvore, toda árvore de $n$ arestas é construida adicionando uma aresta a uma árvore de $n-1$ vértices. Agora, dada uma árvore de $n-1$ vértices, podemos adicionar uma aresta a ela conectando-a de duas maneiras: se conectarmos apenas um vértice, o outro vértice dessa aresta será livre. Se conectarmos ambos os vértices $u, v$ dessa nova aresta em vértices $g,h$ já existentes na árvore, então o novo vértice junto com o caminho de $g$ para $h$ forma um ciclo, portanto o nosso novo grafo não é uma árvore. $\blacksquare$</p>
 
-		<p class="text-justify"><b>Teorema 22:</b> toda árvore finita é contrátil.</p>
-		<p class="text-justify"><i>Demonstração:</i> dada uma árvore finita $G$ com uma aresta, podemos contrair esta aresta para algum de seus vértices e assim $G$ é contrátil. Assuma que toda árvore com $n-1$ arestas é contrátil. Dada uma árvore $G$ com $n$ arestas, como $G$ possui um vértice livre $g$, podemos contrair a aresta de $g$ para o seu outro vértice, ficando assim com uma subarvore de $G$ (um subgrafo que também é uma árvore) que tem $n-1$ arestas. Por hipótese de indução, esta é contrátil. $\blacksquare$</p>
-
-		<p class="text-justify"><b>Teorema 23:</b> toda árvore infinita é contrátil.</p>
-        <p class="text-justify"><i>Demonstração:</i> </p>
+		<p class="text-justify"><b>Teorema 22:</b> toda árvore é contrátil.</p>
+        <p class="text-justify"><i>Demonstração:</i> fixado $a$ um vértice de $G$, para cada outro vértice $b$ de $G$ existe apenas um caminho entre de $a$ para $b$, vamos denotar esse caminho por $ab$. Para cada $t \in [0,1]$ o caminho $t \cdot ab$ é o caminho que parte de $a$ e percorre $100t\%$ do caminho $ab$. Note que $(b,t) \mapsto end(t \cdot ab)$ (onde o operador $end$ retorna o outro extremo que não o $a$) é uma homotopia entre a identidade e o mapa constante em $a$. $\blacksquare$</p>
 		
 		<hr>
 		<h5 class="text-center">Retrações</h5>
 
 		<p class="text-justify">Dado um espaço $X$ e $Y \subset X$, uma aplicação contínua $r \colon X \to Y$ é chamada de retração se $r(y) = y$ para todo $y \in Y$. Ou seja, $r$ é uma extensão contínua da aplicação identidade $Id_Y$. Se existe uma retração $r \colon X \to Y$, dizemos que $Y$ é um retrato de $X$.</p>
 
-		<p class="text-justify"><b>Exemplo 24:</b> a função $r$ dada no <b>Exemplo 10</b> é uma retração.</p>
+		<p class="text-justify"><b>Exemplo 23:</b> a função $r$ dada no <b>Exemplo 10</b> é uma retração.</p>
 
 		<p class="text-justify">Dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$, dizemos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, se existir uma retração $r \colon V \to Y$.</p>
 
-		<p class="text-justify"><b>Exemplo 25:</b> como vimos no <b>Exemplo 24</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
+		<p class="text-justify"><b>Exemplo 24:</b> como vimos no <b>Exemplo 23</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
 
-		<p class="text-justify"><b>Proposição 26:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
+		<p class="text-justify"><b>Proposição 25:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
 		<p class="text-justify"><i>Demonstração:</i> bom, vamos supor que existe tal $\varepsilon > 0$ e trabalhar um pouco com nossa intuição, para que consigamos construi-lo de maneira esperta. Bom, sabemos que $f(x), g(x) \in Y$ para qualquer $x \in X$ e, além disso, se o objetivo é mostrar que $f \simeq g$, talvez adaptar a homotopia linear seja interessante (já que $\mathbb{R}^n$ é EVN). Bom, aqui temos um problema, pois não há como garantir que o segmento ligando $f(x)$ e $g(x)$ esteja inteiramente em $X$. Resolver isso parece complicado, mas se lembrarmos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, percebemos que basta garantir que esse segmento esteja dentro dessa vizinhança! Bom, isso é fácil, pois basta escolher um $\varepsilon$ que faça com que $B(y, \varepsilon) \subset V$ para qualquer $y \in Y$ (afinal, $g(x) \in B(f(x), \varepsilon)$ e portanto o segmento que liga ambos os pontos estaria automaticamente dentro de $V$).</p>
 
 		<p class="text-justify">Bom, sabemos que a distância de $Y$ até $\mathbb{R}^n \setminus V$ é positiva, pois a função $y \mapsto d(y, \mathbb{R}^n\setminus V)$ é contínua e como $Y$ é compacto, a função possui mínimo, que é positivo pois a função é positiva para todo $y$ (já que $y \not\in \mathbb{R}^n \setminus V$). Bom, basta que esse seja nosso $\varepsilon$! Escolha $\varepsilon = \min\{d(x,F) \colon x \in Y\} > 0$ e assim teremos que pra todo $y \in Y$, se $b \in B(y, \varepsilon)$ então $d(b,y) < \varepsilon$ e portanto $b \in V$. $\blacksquare$</p>
@@ -245,7 +242,7 @@
 
         <p class="text-justify">Dada $f \colon A \to Y$ uma aplicação contínua, onde $A \subset X$, uma extensão contínua é uma aplicação contínua $F \colon X \to Y$ tal que $F(x) = f(x)$ se $x \in A$. O problema que queremos estudar é: quando que uma aplicação admite extensão contínua? O teorema de Tietze-Urysohn afirma que se $A$ é fechado, $X$ é normal e $Y = \mathbb{R}^n$, então essa extensão existe.</p>
 
-        <p class="text-justify"><b>Proposição 27:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
+        <p class="text-justify"><b>Proposição 26:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
         <p class="text-justify"><i>Demonstração:</i> primeiramente, vamos definir a aplicação contínua $\phi$ que "conifica" o cilindro $\mathbb{S}^n \times [0,1]$, ou seja, $\phi \colon \mathbb{S}^n \times [0,1] \to \mathbb{B}^{n+1}$ dada por $\phi(x,t) = (1-t)x$. Note que $\phi$ é injetiva em $\mathbb{S}^n \times [0,1)$, sobrejetora e contínua. Agora, perceba que o mapa $$\phi' \colon \frac{\mathbb{S}^n \times [0,1]}{\mathbb{S}^n \times \{1\}} \to \mathbb{B}^{n+1}$$ dado por $\phi'(x,t) = (1-t)x$ é bijetor, pois é igual ao mapa $\phi$ em $\mathbb{S}^n \times [0,1)$ e todo o conjunto que impedia $\phi$ de ser injetor agora está colapsado a um único ponto. Além disso, o único ponto que impede $\phi$ restrito à $\mathbb{S}^n \times [0,1)$ de ser sobrejetora é o $0$, que é a imagem do agora colapsado $\mathbb{S}^n \times \{1\}$.</p>
 
         <p>Pela propriedade universal do quociente, segue que $\phi'$ é contínuo, pois $\phi = \phi' \circ \pi$, onde $\pi$ é o mapa projeção $\pi \colon \mathbb{S}^{n} \times [0,1] \to \frac{\mathbb{S}^n \times [0,1]}{\mathbb{S}^n \times \{1\}}$. Agora, como o domínio de $\phi'$ é compacto, segue que $\phi'$ é um homeomorfismo. Para realizarmos a demonstração da proposição, vamos fazer a ida e a volta separadamente: </p>
@@ -255,7 +252,7 @@
             <li><b>Volta:</b> tome a aplicação $F = H \circ \phi'^{-1} \colon \mathbb{B}^{n+1} \to Y$ e perceba que se $a \in \mathbb{S}^n$, temos $F(a) = H(\phi'^{-1}(a)) = H(a,0) = f(a)$. $\blacksquare$</li>
         </ol>        
 
-        <p class="text-justify"><b>Proposição 28:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
+        <p class="text-justify"><b>Proposição 27:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
         <p class="text-justify"><i>Demonstração:</i> primeiramente, perceba que podemos tomar o contra-domínio de $f$ como sendo todo o $\mathbb{R}^n$, sem perder nenhuma informação. Isso é importante pois agora temos que $f$ se enquadra nos requisitos para aplicarmos o teorema de Tietze-Urysohn! Fazendo isso, conseguimos uma extensão contínua $\phi \colon X \to \mathbb{R}^n$ de $f$. Agora, se $U = \phi^{-1}(V)$, perceba que $U$ é uma vizinhança de $A$ (pois $A \subset \phi^{-1}(Y) \subset \phi^{-1}(V)$). Por fim basta notar que $F = r \circ \phi_U \colon U \to Y$, onde $r$ é a retração de $V$ em $Y$, é contínua (composição de funções contínuas) e se $x \in A$, então $F(x)$ $= r(\phi_U(a))$ $= r(f(a))$ $= f(a)$ (note que aqui denotamos por $\phi_U$ a restrição de $\phi$ ao conjunto $U$). $\blacksquare$</p>
 
         <hr>
@@ -263,7 +260,7 @@
 
         <p class="text-justify">Agora, provaremos um resultado que de certa maneira implica o teorema de Tietze-Urysohn (de certa maneira, pois precisamos supor algo que não é necessário no teorema descrito). Esse resultado, chamado de Teorema da Extensão de Borsuk, diz que a propriedade de admitir extensão contínua depende apenas da classe de homotopia da aplicação.</p>
 
-        <p class="text-justify"><b>Teorema 29:</b> sejam $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço métrico e $A \subset X$ fechado. Dadas $f,g \colon A \to Y$ aplicações contínuas homotópicas, se $F \colon X \to Y$ é uma extensão contínua de $f$, temos que toda homotopia entre $f$ e $g$ se estende para uma homotopia entre $F$ e uma extensão contínua de $g$.</p>
+        <p class="text-justify"><b>Teorema 28:</b> sejam $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço métrico e $A \subset X$ fechado. Dadas $f,g \colon A \to Y$ aplicações contínuas homotópicas, se $F \colon X \to Y$ é uma extensão contínua de $f$, temos que toda homotopia entre $f$ e $g$ se estende para uma homotopia entre $F$ e uma extensão contínua de $g$.</p>
         <p class="text-justify"><i>Demonstração:</i> seja $H \colon A \times [0,1] \to Y$ uma homotopia entre $f$ e $g$. Definiremos a extensão de $H$ primeiramente no conjunto $X \times \{0\}$: $$H_0 \colon (X \times \{0\}) \cup (A \times [0,1]) \to Y, \quad
         H_0(x,t) = \left\{      
         \begin{array}{ll}
@@ -271,23 +268,23 @@
             H(x,t) & \mbox{se } (x,t) \in A \times [0,1]
         \end{array}
         \right.$$
-    	Pela <b>Proposição 28</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado). Agora, como $[0,1]$ é compacto, existe $U$ vizinhança de $A$ tal que $U \times [0,1] \subset W$ (basta notar que a aplicação com domínio $[0,1]$ dada por $t \mapsto d(A \times \{t\}, X \times [0,1] \setminus W)$ é contínua).</p>
+    	Pela <b>Proposição 27</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado). Agora, como $[0,1]$ é compacto, existe $U$ vizinhança de $A$ tal que $U \times [0,1] \subset W$ (basta notar que a aplicação com domínio $[0,1]$ dada por $t \mapsto d(A \times \{t\}, X \times [0,1] \setminus W)$ é contínua).</p>
 
     	<p class="text-justify">Pelo lema de Urysohn, como $A$ e $X \setminus U$ são fechados e $X$ é normal, então existe uma aplicação $\lambda \colon X \to [0,1]$ que satisfaz: 
     	$$\lambda(x) = \left\{ \begin{array}{ll} 0 & \mbox{se } x \in A \\ 1 & \mbox{se } x \in X \setminus U \end{array}\right.$$
     	Defina, portanto, $G \colon X \times [0,1] \to Y$ por $G(x,t) = H_0(x, \lambda(x)t)$. Temos que $G(a,t) = H_0(a, \lambda(a)t)$ $= H_0(a,t)$ $= H(a,t)$ para todo $a \in A$. Além disso, $G(x,0)$ $= H_0(x, \lambda(x)0)$ $= H_0(x,0)$ $= F(x)$ e ainda $G(x,1)$ $= H_0(x, \lambda(x))$ e se $x \in A$ temos $G(x,1)$ $= H_0(x,1)$ $= H(a,1)$ $= g(x)$ e assim $G(x,1)$ é extensão contínua de $g$. $\blacksquare$</p>
 
         <img class="w-50 rounded mx-auto d-block" src="bursuk-extension.png" alt="Responsive image">
-        <p class="text-center" >Ilustração do <b>Teorema 29</b>.</p>
+        <p class="text-center" >Ilustração do <b>Teorema 28</b>.</p>
 
-    	<p class="text-justify"><b>Corolário 30:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
-    	<p class="text-justify"><i>Demonstração:</i> se $Y$ é contrátil, quaisquer $f, g \colon A \to Y$ são homotópicas (<b>Corolário 17</b>) e portanto podemos tomar $g$ constante. Como $g$ admite extensão contínua, $f$ também admite pelo <b>Teorema 29</b>. $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 29:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $Y$ é contrátil, quaisquer $f, g \colon A \to Y$ são homotópicas (<b>Corolário 17</b>) e portanto podemos tomar $g$ constante. Como $g$ admite extensão contínua, $f$ também admite pelo <b>Teorema 28</b>. $\blacksquare$</p>
 
-    	<p class="text-justify"><b>Corolário 31:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$, conexo por caminhos, e $A$ é subconjunto fechado contrátil de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
-    	<p class="text-justify"><i>Demonstração:</i> agora pelo <b>Corolário 18</b>, como $Y \subset \mathbb{R}^n$ é conexo por caminhos temos que $f$ é homotópico a qualquer mapa constante, que possui extensão contínua, portanto o <b>Teorema 29</b> nos diz que $f$ também possui. $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 30:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$, conexo por caminhos, e $A$ é subconjunto fechado contrátil de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> agora pelo <b>Corolário 18</b>, como $Y \subset \mathbb{R}^n$ é conexo por caminhos temos que $f$ é homotópico a qualquer mapa constante, que possui extensão contínua, portanto o <b>Teorema 28</b> nos diz que $f$ também possui. $\blacksquare$</p>
 
-    	<p class="text-justify"><b>Corolário 32:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e $A$ é subconjunto fechado de um espaço métrico contrátil $X$, uma aplicação contínua $f \colon A \to Y$ admite extensão contínua se, e somente se, for homotópica a uma constante.</p>
-    	<p class="text-justify"><i>Demonstração:</i> se $f$ for homotópica a uma constante o resultado segue do <b>Teorema 29</b>. Se $f$ possuir extensão contínua $F \colon X \to Y$, como $X$ é contrátil então $F$ é homotópica a uma constante e assim $f$ também será (basta restringir a homotopia). $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 31:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e $A$ é subconjunto fechado de um espaço métrico contrátil $X$, uma aplicação contínua $f \colon A \to Y$ admite extensão contínua se, e somente se, for homotópica a uma constante.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $f$ for homotópica a uma constante o resultado segue do <b>Teorema 28</b>. Se $f$ possuir extensão contínua $F \colon X \to Y$, como $X$ é contrátil então $F$ é homotópica a uma constante e assim $f$ também será (basta restringir a homotopia). $\blacksquare$</p>
 
 	  </div> <!-- /container -->
     </main>
