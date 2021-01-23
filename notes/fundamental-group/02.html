@@ -175,6 +175,16 @@
 
         <p class="text-justify"><b>Teorema 04:</b> (por mais que o resultado seja só provar que um conjunto munido de uma operação é um grupo, este é um grupo importante o suficiente pra que essa demonstração ganhe de mim o título de teorema) fixado $x \in X$, o conjunto $\pi_1(X,x)$ munido da operação definida na <b>Proposição 03</b> é um grupo.</p>
         <p class="text-justify"><i>Demonstração:</i> como já vimos, a operação $[a][b] = [ab]$ está bem definida quando $a$ termina onde $b$ começa. Bom, como ambos são fechados em $x$, segue que $a(1) = x = b(0)$. Além disso, sabemos que $aa^{-1} \cong a(0) = x = a(1) \cong a^{-1}a$ e $ax \cong a \cong xa$, o que mostra que o mapa constante igual a $x$ é uma identidade em $\pi_1(X, x)$. Por fim, já mostramos que para quaiquer $f,g,h$ caminhos fechados em $x$, $f(gh) \cong (fg)h$ e portanto $[f]([g][h]) = ([f][g])[h]$.</p>
+
+        Agora que já conhecemos o grupo fundamental, podemos nos perguntar: quanta informação o grupo fundamental de um espaço dá sobre ele? Melhor ainda, O QUE É o grupo fundamental de um espaço? Note que a nossa definição depende de um ponto fixado $x \in X$ e assim para cada elemento do espaço podemos definir um grupo fundamental, portanto não podemos falar de grupo fundamental de um espaço, certo?
+
+        <p class="text-justify"><b>Proposição 05:</b> dados $x_0, x_1 \in X$, se $x_0$ e $x_1$ estão na mesma componente conexa por caminhos de $X$, temos que $\pi_1(X, x_0)$ é isomorfo a $\pi_1(X, x_1)$. Em particular, se $X$ é conexo por caminhos segue que o grupo fundamental não depende de ponto base a menos de isomorfismo.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $\gamma$ é uma classe de homotopia de caminhos ligando $x_1$ em $x_0$, considere o mapa $\Gamma \colon \pi_1(X, x_0) \to \pi_1(X,x_1)$ dado por $\Gamma(f) = \gamma f \gamma^{-1}$. Note que esse mapa possui inversa $\Gamma^{-1}(f) = \gamma^{-1} f \gamma$ e que $\Gamma(fg) =$ $\gamma fg \gamma^{-1} =$ $\gamma f \gamma^{-1} \gamma g \gamma^{-1} =$ $\Gamma(f)\Gamma(g)$.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="02/isomorfismo-componente-conexa.png" alt="Responsive image">
+        <p class="text-center">Ilustração de como funciona o isomorfismo $\Gamma$.</p>
+
+        <p class="text-justify"><b>Observação 06:</b> em geral o isomorfismo $\Gamma$ não é natural, ou seja, depende da escolha da classe de caminhos $\gamma$. Uma exceção interessante é o caso em que o grupo fundamental é abeliano. De fato, seja $\Gamma' \colon \pi_1(X, x_0) \to \pi_1(X, x_1)$ o isomorfismo associado a outra classe de homotopia $\gamma'$ de caminhos ligando $x_0$ em $x_1$. No caso abeliano, $\Gamma'(f) =$ $\gamma' f \gamma'^{-1} =$ $(\gamma' f \gamma^{-1})(\gamma\gamma'^{-1}) =$ $(\gamma\gamma'^{-1})(\gamma' f \gamma^{-1}) =$ $\gamma f \gamma^{-1} = \Gamma(f)$.</p>
         
       </div> <!-- /container -->
 
