@@ -9,7 +9,15 @@
     <link rel="icon" href="reals.ico">
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
 
     <title>O Grupo Fundamental</title>
 
@@ -54,6 +62,31 @@
       </div>
 
       <div class="container">
+        <h5 class="text-center">Caminhos</h5>
+        <p class="text-justify">Por mais que a noção de caminho já tenha sido informalmente utilizada no capítulo anterior, vamos agora entender precisamente o que são caminhos e como se comportam sob várias circustâncias.</p>
+        <p class="text-justify">Dado um espaço topológico $X$, um caminho em $X$ é uma aplicação contínua $f \colon [a,b] \to X$ com $a,b \in \mathbb{R}$. Note que a escolha de $a$ e $b$ não fazem muita diferença para a construção do caminho pois quaisquer dois intervalos fechados são homeomorfos, portanto iremos adotar $a = 0$ e $b = 1$ para a grande maioria dos exemplos. Além disso, como $[0,1]$ é contrátil, todo caminho é homotópico a uma constante.</p>
+        <p class="text-justify">Dizemos que dois caminhos $f,g \colon [0,1] \to X$ são homotópicos se $f \simeq g$ $(rel.$ $\{0,1\})$, ou seja, se existe uma aplicação contínua $H \colon [0,1]^2 \to X$ tal que $H(x,0) = f(x)$, $H(x,1) = g(x)$, $H(0,t) = f(0) = g(0)$ e $H(1,t) = f(1) = g(1)$. Nesse caso escreveremos $f \cong g$.</p>
+
+        <p class="text-justify"><b>Proposição 01:</b> $\cong$ é uma relação de equivalência.</p>
+        <p class="text-justify"><i>Demonstração:</i></p>
+        <ol>
+            <li>
+                <b>Reflexiva:</b> considere a homotopia $H(x,t) = f(x)$. Agora, note que $H(0,t) = f(0) = f(0)$ e $H(1,t) = f(1) = f(1)$ e assim $f \cong f$.
+            </li>
+            <li>
+                <b>Simétrica:</b> se $H(x,t)$ é homotopia de $f$ a $g$, então $K(x,t) = H(x,1-t)$ é homotopia de $g$ a $f$. Note que $K(0,t) = H(0,1-t) = f(0) = g(0)$ e $K(1,t) = H(1,1-t) = f(1) = g(1)$ e assim $g \cong f$.
+            </li>
+            <li>
+                <b>Transitiva:</b> se $H(x,t)$ é homotopia de $f$ a $g$ e $K(x,t)$ é homotopia de $g$ a $h$, então:
+                $$L(x,t) = \left\{
+                    \begin{array}{ll}
+                        H(x,2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
+                        K(x,2t-1) & \mbox{se } 1/2 \leq t \leq 1
+                    \end{array}
+                \right.$$
+                Perceba que $L(0,t) = H(0,2t) = f(0) = g(0) = h(0)$ e $L(1,t) = H(1,2t) = f(1) = g(1) = h(1)$ se $t \in [0,1/2]$. Além disso, se $t \in [1/2, 1]$ então $L(0,t) = K(0,2t-1) = h(0) = g(0) = f(0)$ e $L(1,t) = K(1, 2t-1) = h(1) = g(1) = f(1)$ e assim segue que $f \cong h$. $\blacksquare$
+            </li>
+        </ol> 
       </div> <!-- /container -->
 
     </main>
