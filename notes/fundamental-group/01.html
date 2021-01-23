@@ -67,17 +67,17 @@
 
         <p class="text-justify"><b>Exemplo 01:</b> se $E$ é um espaço vetorial normado e $f,g \colon X \to E$ são duas aplicações contínuas, então $f$ e $g$ são homotópicas: podemos considerar a homotopia $H(x,t) = (1-t)f(x) + tg(x)$. Esse tipo de homotopia é chamada de homotopia linear.</b></p>
 
-        <img class="w-25 rounded mx-auto d-block" src="func-homotop-exemplo.png" alt="Responsive image">
+        <img class="w-25 rounded mx-auto d-block" src="01/func-homotop-exemplo.png" alt="Responsive image">
         <p class="text-center" >Homotopia entre duas funções $f,g \colon \mathbb{R} \to \mathbb{R}$.</p>
 
         <p class="text-justify"><b>Observação 02:</b> a relação de homotopia depende do contradomínio. Por exemplo, duas aplicações $f,g \colon X \to E \setminus \{0\}$ podem não ser homotópicas. Em particular, se dado $x_0 \in X$, $E = \mathbb{R}^2$ e $f(x_0)$ e $g(x_0)$ forem opostos pela origem, então a homotopia linear é impossível, pois teríamos $H(x_0,1/2) = 0$.</p>
 
-        <img class="w-25 rounded mx-auto d-block" src="obs-codominio-r2.png" alt="Responsive image">
+        <img class="w-25 rounded mx-auto d-block" src="01/obs-codominio-r2.png" alt="Responsive image">
         <p class="text-center" >Exemplo citado na observação.</p>
 
         <p class="text-justify"><b>Exemplo 03:</b> se representarmos por $\mathbb{S}^n$ a esfera $n-$dimensional (note que $\mathbb{S}^n \subset \mathbb{R}^{n+1}$), dadas $f,g \colon X \to \mathbb{S}^n$ não antipodais, ou seja, tais que $f(x) \neq -g(x)$ para todo $x \in X$, então $f \simeq g$ pela aplicação $H \colon X \times [0,1] \to \mathbb{S}^n$ dada por: $$H(x,t) = \frac{(1-t)f(x) + tg(x)}{\mid (1-t)f(x) + tg(x) \mid}.$$ A intuição por trás dessa homotopia é a seguinte: dado $x_0 \in X$, $G_{x_0}(t) = (1-t)f(x_0) + tg(x_0)$ é o segmento de reta que liga os pontos $f(x_0)$ e $g(x_0)$. Dividir por $\mid G_{x_0}(t) \mid$ é a mesma coisa que projetar esse segmento na esfera, pois $H(x_0, t)$ acaba tendo norma $1$ para todo $t$.</p>
 
-        <img class="w-25 rounded mx-auto d-block" src="projecao-n-esfera.png" alt="Responsive image">
+        <img class="w-25 rounded mx-auto d-block" src="01/projecao-n-esfera.png" alt="Responsive image">
         <p class="text-center" >Projeção do ponto $a$ do segmento que liga $f(x_0)$ em $g(x_0)$ na esfera de $1-$dimensão.</p>
 
         <p class="text-justify"><b>Exemplo 04:</b> agora, vamos olhar dois casos particulares do exemplo anterior:</p>
@@ -112,7 +112,7 @@
         	</li>
         </ol> 
 
-        <img class="w-75 rounded mx-auto d-block" src="equiv-relac-homotop.png" alt="Responsive image">
+        <img class="w-75 rounded mx-auto d-block" src="01/equiv-relac-homotop.png" alt="Responsive image">
         <p class="text-center">Ser homotopicamente equivalente é uma relação de equivalência.</p>
 
         <p class="text-justify">Perceba que na imagem acima, para facilitar a vida do desenhista (eu mesmo), representamos a homotopia para um ponto $x_0 \in X$ fixado, não para todo o domínio $X$ de $f$ e $g$.</p>
@@ -130,7 +130,7 @@
         <p class="text-justify"><b>Exemplo 09:</b> todo espaço vetorial normado tem o tipo de homotopia de um ponto, pois dado um EVN $E$, note que $f \colon E \to \{0\}$ dada por $f(v) = 0$ para todo $v \in E$ é contínua, pois é constante. Ainda mais, se $i \colon \{0\} \to E$ é a inclusão, note que $f \circ i \simeq Id_{\{0\}}$ () e $i \circ f \simeq Id_E$ (quaisquer duas funções contínuas com contra-domínio num EVN são homotópicas).</p>
         <p class="text-justify"><b>Exemplo 10:</b> considere a inclusão $i \colon \mathbb{S}^n \to \mathbb{R}^{n+1}\setminus\{0\}$ e a função $r \colon \mathbb{R}^{n+1}\setminus\{0\} \to \mathbb{S}^n$ dada por $r(x) = x/|x|$. Primeiro, note que ambas $i$ e $r$ são contínuas. Agora, claramente $r \circ i = Id_{\mathbb{S}^n}$ e, além disso, pela homotopia linear segue também que $i \circ r \simeq Id_{\mathbb{R}^{n+1}}$. Assim, $\mathbb{R}^{n+1}\setminus\{0\}$ e $\mathbb{S}^n$ tem o mesmo tipo de homotopia. A ideia aqui é que para cada $x \in \mathbb{R}^{n+1}$ podemos percorrer o a reta que liga $x$ em $0$ até chegarmos em $\mathbb{S}^n$ (o que não aconteceria no caso de incluirmos o $0$ pois essa reta não estaria bem definida).</p>
 
-        <img class="w-50 rounded mx-auto d-block" src="homotop-sn-rnm1.png" alt="Responsive image">
+        <img class="w-50 rounded mx-auto d-block" src="01/homotop-sn-rnm1.png" alt="Responsive image">
         <p class="text-center">Visualização de como funcionam as funções $i$ e $r$.</p>
 
         <p class="text-justify">Note que homotopia é um conceito muito mais fraco que homeomorfismo entre espaços topológicos. Por exemplo, como $\mathbb{R}^{n+1}$ é um EVN, temos que $\mathbb{S}^n$ tem o tipo de homotopia de um ponto. Porém, perceba que $\mathbb{S}^n$ separa o espaço em dois subespaços desconexos, enquanto um ponto não faz isso.</p>
@@ -155,7 +155,7 @@
 
         <p class="text-justify"><b>Exemplo 14:</b> um subconjunto $X$ de um EVN $E$ é uma estrela de vértice $p$ se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
 
-        <img class="w-25 rounded mx-auto d-block" src="conj-estrela.png" alt="Responsive image">
+        <img class="w-25 rounded mx-auto d-block" src="01/conj-estrela.png" alt="Responsive image">
         <p class="text-center">Exemplo de estrela. Nesse caso, qualquer ponto dentro da área rachurada pode ser um vértice.</p>
 
         <p class="text-justify"><b>Observação 15:</b> todo espaço contrátil é também conexo por caminhos. Afinal, fixado $p \in X$ com $Id_X \simeq K_p$, dados $x,y \in X$ temos os caminhos $f_x(t) = H(x,t)$ e $f_y(t) = H(y,1-t)$ onde $H$ é a homotopia entre $Id_X$ e $p$. Basta notar que a função $f$ descrita abaixo é um caminho de $x$ para $y$:
@@ -180,7 +180,7 @@
 
 		<p class="text-justify">Para definirmos a ideia de grafo, comecemos com um conjunto discreto de pontos $G^0$, chamaremos esses pontos de vértices. Agora, defina um conjunto $G^1$ onde todos os objetos são espaços $J_i$ homeomorfos ao intervalo $[0,1]$. Esses espaços serão chamados de arestas. Para cada aresta $J_i$, sabemos que $\partial J_i$ é um conjunto com dois elementos, que chamaremos de $u_i$ e $v_i$ (vamos padronizar que o homeomorfismo de $J_i$ em $[0,1]$ leva $u_i$ em $0$ e $v_i$ em $1$). Um grafo é um conjunto $G = G^0 \sqcup G^1 / \sim$, onde $\sim$ é a relação de equivalência que identifica todos os pontos $u_i$ e $v_i$ com elementos de $G^0$ (distintos ou não). A topologia em $G$ é aquela na qual $A \subset G$ é aberto se, e somente se, $A \cap J_i$ é aberto em $J_i$ para todo $i$. Um subgrafo de $G$ é um grafo composo de arestas e vértices de $G$.</p>
 
-		<img class="w-50 rounded mx-auto d-block" src="grafos-arvores-conexidade.png" alt="Responsive image">
+		<img class="w-50 rounded mx-auto d-block" src="01/grafos-arvores-conexidade.png" alt="Responsive image">
         <p class="text-center">Exemplos de um grafo $G$, um subgrafo de $G$ e de um grafo conexo gerado por $G$.</p>
 
 		<p class="text-justify">Um grafo $G$ é conexo se quaisquer dois vértices são ligados por uma quantidade finita de arestas (ou seja, dados $g,h$ vértices, existem $J_1, \dots, J_n$ distintas tais que $g \sim u_1$ e $h \sim v_n$ e, além disso, $v_i \sim u_{i+1}$ para todo $i < n$). Um circuito em $G$ é uma sequência finita de arestas distintas $J_1, \dots, J_n$ tal que $v_i \sim u_{i+1}$ para todo $i < n$ e $v_n \sim u_1$.</p>
@@ -207,7 +207,7 @@
             <dd class="text-justify">Por fim, note que dados dois vértices $x,y$ de $G$ sabemos que $x$ está conectado por $y$ e, por construção, esse caminho deve ser formado apenas por arestas e vértices. Resta agora entender por que são apenas finitas arestas! Bom, sabemos que o conjunto de vértices é discreto e como arestas abertas são abertas, este conjunto também é fechado. Para terminar, como caminhos são compactos, o conjunto de vértices do caminho ligando $x$ e $y$ é também compacto, pois é fechado. Conjuntos compactos e discretos são obrigatoriamente finitos e portanto o caminho ligando ambos os pontos é feito de finitas arestas. $\blacksquare$</dd>
         </dl>
 
-		<img class="w-50 rounded mx-auto d-block" src="grafos-arvores-conexidade-2.png" alt="Responsive image">
+		<img class="w-50 rounded mx-auto d-block" src="01/grafos-arvores-conexidade-2.png" alt="Responsive image">
         <p class="text-center">Exemplos de circuitos de $G$, de uma árvore e da remoção de uma aresta aberta, tornando a árvore desconexa.</p>
 
 		<p class="text-justify">Uma árvore $A$ é um grafo conexo que não ter circuitos. Dada $J$ uma aresta qualquer, chamamos de $J \setminus \partial J$ de aresta aberta. Dizemos também que um vértice $g \in G$ é livre se ele está ligado a uma única aresta.</p>
@@ -274,7 +274,7 @@
     	$$\lambda(x) = \left\{ \begin{array}{ll} 0 & \mbox{se } x \in A \\ 1 & \mbox{se } x \in X \setminus U \end{array}\right.$$
     	Defina, portanto, $G \colon X \times [0,1] \to Y$ por $G(x,t) = H_0(x, \lambda(x)t)$. Temos que $G(a,t) = H_0(a, \lambda(a)t)$ $= H_0(a,t)$ $= H(a,t)$ para todo $a \in A$. Além disso, $G(x,0)$ $= H_0(x, \lambda(x)0)$ $= H_0(x,0)$ $= F(x)$ e ainda $G(x,1)$ $= H_0(x, \lambda(x))$ e se $x \in A$ temos $G(x,1)$ $= H_0(x,1)$ $= H(a,1)$ $= g(x)$ e assim $G(x,1)$ é extensão contínua de $g$. $\blacksquare$</p>
 
-        <img class="w-50 rounded mx-auto d-block" src="bursuk-extension.png" alt="Responsive image">
+        <img class="w-50 rounded mx-auto d-block" src="01/bursuk-extension.png" alt="Responsive image">
         <p class="text-center" >Ilustração do <b>Teorema 28</b>.</p>
 
     	<p class="text-justify"><b>Corolário 29:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>

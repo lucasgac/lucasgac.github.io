@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -67,7 +66,7 @@
         <p class="text-justify">Dado um espaço topológico $X$, um caminho em $X$ é uma aplicação contínua $f \colon [a,b] \to X$ com $a,b \in \mathbb{R}$. Note que a escolha de $a$ e $b$ não fazem muita diferença para a construção do caminho pois quaisquer dois intervalos fechados são homeomorfos, portanto iremos adotar $a = 0$ e $b = 1$ para a grande maioria dos exemplos. Além disso, como $[0,1]$ é contrátil, todo caminho é homotópico a uma constante.</p>
         <p class="text-justify">Dizemos que dois caminhos $f,g \colon [0,1] \to X$ são homotópicos se $f \simeq g$ $(rel.$ $\{0,1\})$, ou seja, se existe uma aplicação contínua $H \colon [0,1]^2 \to X$ tal que $H(x,0) = f(x)$, $H(x,1) = g(x)$, $H(0,t) = f(0) = g(0)$ e $H(1,t) = f(1) = g(1)$. Nesse caso escreveremos $f \cong g$.</p>
 
-        <p class="text-justify"><b>Proposição 01:</b> $\cong$ é uma relação de equivalência.</p>
+        <p class="text-justify"><b>Proposição 01:</b> $\cong$ é uma relação de equivalência. Escreveremos a classe de equivalência de um caminho $f$ como $[f]$.</p>
         <p class="text-justify"><i>Demonstração:</i></p>
         <ol>
             <li>
@@ -86,7 +85,97 @@
                 \right.$$
                 Perceba que $L(0,t) = H(0,2t) = f(0) = g(0) = h(0)$ e $L(1,t) = H(1,2t) = f(1) = g(1) = h(1)$ se $t \in [0,1/2]$. Além disso, se $t \in [1/2, 1]$ então $L(0,t) = K(0,2t-1) = h(0) = g(0) = f(0)$ e $L(1,t) = K(1, 2t-1) = h(1) = g(1) = f(1)$ e assim segue que $f \cong h$. $\blacksquare$
             </li>
-        </ol> 
+        </ol>
+
+        <p class="text-justify"><b>Exemplo 02:</b> se $X$ é um subconjunto convexo de um EVN, quaisquer dois caminhos $f,g \colon [0,1] \to X$ com mesmos extremos são homotópicos: basta considerar a homotopia linear $H(x,t) = (1-t)f(x) + tg(x)$.</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="02/homotopia-caminhos-convexo.png" alt="Responsive image">
+        <p class="text-center">Homotopia entre caminhos com domínio convexo em um EVN.</p>
+
+        <p class="text-justify">Diremos que um caminho $f \colon [0,1] \to X$ é fechado se $f(0) = f(1)$. Para caminhos fechados ainda focaremos, por agora, no estudo a homotopia de caminhos definida anteriormente. Porém, é importante notar que a homotopia usual de funções também é interessante quando o assunto são caminhos fechados. Essa homotopia será chamada de homotopia livre e será estudada mais para frente.</p>
+
+        <p class="text-justify">Dados dois caminhos fechados $f,g \colon [0,1] \to X$ de mesmo extremo, perceba que agora a orientação é muito mais importante do que no caso de caminhos abertos! Se dois caminhos abertos tem os mesmos extremos, a orientação destes é obrigatoriamente a mesma pois $f(0) = g(0)$ e $f(1) = g(1)$. Agora, no caso de caminhos fechados a história muda, como é possível observar na ilustração abaixo:</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="02/caminhos-fechados-orientacao.png" alt="Responsive image">
+        <p class="text-center">Caminhos fechados com orientações diferentes.</p>
+
+        <hr>
+        <h5 class="text-center">O Grupo Fundamental</h5>
+
+        <p class="text-justify">Dados dois caminhos $f, g \colon [0,1] \to X$, se $f(1) = g(0)$ podemos definir o produto de $f$ e $g$ como o mapa $fg \colon [0,1] \to X$ dado por:</p>
+        $$fg(t) = \left\{
+            \begin{array}{ll}
+                f(2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
+                g(2t-1) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right.$$
+        Perceba que $fg$ é de fato um caminho entre $f(0)$ e $g(1)$ (demonstração abaixo).</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="02/produto-caminhos.png" alt="Responsive image">
+        <p class="text-center">Essa é a demonstração.</p>
+
+        <p class="text-justify">Além de podermos mmultiplicar dois caminhos, podemos também tomar caminhos inversos: dado $f \colon [0,1] \to X$ um caminho, defina $f^{-1} \colon [0,1] \to X$ como $f(t) = f(1-t)$. Dada essa definição, perceba que:
+        $$ff^{-1} = \left\{
+            \begin{array}{ll}
+                f(2t) & \mbox{se } 0 \leq t \leq 1/2 \\
+                f(2 - 2t) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right. \quad \textrm{e} \quad f^{-1}f = \left\{
+            \begin{array}{ll}
+                f(1 - 2t) & \mbox{se } 0 \leq t \leq 1/2 \\
+                f(2t - 1) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right.$$ Note agora que esses caminhos são homotópicos aos caminhos constantes em $f(0)$ e $f(1)$, respectivamente: $$H(x,t) = ff^{-1}((1-t)x) \quad \textrm{e} \quad G(x,t) = f^{-1}f((1-t)x).$$ O fato exposto acima nos faz pensar como seria interessante definir uma estrutura de grupo com nossos caminhos, mas também mostra que esse trabalho é mais complicado do que parece, pois teríamos de fazer isso utilizando classes de homotopia ao invés de caminhos propriamente ditos.</p>
+
+        <p class="text-justify">Continuando com a ideia de acharmos uma estrutura de grupo interessante para o conjunto dos caminhos (ou quase isso), tome os caminhos $f,g,h \colon [0,1] \to X$ com $f(1) = g(0)$, $g(1) = h(0)$. Temos que:
+        $$f(gh) = \left\{
+            \begin{array}{ll}
+                f(2t) & \mbox{se } 0 \leq t \leq 1/2 \\
+                gh(2t - 1) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right. = \left\{
+            \begin{array}{ll}
+                f(2t) & \mbox{se } 0 \leq t \leq 1/2 \\
+                g(4t-2) & \mbox{se } 1/2 \leq t \leq 3/4 \\
+                h(4t-3) & \mbox{se } 3/4 \leq t \leq 1
+            \end{array}
+        \right.$$ e também
+        $$(fg)h = \left\{
+            \begin{array}{ll}
+                fg(2t) & \mbox{se } 0 \leq t \leq 1/2 \\
+                h(2t - 1) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right. = \left\{
+            \begin{array}{ll}
+                f(4t) & \mbox{se } 0 \leq t \leq 1/4 \\
+                g(4t-2) & \mbox{se } 1/4 \leq t \leq 1/2 \\
+                h(2t-1) & \mbox{se } 1/2 \leq t \leq 1
+            \end{array}
+        \right.$$ Nossa tão procurada estrutura de grupo parece estar ficando cada vez mais distante, pois agora percebemos que a associatividade do produto não existe, certo? Não. O que acontece é que, novamente, precisamos falar em termos de homotopia! Perceba que a homotopia abaixo mostra que $f(gh) \cong (fg)h$: 
+        $$H(x,t) = \left\{
+            \begin{array}{ll}
+                f(2x(t+1)) & \mbox{se } 0 \leq x \leq \frac{2-t}{4} \\
+                g(4x-2) & \mbox{se } \frac{2-t}{4} \leq x \leq \frac{3 - t}{4} \\
+                h(4x+2t-2tx-3) & \mbox{se } \frac{3-t}{4} \leq x \leq 1
+            \end{array}
+        \right.$$</p>
+
+        <p>O objetivo, portanto, é mostrar que o produto de caminhos define uma operação no conjunto de todas as classes de homotopia de caminhos. Bom, isso de fato não acontece! O problema mora no fato de que para multiplicarmos caminhos, precisamos que o primeiro termine onde começa o segundo, portanto a operação de produto não está definida para quaisquer dois caminhos e, como veremos na proposição abaixo, precisamos assumir várias coisas sobre nossos caminhos que talvez faça com que o grupo obtido seja menos interessante.</p>
+
+        <p class="text-justify"><b>Proposição 03:</b> sejam $a,a',b,b' \colon [0,1] \to X$ caminhos tais que $a(0) = a'(0)$, $a(1) = a'(1) = b(0) = b'(0)$ e $b(1) = b'(1)$. Se $a \cong a'$ e $b \cong b'$ temos que $ab \cong a'b'$ e $a^{-1} \cong a'^{-1}$. Note que isso faz com que o produto de classes de homotopia de caminhos $[a][b] = [ab]$ e o inverso de uma classe de homotopia de caminhos $[a]^{-1} = [a^{-1}]$ estejam definidos sempre que o final de $a$ coincida com o começo de $b$.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $H$ é uma homotopia entre $a$ e $a'$ e $K$ é uma homtopia entre $b$ e $b'$, segue que $K \colon [0,1]^2 \to X$ dada por: 
+        $$K(x,t) = \left\{
+            \begin{array}{ll} 
+                H(2x, t) & \mbox{se } 0 \leq x \leq 1/2 \\
+                K(2x-1, t) & \mbox{se } 1/2 \leq x \leq 1
+            \end{array}
+        \right.$$ é uma homotopia entre $ab$ e $a'b'$. Além disso, $G \colon [0,1] \to X$ dada por $G(x,t) = H(1-x,t)$ é um homotopia entre $a^{-1}$ e $a'^{-1}$.</p>
+
+        Por fim, vamos agora finalmente entender como se dá a estrutura de grupo procurada: fixado $x \in X$, escrevemos $\pi_1(x, X)$ para representar o grupo fundamental de $X$ centrado em $x$. Esse grupo é simplesmente o conjunto de todas as classes de homotopia de caminhos fechados em $x$, munido da operação definida na <b>Proposição 03</b>.</p>
+
+        <p class="text-justify"><b>Teorema 04:</b> (por mais que o resultado seja só provar que um conjunto munido de uma operação é um grupo, este é um grupo importante o suficiente pra que essa demonstração ganhe de mim o título de teorema) fixado $x \in X$, o conjunto $\pi_1(X,x)$ munido da operação definida na <b>Proposição 03</b> é um grupo.</p>
+        <p class="text-justify"><i>Demonstração:</i> como já vimos, a operação $[a][b] = [ab]$ está bem definida quando $a$ termina onde $b$ começa. Bom, como ambos são fechados em $x$, segue que $a(1) = x = b(0)$. Além disso, sabemos que $aa^{-1} \cong a(0) = x = a(1) \cong a^{-1}a$ e $ax \cong a \cong xa$, o que mostra que o mapa constante igual a $x$ é uma identidade em $\pi_1(X, x)$. Por fim, já mostramos que para quaiquer $f,g,h$ caminhos fechados em $x$, $f(gh) \cong (fg)h$ e portanto $[f]([g][h]) = ([f][g])[h]$.</p>
+        
       </div> <!-- /container -->
 
     </main>
