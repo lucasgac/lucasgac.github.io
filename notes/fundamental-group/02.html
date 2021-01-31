@@ -223,13 +223,13 @@
         <hr>
         <h5 class="text-center">Morfismos Induzidos</h5>
 
-        <p class="text-justify">Dada uma aplicação contínua $f \colon X \to Y$ considere $f^* \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0))$m dada por $f^*([a]) = [f \circ a]$. Note que como $a \cong b$ implica que $f \circ a \cong f \circ b$, temos que $f^*$ está bem definido. Além disso, $f^*([a][b]) = f^*([ab]) = [f \circ ab]$ e temos 
-        $$f \circ ab = \left\{
+        <p class="text-justify">Dada uma aplicação contínua $f \colon X \to Y$ considere $f^* \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0))$ dada por $f^*([a]) = [f \circ a]$. Note que como $a \cong b$ implica que $f \circ a \cong f \circ b$, temos que $f^*$ está bem definido. Além disso, $f^*([a][b]) = f^*([ab]) = [f \circ ab]$ e temos 
+        $$(f \circ ab)(t) = \left\{
             \begin{array}{ll}
                 f(a(2t)) & \mbox{se } 0 \leq t \leq 1/2 \\
                 f(b(2t-1)) & \mbox{se } 1/2 \leq t \leq 1
             \end{array}
-        \right. = (f \circ a)(f \circ b),$$ portanto $f^*$ é morfismo de grupos. Chamaremos de $f^*$ o morfismo de grupos induzido por $f$.</p>
+        \right. = (f \circ a)(f \circ b)(t),$$ portanto $f^*$ é morfismo de grupos. Chamaremos de $f^*$ o morfismo de grupos induzido por $f$.</p>
 
         <p class="text-justify"><b>Observação 12:</b> Vamos fazer algumas observações sobre morfismos induzidos:</p>
         <ol>
@@ -263,6 +263,8 @@
             <li>quaisquer dois caminhos $a, b \colon [0,1] \to X$ com $a(0) = b(0)$ e $a(1) = b(1)$ são homotópicos.</li>
         </ol>
       </div> <!-- /container -->
+
+      <!-- colocar o asterisco em baixo no morfismo induzido-->
 
     </main>
     <!-- Bootstrap core JavaScript
