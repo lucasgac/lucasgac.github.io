@@ -223,7 +223,7 @@
         <hr>
         <h5 class="text-center">Morfismos Induzidos</h5>
 
-        <p class="text-justify">Dada uma aplicação contínua $f \colon X \to Y$ considere $f^* \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0))$ dada por $f^*([a]) = [f \circ a]$. Note que como $a \cong b$ implica que $f \circ a \cong f \circ b$, temos que $f^*$ está bem definido. Além disso, $f^*([a][b]) = f^*([ab]) = [f \circ ab]$ e temos 
+        <p class="text-justify">Dada uma aplicação contínua $f \colon X \to Y$ e fixado $x_0 \in X$, considere $f^* \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0))$ dada por $f^*([a]) = [f \circ a]$. Note que como $a \cong b$ implica que $f \circ a \cong f \circ b$, temos que $f^*$ está bem definido. Além disso, $f^*([a][b]) = f^*([ab]) = [f \circ ab]$ e temos 
         $$(f \circ ab)(t) = \left\{
             \begin{array}{ll}
                 f(a(2t)) & \mbox{se } 0 \leq t \leq 1/2 \\
@@ -236,7 +236,7 @@
             <li>o morfismo induzido pela identidade $id \colon X \to X$ é a identidade $id' \colon \pi_1(X, x_0) \to \pi_1(X, x_0)$, pois $id'([a]) = [id \colon a] = [a]$;</li>
             <li>dadas duas aplicações contínuas $f \colon X \to Y$ e $g \colon Y \to Z$, temos $(g \circ f)^* = g^* \circ f^* \colon \pi_1(X, x_0) \to \pi_1(Z, g(f(x_0)))$. Afinal, $$(g \circ f)^*[a] = [(g \circ f) \circ a] = [g \circ (f \circ a)] = g^*([f \circ a]) = g^*(f^*(a));$$</li>
             <li>se $f$ é homeomorfismo, $f^*$ é isomorfismo. Note que $(f^{-1})^*$ é isomorfismo também e é a inversa de $f^*$. Perceba como esse resultado é importante: acabamos de provar que o grupo fundamental é um invariante topológico, ou seja, espaços homeomorfos e conexos por caminho possuem o mesmo grupo fundamental;</li>
-            <li>se $f,g$ são homotópicas relativamente a $x_0$, temos $f^* = g^* \colon \pi_1(X, x_0) \to \pi_1(F, f(x_0) = g(x_0))$, pois temos $f \circ a \cong g \circ a$.</li>
+            <li>se $f,g$ são homotópicas relativamente a $x_0$, temos $f^* = g^* \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0) = g(x_0))$, pois temos $f \circ a \cong g \circ a$.</li>
         </ol>
 
         <p class="text-justify"><b>Corolário 13:</b> se $f,g \colon X \to Y$ são aplicações contínuas homotópicas, os morfismos induzidos $f^*$ e $g^*$ estão relacionados por $f^*([a]) = \gamma g^*([a])\gamma^{-1}$ para todo $a \in \pi_1(X, x_0)$, onde $\gamma$ é uma classe de homotopia de caminhos ligando $f(x_0)$ até $g(x_0)$.</p>
