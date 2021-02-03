@@ -70,20 +70,20 @@
         <p class="text-justify"><i>Demonstração:</i></p>
         <ol>
             <li>
-                <b>Reflexiva:</b> considere a homotopia $H(x,t) = f(x)$. Agora, note que $H(0,t) = f(0) = f(0)$ e $H(1,t) = f(1) = f(1)$ e assim $f \cong f$.
+                <p class="text-justify"><b>Reflexiva:</b> considere a homotopia $H(x,t) = f(x)$. Agora, note que $H(0,t) = f(0) = f(0)$ e $H(1,t) = f(1) = f(1)$ e assim $f \cong f$;</p>
             </li>
             <li>
-                <b>Simétrica:</b> se $H(x,t)$ é homotopia de $f$ a $g$, então $K(x,t) = H(x,1-t)$ é homotopia de $g$ a $f$. Note que $K(0,t) = H(0,1-t) = f(0) = g(0)$ e $K(1,t) = H(1,1-t) = f(1) = g(1)$ e assim $g \cong f$.
+                <p class="text-justify"><b>Simétrica:</b> se $H(x,t)$ é homotopia de $f$ a $g$, então $K(x,t) = H(x,1-t)$ é homotopia de $g$ a $f$. Note que $K(0,t) = H(0,1-t) = f(0) = g(0)$ e $K(1,t) = H(1,1-t) = f(1) = g(1)$ e assim $g \cong f$;</p>
             </li>
             <li>
-                <b>Transitiva:</b> se $H(x,t)$ é homotopia de $f$ a $g$ e $K(x,t)$ é homotopia de $g$ a $h$, então:
+                <p class="text-justify"><b>Transitiva:</b> se $H(x,t)$ é homotopia de $f$ a $g$ e $K(x,t)$ é homotopia de $g$ a $h$, então:
                 $$L(x,t) = \left\{
                     \begin{array}{ll}
                         H(x,2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
                         K(x,2t-1) & \mbox{se } 1/2 \leq t \leq 1
                     \end{array}
                 \right.$$
-                Perceba que $L(0,t) = H(0,2t) = f(0) = g(0) = h(0)$ e $L(1,t) = H(1,2t) = f(1) = g(1) = h(1)$ se $t \in [0,1/2]$. Além disso, se $t \in [1/2, 1]$ então $L(0,t) = K(0,2t-1) = h(0) = g(0) = f(0)$ e $L(1,t) = K(1, 2t-1) = h(1) = g(1) = f(1)$ e assim segue que $f \cong h$. $\blacksquare$
+                Perceba que $L(0,t) = H(0,2t) = f(0) = g(0) = h(0)$ e $L(1,t) = H(1,2t) = f(1) = g(1) = h(1)$ se $t \in [0,1/2]$. Além disso, se $t \in [1/2, 1]$ então $L(0,t) = K(0,2t-1) = h(0) = g(0) = f(0)$ e $L(1,t) = K(1, 2t-1) = h(1) = g(1) = f(1)$ e assim segue que $f \cong h$. $\blacksquare$</p>
             </li>
         </ol>
 
@@ -233,10 +233,10 @@
 
         <p class="text-justify"><b>Observação 12:</b> Vamos fazer algumas observações sobre morfismos induzidos:</p>
         <ol>
-            <li>o morfismo induzido pela identidade $id \colon X \to X$ é a identidade $id_\sharp \colon \pi_1(X, x_0) \to \pi_1(X, x_0)$, pois $id'([a]) = [id \colon a] = [a]$;</li>
-            <li>dadas duas aplicações contínuas $f \colon X \to Y$ e $g \colon Y \to Z$, temos $(g \circ f)_\sharp = g_\sharp \circ f_\sharp \colon \pi_1(X, x_0) \to \pi_1(Z, g(f(x_0)))$. Afinal, $$(g \circ f)_\sharp[a] = [(g \circ f) \circ a] = [g \circ (f \circ a)] = g_\sharp([f \circ a]) = g_\sharp(f_\sharp(a));$$</li>
-            <li>se $f$ é homeomorfismo, $f_\sharp$ é isomorfismo. Note que $(f^{-1}_\sharp$ é isomorfismo também e é a inversa de $f_\sharp$). Perceba como esse resultado é importante: acabamos de provar que o grupo fundamental é um invariante topológico, ou seja, espaços homeomorfos e conexos por caminho possuem o mesmo grupo fundamental;</li>
-            <li>se $f,g$ são homotópicas relativamente a $x_0$, temos $f_\sharp = g_\sharp \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0) = g(x_0))$, pois temos $f \circ a \cong g \circ a$.</li>
+            <li><p class="text-justify">o morfismo induzido pela identidade $id \colon X \to X$ é a identidade $id_\sharp \colon \pi_1(X, x_0) \to \pi_1(X, x_0)$, pois $id'([a]) = [id \colon a] = [a]$;</p></li>
+            <li><p class="text-justify">dadas duas aplicações contínuas $f \colon X \to Y$ e $g \colon Y \to Z$, temos $(g \circ f)_\sharp = g_\sharp \circ f_\sharp \colon \pi_1(X, x_0) \to \pi_1(Z, g(f(x_0)))$. Afinal, $$(g \circ f)_\sharp[a] = [(g \circ f) \circ a] = [g \circ (f \circ a)] = g_\sharp([f \circ a]) = g_\sharp(f_\sharp(a));$$</p></li>
+            <li><p class="text-justify">se $f$ é homeomorfismo, $f_\sharp$ é isomorfismo. Note que $(f^{-1}_\sharp$ é isomorfismo também e é a inversa de $f_\sharp$). Perceba como esse resultado é importante: acabamos de provar que o grupo fundamental é um invariante topológico, ou seja, espaços homeomorfos e conexos por caminho possuem o mesmo grupo fundamental;</p></li>
+            <li><p class="text-justify">se $f,g$ são homotópicas relativamente a $x_0$, temos $f_\sharp = g_\sharp \colon \pi_1(X, x_0) \to \pi_1(Y, f(x_0) = g(x_0))$, pois temos $f \circ a \cong g \circ a$.</p></li>
         </ol>
 
         <p class="text-justify"><b>Corolário 13:</b> se $f,g \colon X \to Y$ são aplicações contínuas homotópicas, os morfismos induzidos $f_\sharp$ e $g_\sharp$ estão relacionados por $f_\sharp([a]) = \gamma g_\sharp([a])\gamma^{-1}$ para todo $a \in \pi_1(X, x_0)$, onde $\gamma$ é uma classe de homotopia de caminhos ligando $f(x_0)$ até $g(x_0)$.</p>
@@ -257,10 +257,18 @@
 
         <p class="text-justify"><b>Proposição 16:</b> um espaço $X$ é simplesmente conexo se, e somente se:</p>
         <ol>
-            <li>todo caminho fechado é livremente homotópico a uma constante;</li>
-            <li>quaisquer duas aplicações $f, g \colon \mathbb{S}^1 \to X$ são homotópicas;</li>
-            <li>toda aplicação $f \colon \mathbb{S}^1 \to X$ admite extensão contínua para a bola $\mathbb{B}^2$.</li>
-            <li>quaisquer dois caminhos $a, b \colon [0,1] \to X$ com $a(0) = b(0)$ e $a(1) = b(1)$ são homotópicos.</li>
+            <li><p class="text-justify">todo caminho fechado é livremente homotópico a uma constante;</p></li>
+            <li><p class="text-justify">quaisquer duas aplicações $f, g \colon \mathbb{S}^1 \to X$ são homotópicas;</p></li>
+            <li><p class="text-justify">toda aplicação $f \colon \mathbb{S}^1 \to X$ admite extensão contínua para a bola $\mathbb{B}^2$;</p></li>
+            <li><p class="text-justify">quaisquer dois caminhos $a, b \colon [0,1] \to X$ com $a(0) = b(0)$ e $a(1) = b(1)$ são homotópicos.</p></li>
+        </ol>
+        <p class="text-justify"><i>Demonstração:</i> vamos provar os itens separadamente:</p>
+        <ol>
+            <li><p class="text-justify"><b>Corolário 09</b></p></li>
+            <li><p class="text-justify">para demonstrarmos esse fato precisaremos fazer um paralelo entre aplicações com domínio na esfera e caminhos fechados. O paralelo é: eles são a mesma coisa. Dado $f \colon [0,1] \to X$ um caminho fechado, podemos criar $f' \colon \frac{[0,1]}{\{0,1\}} \to X$ o mapa que "desce $f$ para o quociente". Essa mapa nada mais é que $f'([x]) = f(x)$. Note que esse mapa está bem definido pois a única classe com mais de um representante é $[0]$ e esse outro representante é $1$ (e $f(0) = f(1)$ por definição de caminho fechado). Perceba também que esse mapa é contínuo pela propriedade universal do quociente: dada a projeção $\pi \colon [0,1] \to \frac{[0,1]}{\{0,1\}}$ temos que $f' \circ \pi = f$ e como $f$ é contínua, segue que $f'$ é contínua. Por fim basta notarmos que esse quociente é homeomorfo à $\mathbb{S}^1$ pelo mapa $\phi([t]) = (\cos(2\pi t), \sin(2\pi t))$ (perceba que $\cos(2\pi)$ $=$ $\cos(0)$ e $\sin(2\pi)$ $=$ $\sin(0)$ e assim $\phi$ está bem definido no quociente. Além disso, é homeomorfismo pois é bijeção, contínua e com domínio compacto). Assim, temos o mapa $f_{\mathbb{S}^1} \colon \mathbb{S}^1 \to X$ dado por $f_{\mathbb{S}^1} = f' \circ \phi^{-1}$.</p>
+            <p class="text-justify">Agora, dada $f \colon \mathbb{S}^1 \to X$ uma aplicação contínua, basta criar o mapa $f_{[0,1]} \colon [0,1] \to X$ dado por $f_{[0,1]} = f \circ \varphi$ onde $\varphi \colon [0,1] \to \mathbb{S}^1$ é o mapa $\phi$, mas sem identificar o bordo do intervalo: $\varphi(t) = (\cos(2\pi t), \sin(2\pi t))$. A parte interessante é que essas noções são inversas uma da outra, ou seja, $(f_{[0,1]})_{\mathbb{S}^1} = f$. Isso acontece pois se $x \neq (1,0)$ sabemos que $\phi^{-1}(x) \subset ]0,1[$ e assim se $v$ é o único representante de $\phi^{-1}(x)$ temos: $$f_{[0,1]}'(\phi^{-1}(x)) = f_{[0,1]}(v) = f(\varphi(v)) = f(x).$$ Além disso: $$f_{[0,1]}'(\phi^{-1}(1,0)) = f_{[0,1]}'([0]) = f_{[0,1]}(0) = f(\varphi(0)) = f(1,0).$$</p>
+            <p class="text-justify">Basta então provar que se $f,g$ são caminhos fechados homotópicos, então $f_{\mathbb{S}^1}$ e $g_{\mathbb{S}^1}$ também são homotópicos. Dada $H$ homotopia entre $f$ e $g$, se para cada $t$ temos $H(x,t) = H_t(x)$, basta definir uma homotopia $K(x,t) = (H_t' \circ \phi^{-1})(x)$, onde $H_t'$ é definida da mesma forma que $f'$ no parágrafo anterior. A partir de agora, para evitarmos notação muito carregada, dado um caminho fechado $f$, vamos chamar $f_{\mathbb{S}^1}$ de $f$ também e, se $g \colon \mathbb{S}^1 \to X$ for uma aplicação contínua, escreveremos $g$ para representar $g_{[0,1]}$.</p></li>
+            <li><p class="text-justify"></p></li>
         </ol>
       </div> <!-- /container -->
 
