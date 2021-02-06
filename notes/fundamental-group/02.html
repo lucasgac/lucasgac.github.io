@@ -290,8 +290,75 @@
         <p class="text-justify"><b>Exemplo 18:</b> todo espaço contrátil é simplesmente conexo. Isso é consequência direta do <b>Corolário 15</b> e da <b>HEM.Observação 15</b>.</p>
 
         <p class="text-justify"><b>Exemplo 19:</b> como $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ (como veremos mais para frente), temos que $\mathbb{S}^1$ não é simplesmente conexo. Além disso, como $\mathbb{S}^1$ e $\mathbb{R}^2 \setminus \{0\}$ tem o mesmo tipo homotópico, $\mathbb{R}^2 \setminus \{0\}$ também não é simplesmente conexo.</p>
-      </div> <!-- /container -->
 
+        <hr>
+        <h5 class="text-center">Produto de Grupos Fundamentais e Outras Propriedades</h5>
+
+        <p class="text-justify"><b>Proposição 20:</b> o grupo fundamental do produto é isomorfo ao produto dos grupos fundamentais.</p>
+        <p class="text-justify"><i>Demonstração:</i> o mapa $\phi \colon \pi_1(X \times Y, (x_0, y_0)) \to \pi_1(X, x_0) \times \pi_1(Y, y_0)$ dado por $\phi([f]) = ([\pi_X \circ f], [\pi_Y \circ f])$ é um isomorfismo. Para provarmos isso devemos provar que:</p>
+        <ol>
+            <li><p class="text-justify"><b>o mapa faz sentido:</b> isto é, $\pi_X \circ f$ é um caminho fechado em $x_0$ e $\pi_Y \circ f$ é um caminho fechado em $y_0$. De fato, note que ambos os mapas são contínuos (pois ambas as projeções e $f$ são contínuos), $\pi_X(f(1)) =$ $\pi_X(f(0)) =$ $\pi_X(x_0, y_0) =$ $x_0$. e $\pi_Y(f(1)) =$ $\pi_Y(f(0)) =$ $\pi_Y(x_0, y_0) =$ $y_0$;</p></li>
+            <li><p class="text-justify"><b>o mapa está bem definido:</b> se $[f] = [g]$ então sabemos que $f \cong g$ e assim $\pi_X \circ f \cong \pi_X \circ g$ e $\pi_Y \circ f \cong \pi_Y \circ g$ pois composição é bem comportada com homotopias;</p></li>
+            <li><p class="text-justify"><b>o mapa é morfismo de grupos:</b> dadas $[f], [g] \in \pi_1(X \times Y, (x_0,y_0))$, temos que $\phi([f][g])$ $=$ $\phi([fg])$ $=$ $([\pi_X \circ fg], [\pi_Y \circ fg])$ $=$ $([\pi_X \circ f][\pi_X \circ g], [\pi_Y \circ f][\pi_Y \circ g])$ $=$ $([\pi_X \circ f], [\pi_Y \circ f])([\pi_X \circ g], [\pi_Y \circ g])$ $=$ $\phi([f])\phi([g])$;</p></li>
+            <li><p class="text-justify"><b>o mapa é injetor:</b> basta mostrarmos que $\ker \phi \subset \{[(x_0,y_0)]\}$ (aqui $(x_0,y_0)$ representa o mapa constante, que é a identidade do grupo fundamental). Bom, se $\phi([f]) = ([x_0], [y_0])$ isso significa que $[\pi_X \circ f] = [x_0]$ e $[\pi_Y \circ f] = [y_0]$. Se $J$ é uma homotopia entre $\pi_X \circ f$ e $x_0$ e $K$ é uma homotopia entre $\pi_Y \circ f$ e $y_0$, defina a homotopia $$H \colon [0,1]^2 \to X \times Y \textrm{ dada por } H(x,t) = (J(x,t), K(x,t)).$$ Perceba que $H(x,0) = ((\pi_X \circ f)(x), (\pi_Y \circ f)(x)) = f(x)$ e $H(x,1) = (x_0, y_0)$. Assim, segue que $[f] = [(x_0, y_0)]$ e portanto $\phi$ é injetora.</p></li>  
+            <li><p class="text-justify"><b>o mapa é sobrejetor:</b> dadas $[f] \in \pi_1(X, x_0)$ e $[g] \in \pi_1(Y, y_0)$, segue que $h(x) = (f(x), g(x))$ é tal que $\phi([h]) = ([f], [g])$. Afinal, $\pi_X \circ h = f$ e $\pi_Y \circ h = g$. $\blacksquare$</p></li>
+        </ol>
+
+        <p class="text-justify"><b>Corolário 21:</b> o produto de dois espaços simplesmente conexos é simplesmente conexo.</p>
+
+        <p class="text-justify"><b>Observação 22:</b> já sabemos que se $f$ é um homeomorfismo, então o morfismo induzido $f_\sharp$ é um isomorfismo. Porém, mesmo que a vontade seja grande, não podemos separar essa afirmação em seus casos mais fracos:</p>
+        <ol>
+            <li><p class="text-justify"><b>se $f$ for injetor, não necessariamente $f_\sharp$ será injetor:</b> a aplicação $f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é sobrejetiva, mas $f_\sharp$ não pode ser sobrejetiva pois $\pi_1(\mathbb{R})$ é trivial e $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ (como veremos mais para frente).</p></li>
+            <li><p class="text-justify"><b>se $f$ for sobrejetor, não necessariamente $f_\sharp$ será sobrejetor:</b> a inclusão $i \colon \mathbb{S}^1 \to \mathbb{R}^2$ é injetiva, mas $i_\sharp$ não pode ser injetiva pois $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ e $\pi_1(\mathbb{R}^2)$ é trivial.</p></li>
+        </ol>
+        Isso se dá pelo fato de que $r \circ i = id_Y$ e assim $r_\sharp \circ i_\sharp = id_{\pi_1(Y,y_0)}$ e portanto uma bijeção. Porém, vale um caso interessante: se $r \colon X \to Y$ é uma retração então o morfismo induzido $r_\sharp$ é sobrejetor e $i_\sharp$ induzido pela inclusão de $Y$ em $X$ é injetor. Ou seja, se $Y$ é retrato de $X$ temos que $\pi_1(Y)$ é isomorfo a algum subgrupo de $\pi_1(X)$ e assim pelo teorema do isomorfismo aplicado em $r_\sharp$ segue que o quociente $\pi_1(X)/\ker r$ é isomorfo a algum subgrupo de $\pi_1(X)$. Em particular, se $X$ é simplesmente conexo então $Y$ também é.
+
+        <hr>
+        <h5 class="text-center">Grupos Topológicos</h5>
+
+        <p class="text-justify">Um grupo $G$ é dito topológico se é equipado com uma topologia que faz com que os mapas $(x,y) \mapsto x \cdot y$ e $x \mapsto x^{-1}$ sejam contínuos.</p>
+
+        <p class="text-justify"><b>Exemplo 23:</b> o grupo $GL(d)$ das matrizes $d \times d$ ($d \geq 2$) invertíveis e com entradas reais é um grupo (com o produto de matrizes) topológico. Podemos imaginar que matrizes de $GL(d)$ são elementos de $\mathbb{R}^{d^2}$ e portanto este grupo vem equipado com a topologia de subespaço e essa topologia deixa as aplicações pedidas contínuas. Temos que $GL(d)$ não é abeliano.</p>
+
+        <p class="text-justify"><b>Exemplo 24:</b> o espaço $\mathbb{T}^n = \mathbb{R}^n / \mathbb{Z}^n$, também conhecido como torus $n-$dimensional, pode ser visto como quociente de grupos e de espaços topológicos. A topologia quociente faz com que a operação induzida do quociente de grupos seja contínua, assim como a função de tomar o inverso. Essa estrutura faz de $\mathbb{T}^n$ abeliano.</p>
+
+        <p class="text-justify"><b>Proposição 25:</b> dados dois caminhos $a, b$ em $G$, podemos definir o caminho $a \cdot b$ dad por $(a\cdot b)(x) = a(x) \cdot b(x)$. Se $a, a', b, b'$ são caminhos fechados em $G$ com $a \cong a'$ e $b \cong b'$, temos que $a \cdot b \cong a' \cdot b'$.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $H$ é uma homotopia entre $a$ e $a'$ e $K$ é uma homotopia entre $b$ e $b'$, defina $J(x,t) = H(x,t) \cdot K(x,t)$. Como o produto é contínuo segue que $J$ é contínua.</p>
+
+        <p class="text-justify">Isso faz com que possamos definir agora uma nova operação em $\pi_1(G, 1_G)$, dada por $[a] \cdot [b] = [a \cdot b]$. Note que a escolha de $1_G$ não é arbitrária, pois queremos que para quaisquer dois caminhos $a, b$ neste grupo, $a \cdot b$ também esteja nesse grupo, portanto o ponto-base $x_0$ de ambos deve satisfazer $x_0^2 = x_0$ e, como $G$ pode ter ordem finita e ímpar, o único elemento que podemos garantir que satisfaz essa propriedade para qualquer $G$ é a identidade.</p>
+
+        <p class="text-justify"><b>Lema 26:</b> se $a,b \colon [0,1] \to G$ são caminhos fechados com $a(0) = a(1) = b(0) = b(1) = 1_G$, então $a1_G \cdot 1_Gb = ab$ e $1_Ga\cdot b1_G = ba$.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $x \in [0,1]$ temos 
+        $$(a1_G \cdot 1_Gb)(x) = (a1_G)(x) \cdot (1_Gb)(x) = \left\{ 
+            \begin{array}{ll}
+                a(2x) \cdot 1_G(2x) & \mbox{se } 0 \leq x \leq 1/2 \\
+                1_G(2x - 1) \cdot b(2x - 1) & \mbox{se } 1/2 \leq 1
+            \end{array}
+        \right. = \left\{
+            \begin{array}{ll}
+                a(2x) & \mbox{se } 0 \leq x \leq 1/2 \\
+                b(2x - 1) & \mbox{se } 1/2 \leq x \leq 1
+            \end{array}
+        \right. = ab$$
+
+        $$(1_Ga \cdot b1_G)(x) = (1_Ga)(x) \cdot (b1_G)(x) = \left\{ 
+            \begin{array}{ll}
+                1_G(2x) \cdot b(2x) & \mbox{se } 0 \leq x \leq 1/2 \\
+                a(2x - 1) \cdot 1_G(2x - 1) & \mbox{se } 1/2 \leq 1
+            \end{array}
+        \right. = \left\{
+            \begin{array}{ll}
+                b(2x) & \mbox{se } 0 \leq x \leq 1/2 \\
+                a(2x - 1) & \mbox{se } 1/2 \leq x \leq 1
+            \end{array}
+        \right. = ab. \blacksquare$$</p>
+
+        <p class="text-justify"><b>Proposição 27:</b> se $G$ é um grupo topológico, $\pi_1(G, 1_G)$ é abeliano. Além disso, para todos $[a],[b] \in \pi_1(G, 1_G)$ temos $[a][b] = [a] \cdot [b]$.</p>
+        <p class="text-justify"><i>Demonstração:</i> dados $a,b$ caminhos fechados, $ab = a1_G \cdot 1_Gb \cong a \cdot b \cong 1_Ga \cdot b1_G = ba$. Assim, segue que $[ab] = [a\cdot b]$ e $[ab] = [ba]$.</p>
+
+        <hr>
+        <h5 class="text-center">Teorema de Seifert-van Kampen</h5>
+      </div> <!-- /container -->
     </main>
     <!-- Bootstrap core JavaScript
     ================================================== -->
