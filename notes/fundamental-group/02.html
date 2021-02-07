@@ -308,10 +308,10 @@
 
         <p class="text-justify"><b>Observação 22:</b> já sabemos que se $f$ é um homeomorfismo, então o morfismo induzido $f_\sharp$ é um isomorfismo. Porém, mesmo que a vontade seja grande, não podemos separar essa afirmação em seus casos mais fracos:</p>
         <ol>
-            <li><p class="text-justify"><b>se $f$ for injetor, não necessariamente $f_\sharp$ será injetor:</b> a aplicação $f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é sobrejetiva, mas $f_\sharp$ não pode ser sobrejetiva pois $\pi_1(\mathbb{R})$ é trivial e $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ (como veremos mais para frente).</p></li>
-            <li><p class="text-justify"><b>se $f$ for sobrejetor, não necessariamente $f_\sharp$ será sobrejetor:</b> a inclusão $i \colon \mathbb{S}^1 \to \mathbb{R}^2$ é injetiva, mas $i_\sharp$ não pode ser injetiva pois $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ e $\pi_1(\mathbb{R}^2)$ é trivial.</p></li>
+            <li><p class="text-justify"><b>se $f$ for injetor, não necessariamente $f_\sharp$ será injetor:</b> a inclusão $i \colon \mathbb{S}^1 \to \mathbb{R}^2$ é injetiva, mas $i_\sharp$ não pode ser injetiva pois $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ e $\pi_1(\mathbb{R}^2)$ é trivial.</p></li>
+            <li><p class="text-justify"><b>se $f$ for sobrejetor, não necessariamente $f_\sharp$ será sobrejetor:</b> a aplicação $f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é sobrejetiva, mas $f_\sharp$ não pode ser sobrejetiva pois $\pi_1(\mathbb{R})$ é trivial e $\pi_1(\mathbb{S}^1) = \mathbb{Z}$ (como veremos mais para frente).</p></li>
         </ol>
-        Isso se dá pelo fato de que $r \circ i = id_Y$ e assim $r_\sharp \circ i_\sharp = id_{\pi_1(Y,y_0)}$ e portanto uma bijeção. Porém, vale um caso interessante: se $r \colon X \to Y$ é uma retração então o morfismo induzido $r_\sharp$ é sobrejetor e $i_\sharp$ induzido pela inclusão de $Y$ em $X$ é injetor. Ou seja, se $Y$ é retrato de $X$ temos que $\pi_1(Y)$ é isomorfo a algum subgrupo de $\pi_1(X)$ e assim pelo teorema do isomorfismo aplicado em $r_\sharp$ segue que o quociente $\pi_1(X)/\ker r$ é isomorfo a algum subgrupo de $\pi_1(X)$. Em particular, se $X$ é simplesmente conexo então $Y$ também é.
+        Porém, vale um caso interessante: se $r \colon X \to Y$ é uma retração então o morfismo induzido $r_\sharp$ é sobrejetor e $i_\sharp$ induzido pela inclusão de $Y$ em $X$ é injetor. Isso se dá pelo fato de que $r \circ i = id_Y$ e assim $r_\sharp \circ i_\sharp = id_{\pi_1(Y,y_0)}$ e portanto uma bijeção. Ou seja, se $Y$ é retrato de $X$ temos que $\pi_1(Y)$ é isomorfo a algum subgrupo de $\pi_1(X)$ e assim pelo teorema do isomorfismo aplicado em $r_\sharp$ segue que o quociente $\pi_1(X)/\ker r$ é isomorfo a algum subgrupo de $\pi_1(X)$. Em particular, se $X$ é simplesmente conexo então $Y$ também é.
 
         <hr>
         <h5 class="text-center">Grupos Topológicos</h5>
@@ -322,7 +322,7 @@
 
         <p class="text-justify"><b>Exemplo 24:</b> o espaço $\mathbb{T}^n = \mathbb{R}^n / \mathbb{Z}^n$, também conhecido como torus $n-$dimensional, pode ser visto como quociente de grupos e de espaços topológicos. A topologia quociente faz com que a operação induzida do quociente de grupos seja contínua, assim como a função de tomar o inverso. Essa estrutura faz de $\mathbb{T}^n$ abeliano.</p>
 
-        <p class="text-justify"><b>Proposição 25:</b> dados dois caminhos $a, b$ em $G$, podemos definir o caminho $a \cdot b$ dad por $(a\cdot b)(x) = a(x) \cdot b(x)$. Se $a, a', b, b'$ são caminhos fechados em $G$ com $a \cong a'$ e $b \cong b'$, temos que $a \cdot b \cong a' \cdot b'$.</p>
+        <p class="text-justify"><b>Proposição 25:</b> dados dois caminhos $a, b$ em $G$, podemos definir o caminho $a \cdot b$ dado por $(a\cdot b)(x) = a(x) \cdot b(x)$. Se $a, a', b, b'$ são caminhos fechados em $G$ com $a \cong a'$ e $b \cong b'$, temos que $a \cdot b \cong a' \cdot b'$.</p>
         <p class="text-justify"><i>Demonstração:</i> se $H$ é uma homotopia entre $a$ e $a'$ e $K$ é uma homotopia entre $b$ e $b'$, defina $J(x,t) = H(x,t) \cdot K(x,t)$. Como o produto é contínuo segue que $J$ é contínua.</p>
 
         <p class="text-justify">Isso faz com que possamos definir agora uma nova operação em $\pi_1(G, 1_G)$, dada por $[a] \cdot [b] = [a \cdot b]$. Note que a escolha de $1_G$ não é arbitrária, pois queremos que para quaisquer dois caminhos $a, b$ neste grupo, $a \cdot b$ também esteja nesse grupo, portanto o ponto-base $x_0$ de ambos deve satisfazer $x_0^2 = x_0$ e, como $G$ pode ter ordem finita e ímpar, o único elemento que podemos garantir que satisfaz essa propriedade para qualquer $G$ é a identidade.</p>
@@ -351,13 +351,10 @@
                 b(2x) & \mbox{se } 0 \leq x \leq 1/2 \\
                 a(2x - 1) & \mbox{se } 1/2 \leq x \leq 1
             \end{array}
-        \right. = ab. \blacksquare$$</p>
+        \right. = ba. \blacksquare$$</p>
 
         <p class="text-justify"><b>Proposição 27:</b> se $G$ é um grupo topológico, $\pi_1(G, 1_G)$ é abeliano. Além disso, para todos $[a],[b] \in \pi_1(G, 1_G)$ temos $[a][b] = [a] \cdot [b]$.</p>
         <p class="text-justify"><i>Demonstração:</i> dados $a,b$ caminhos fechados, $ab = a1_G \cdot 1_Gb \cong a \cdot b \cong 1_Ga \cdot b1_G = ba$. Assim, segue que $[ab] = [a\cdot b]$ e $[ab] = [ba]$.</p>
-
-        <hr>
-        <h5 class="text-center">Teorema de Seifert-van Kampen</h5>
       </div> <!-- /container -->
     </main>
     <!-- Bootstrap core JavaScript
