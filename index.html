@@ -11,6 +11,15 @@
     <title>Matemática com Desenhos</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        });
+    </script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -55,20 +64,25 @@
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
+            <h2>Alguns Exemplos Importantes</h2>
+            <p></p>
+            <p><a class="btn btn-secondary" href="notes/fundamental-group/03.html" role="button">Ver mais &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
             <h2>O Grupo Fundamental</h2>
-            <p>Na segunda aula, o conceito de grupo fundamental é introduzido, utilizando uma relação de equivalência sobre loops num espaço topológico.</p>
+            <p>Por mais que a noção de caminho já tenha sido informalmente utilizada no capítulo anterior, vamos agora entender precisamente o que são caminhos e como se comportam sob várias circustâncias. Dado um espaço topológico $X$, um caminho em $X$ é uma aplicação contínua $f \colon [a,b] \to X$...</p>
             <p><a class="btn btn-secondary" href="notes/fundamental-group/02.html" role="button">Ver mais &raquo;</a></p>
           </div>
           <div class="col-md-4">
             <h2>Homotopia e Extensões Contínuas</h2>
-            <p>Aqui começa o curso de Grupo Fundamental e Espaços de Recobrimento, ministrado pelo professor Marcelo Viana, do qual participei no verão de 2021</p>
+            <p>Sejam $X, Y$ espaços topológicos e $f,g \colon X \to Y$ duas aplicações contínuas. Dizemos que $f$ e $g$ são homotópicas ou homotopicamente equivalentes se, e somente se, existe outra aplicação contínua $H \colon X \times [0,1] \to Y$ tal que...</p>
             <p><a class="btn btn-secondary" href="notes/fundamental-group/01.html" role="button">Ver mais &raquo;</a></p>
           </div>
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <h2>Sobre Mim</h2>
             <p>Meu nome é Lucas Giraldi Almeida Coimbra e eu faço bacharelado em matemática na Universidade de São Paulo (USP), campus São Carlos. Minha mãe me conta que meu interesse pela matemática nasceu nas bases da divisão...</p>
             <p><a class="btn btn-secondary" href="about-me.html" role="button">Ver mais &raquo;</a></p>
-          </div>
+          </div> -->
         </div>
 
         <hr>
