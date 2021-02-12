@@ -53,34 +53,20 @@
     </nav>
 
     <main role="main">
-      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <!-- Main jumbotron for a priary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3 text-center">Alguns Exemplos Importantes</h1>
+          <h1 class="display-3 text-center">?</h1>
         </div>
       </div>
 
       <div class="container">
-        <h5 class="text-center">O Grupo Fundamental de $\mathbb{S}^1$</h5>
+      <h5 class="text-center">Fibrados</h5>
 
-        <p class="text-justify">Vamos agora provar que o grupo fundamental de $\mathbb{S}^1$ é o conjunto dos números inteiros (munido, claramente, da adição). Para isso, vamos considerar o mapa $\phi(t) = (\cos t, \sin t)$. Note que $\phi$ é um morfismo de grupos, pois $\phi(u + v)$ $=$ $(\cos u+v, \sin u+v)$ $=$ $(\cos u \cos v - \sin u \sin v, \sin u \cos v + \cos u \sin v)$ $=$ $(\cos u, \sin u)(\cos v, \sin v)$ $=$ $\phi(u)\phi(v)$. Além disso, se $\phi(x) = (1,0)$ temos que $\cos x = 1 \implies x = 2\pi n$ para algum $n \in \mathbb{Z}$ (a comparação do seno nos daria a mesma solução).</p>
+      <p class="text-justify">Um fibrado é uma aplicação contínua $\pi \colon E \to B$ tal que existe um outro espaço $F$ e, para todo $x \in B$ existe uma vizinhança $U \subset B$ e um homeomorfismo $\phi_U \colon U \times F \to \pi^{-1}(U)$ tal que $\pi_U = \pi \circ \phi_U$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
 
-        <p class="text-justify"><b>Observação 01:</b> a restrição de $\phi$ a qualquer intervalo aberto $(x, x+2\pi)$ é um homeomorfismo sobre $\mathbb{S}^1/\{\phi(x)\}$.</p>
+      <p class="text-justify"><b>Exemplo 01:</b> o cilindo e a faixa de Möbius são fibrados com base $\mathbb{S}^1$ e fibra $[0,1]$. Ambos os mapas fibrados são projeções:</p>
 
-        <img class="w-50 rounded mx-auto d-block" src="03/observacao-01.png" alt="Responsive image">
-        <p class="text-center">Ilustração do homeomorfismo descrito acima.</p>
-
-        <p class="text-justify">Chamaremos de levantamento de um caminho $f \colon [a,b] \to \mathbb{S}^1$ qualquer caminho $\tilde{f} \colon [a,b] \to \mathbb{R}$ tal que $f = \phi \circ \tilde{f}$. O nome levantamento vem de uma forma de enxergar esse tipo de função: podemos colocar, em espiral, a reta $\mathbb{R}$ em cima do círculo de maneira que a aplicação $\phi$ seja uma projeção de $\mathbb{R}$ em $\mathbb{S}^1$, como visto na figura abaixo:</p>
-
-        <img class="h-25 rounded mx-auto d-block" src="03/levantamento-01.png" alt="Responsive image">
-        <p class="text-center">Ilustração da espiral descrita acima.</p>
-
-        <p class="text-justify">Assim, um levantamento é um mapa tal que sua imagem, quando projetada, cai exatamente em cima de $f$, chamamos esse mapa de levantamento por que estamos levantando o caminho em $\mathbb{S}^1$ para a reta espiralada.</p>
-
-        <img class="h-25 rounded mx-auto d-block" src="03/levantamento-02.png" alt="Responsive image">
-        <p class="text-center">Ilustração do levantamento de um caminho.</p>
-
-        <p class="text-justify"><b>Proposição 02:</b> para todo caminho $f \colon [a,b] \to \mathbb{S}^1$ e todo ponto $t_0 \in \mathbb{R}$ tal que $\phi(t_0) = f(a)$, existe um único levantamento $\tilde{f} \colon [a,b] \to \mathbb{R}$ tal que $\tilde{f}(a) = t_0$.</p>
       </div> <!-- /container -->
     </main>
     <!-- Bootstrap core JavaScript
