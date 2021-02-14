@@ -63,7 +63,7 @@
       <div class="container">
       <h5 class="text-center">Fibrados</h5>
 
-      <p class="text-justify">Um fibrado é uma aplicação contínua $\pi \colon E \to B$ tal que existe um outro espaço $F$ e, para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança distinguida de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
+      <p class="text-justify">Um fibrado é uma aplicação contínua $\pi \colon E \to B$ tal que existe um outro espaço $F \neq \emptyset$ e, para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança distinguida de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
 
       <p class="text-justify"><b>Exemplo 01:</b> o cilindo e a faixa de Möbius são fibrados com base $\mathbb{S}^1$ e fibra $[0,1]$. Ambos os mapas fibrados são projeções:</p>
 
@@ -79,7 +79,7 @@
 
       <p class="text-justify">Perceba como desta vez temos que o produto $U_x \times F$ é a união de um cópia de $U_x$ em cada intervalo da forma $[n, n+1]$ para $n$ inteiro, portanto $F = \mathbb{Z}$.</p>
 
-      <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o levantamento de um caminho $f \colon [a,b] \to B$ é um caminhp $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
+      <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o levantamento de um caminho $f \colon [a,b] \to B$ é um caminho $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
 
       <p class="text-justify"><b>Proposição 02:</b> dados $\pi \colon E \to B$ um fibrado, $f \colon [a,b] \to B$ um caminho e $t_0 \in E$ tal que $\pi(t_0) = f(a)$, existe ao menos um levantamento $\tilde{f}$ tal que $\tilde{f}(a) = t_0$.</p>
       <p class="text-justify"><i>Demonstração:</i> vamos supor que $\textrm{Im}f \subset U$ para alguma vizinhança distinguida $U$. Considerando agora o mapa $\phi_U \colon U \times F \to \pi^{-1}(U)$, fixe qualquer $y_0 \in F$ e tome $\tilde{f} \colon [a,b] \to E$ dado por $\tilde{f}(x) = \phi_U(a(x), y_0)$ (note que esse é o levantamento "horizontal", que fixa a segunda coordenada).</p>
@@ -92,7 +92,52 @@
       <img class="h-25 rounded mx-auto d-block" src="03/levantamento-geral.png" alt="Responsive image">
       <p class="text-center">Ilustração do caso geral.  $\blacksquare$</p>
 
-      <p class="text-justify"><b>Proposição 03:</b> seja $\pi \colon E \to B$ um fibrado com fibra $F$ conexa por caminhos. Então o morfismo induzido $\pi_\sharp \colon \pi_1(E, e_0) \to \pi_1(B, \pi(e_0))$ é sobrejetiv </p>
+      <p class="text-justify"><b>Observação 03:</b> como $\phi_U \colon U \times F \to \pi^{-1}(U)$ é homeomorfismo, podemos restringir o mapa para $\phi_U' \colon \{x\} \times F \to \pi^{-1}(\{x\})$ que é também um homeomorfismo. Portanto, a pré-imagem de todo ponto é homeomorfa à fibra e, em particular, não-vazia, portanto todo fibrado é sobrejetor.</p>
+
+      <p class="text-justify"><b>Proposição 04:</b> seja $\pi \colon E \to B$ um fibrado com fibra $F$ conexa por caminhos. Então o morfismo induzido $\pi_\sharp \colon \pi_1(E, e_0) \to \pi_1(B, \pi(e_0))$ é sobrejetivo.</p>
+      <p class="text-justify"><i>Demonstração:</i> dado $f \colon [0,1] \to B$ um caminho fechado com ponto base $\pi(e_0)$, como $f(0) = \pi(e_0)$ segue que existe um levantamento de $f$, $\tilde{f} \colon [0,1] \to E$ tal que $\tilde{f}(0) = e_0$. Daí, segue que $\tilde{f}(0) \in \pi^{-1}(\pi(e_0))$ e como $\pi(\tilde{f}(1)) = f(1) = \pi(e_0)$ temos $\tilde{f}(1) \in \pi^{-1}(\pi(e_0))$. Advém do fato de que $\pi^{-1}(\pi(e_0))$ é homeomorfo à fibra, que $\pi^{-1}(\pi(e_0))$ é conexo por caminhos, portanto existe um caminho $\gamma$ que conecta $\tilde{f}(1)$ e $\tilde{f}(0)$. Basta notar agora que $\pi_\sharp([\tilde{f}\gamma]) = [\pi \circ \tilde{f}\gamma] = [(\pi \circ \tilde{f})(\pi \circ \gamma)] = [fe_0] = [f]$. $\blacksquare$</p>
+
+      <hr>
+      <h5 class="text-center">Homeomorfismos locais</h5>
+
+      <p class="text-justify">Se $X, Y$ são Hausdorff, uma aplicação contínua $f \colon X \to Y$ é chamada de homeomorfismo local se todo ponto $x \in X$ tem alguma vizinhança aberta $U$ tal que $f(U)$ é aberto em $Y$ e a restrição $f' \colon U \to f(U)$ é um homeomorfismo.</p>
+
+      <p class="text-justify"><b>Exemplo 05:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
+      <ol>
+        <li>$f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$;</li>
+        <li>$f \colon \mathbb{R}^2 \to \mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ dada por $f(s,t) = (\cos s, \sin s, \cos t, \sin t)$;</li>
+        <li>$f \colon \mathbb{C} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = e^z$;</li>
+        <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$.</li>
+      </ol>
+
+      <p class="text-justify"><b>Observação 06:</b> aqui vão alguns fatos sobre homeomorfismos locais:</p>
+      <ol>
+        <li><p class="text-justify">todo homeomorfismo é um homeomorfismo local. Afinal, se $f$ é um homeomorfismo, para todo aberto $U$ do domínio, a restrição $f' \colon U \to f(U)$ é um homeomorfismo. Além disso, $f^{-1}$ é contínua e portanto $f(U) = (f^{-1})^{-1}(U)$ (pré-imagem de $U$ por $f^{-1}$) é aberto;</p></li>
+        <li><p class="text-justify">todo homeomorfismo local é localmente injetivo, ou seja, para todo $x$ no domínio existe uma vizinhança de $x$ tal que o mapa restrito a essa vizinhança é injetor. Esse item é imediato pois podemos tomar as vizinhanças da definição de homeomorfismo local, onde o mapa é não só injetor, mas um homeomorfismo;</p></li>
+        <li><p class="text-justify">todo homeomorfismo local $f \colon X \to Y$ é uma aplicação aberta. Dado $U$ um aberto de $X$, tome o conjunto $\mathcal{U} = \{U_x \subset X \colon x \in U, U_x$ e a restrição de $f$ à $U_x$ é um homeomorfismo$\}$. Agora, perceba que $U = \bigcup (U_x \cap U)$ e $f(U) = f(\bigcup (U_x \cap U)) = \bigcup f(U_x \cap U)$ é aberto (pois é união de abertos, já que $f$ restrita a cada $U_x$ é um homeomorfismo, portanto aberta, e $U_x \cap U \subset U_x$);</p></li>
+        <li><p class="text-justify">se $X$ é compacto, $Y$ é conexo e $f \colon X \to Y$ é homeomorfismo local então $f$ é sobrejetivo. De fato, como $f$ é aberta, $f(X)$ é aberto em $Y$ e como $Y$ é Hausdorff e $X$ é compacto, $f(X)$ é fechado. Porém, num conexo, os únicos conjuntos fechados e abertos são o vazio e o espaço todo, portanto $f(X) = Y$;</p></li>
+        <li><p class="text-justify">homeomorfismos locais sobrejetores são aplicações quociente, afinal, são contínuas (e portanto $U \subset Y$ aberto $\implies f^{-1}(U)$ aberto) e são abertas (ou seja, $f^{-1}(V)$ aberto $\implies f(f^{-1}(V))$ é aberto, mas como $f$ é sobrejetora temos $f(f^{-1}(V)) = V$ e assim $V$ é aberto).</p></li>
+      </ol>
+
+      <p class="text-justify"><b>Proposição 07:</b> se $f \colon X \to Y$ é uma aplicação contínua localmente injetiva, então a imagem inversa $f^{-1}(y)$ de qualquer $y \in Y$ é um subconjunto discreto de $X$.</p>
+      <p class="text-justify"><i>Demonstração:</i> se $y \not\in \textrm{Im}f$, então o resultado segue pois $\emptyset$ é discreto. Agora, se $y \in \textrm{Im}f$, tome $x \in f^{-1}(y)$. Existe uma vizinhança $U$ de $x$ tal que $f$ restrita a $U$ é injetiva, portanto, como $f(x) = y$, $U \cap f^{-1}(y) = \{x\}$ e assim $\{x\}$ é aberto. $\blacksquare$</p>
+
+      <p class="text-justify"><b>Corolário 08:</b> se $X$ é compacto e $f \colon X \to Y$ é localmente injetiva, então $f^{-1}(y)$ é finito para todo $y$ \in Y.</p>
+      <p class="text-justify"><i>Demonstração:</i> como $f^{-1}(y)$ é discreto e $X$ é compacto, segue que $f^{-1}(y)$ é finito.</p>
+
+      <hr>
+      <h5 class="text-center">Levantamentos</h5>
+
+      <p class="text-justify">Já falamos sobre levantamentos de fibrados, porém, o estudo de levantamentos é mais geral do que isso e agora vamos estudar um pouco sobre isso. Sejam $f \colon X \to Y$ e $g \colon Z \to Y$ aplicações contínuas. Um levantamento de $g$ relativamente a $f$ é uma aplicação contínua $\tilde{g} \colon Z \to X$ tal que $f \circ \tilde{g} = g$. Podemos colocar hipóteses nos espaços para que o levantamento seja único.</p>
+
+      <p class="text-justify"><b>Proposição 09:</b> sejam $f \colon X \to Y$ uma aplicação contínua localmente injetiva com $X$ Hausdorff e $Z$ um espaço topológico conexo. Para toda aplicação contínua $g \colon Z \to Y$, dois levantamentos $\tilde{g}, \hat{g} \colon Z \to X$ de $g$ relativamente a $f$ que coincidem em algum ponto $z_0$ são iguais.</p>
+      <p class="text-justify"><i>Demonstração:</i> vamos provar que o conjunto $A = \{z \in Z \colon \tilde{g}(z) = \hat{g}(z)\}$ é fechado e aberto, pois pela conexidade de $Z$ teremos que se $A \neq \emptyset$, então $A = Z$ e assim $\tilde{g} = \hat{g}$. Primeiramente, tome $x \not\in A$. Perceba que como $\tilde{g}(x) \neq \hat{g}(x)$, então existe $\tilde{U}, \hat{U}$ vizinhanças disjuntas destes pontos. Como ambos os levantamentos são contínuos, existe uma vizinhança $\tilde{V}$ de $x$ tal que $\tilde{g}(\tilde{V}) \subset \tilde{U}$ e uma vizinhança de $\hat{V}$ de $x$ tal que $\hat{g}(\hat{V}) \subset \hat{U}$. Assim, tome $V = \tilde{V} \cap \hat{V}$ e perceba que $V$ é uma vizinhança de $x$ e $V \subset Z \setminus A$, portanto $Z \setminus A$ é aberto e segue que $A$ é fechado.</p>
+      <p class="text-justify">Agora, dado $a \in A$, sabemos que existe uma vizinhança $V$ de $\tilde{g}(a) = \hat{g}(a)$ na qual $f$ é injetiva. Como ambos os levantamentos são contínuos, existem $\tilde{U}$ e $\hat{U}$ vizinhanças de $a$ tais que $\tilde{g}(\tilde{U}) \subset V$ e $\hat{g}(\hat{U}) \subset V$. Ou seja, para todo $x \in U = \tilde{U} \cap \hat{U}$, temos $f(\tilde{g}(x)) = g(x) = f(\hat{g}(x))$ e assim $\tilde{g}(x) = \hat{g}(x)$ pois $f$ é localmente injetiva em $V$. Portanto, temos que $x \in U \subset A$ e assim $A$ é aberto. $\blacksquare$</p>
+
+      <p class="text-justify">Uma secção de uma aplicação contínua $f \colon X \to Y$ é um levantamento de identidade $Id_Y$ relativamente a $f$, ou seja, uma aplicação contínua $\sigma \colon Y \to X$ tal que $f \circ \sigma = Id_Y$. Secções podem não existir:</p>
+
+      <p class="text-justify"><b>Proposição:</b> se $X$ é um espaço conexo e Hausdorff e $f \colon X \to Y$ é localmente injetiva, então $f$ admite uma secção se, e somente se, $f$ é um homeomorfismo.</p>
+      <p class="text-justify"><i>Demonstração:</i> se $f$ é um homeomorfismo, basta tomar $\sigma = f^{-1}$. Agora, se $\sigma$ for uma secção de $f$, note que $f \circ (\sigma \circ f) = id_Y \circ f = f$ e $f \circ id_X = f$, portanto $\sigma \circ f$ e $id_X$ são levantamentos de $f$ relativamente a $f$ e, mais que isso, .</p>
 
       </div> <!-- /container -->
     </main>
