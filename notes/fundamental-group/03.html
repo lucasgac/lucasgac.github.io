@@ -61,130 +61,136 @@
       </div>
 
       <div class="container">
-      <h5 class="text-center">Fibrados</h5>
+        <h5 class="text-center">Fibrados</h5>
 
-      <p class="text-justify">Um fibrado com fibra $F \neq \emptyset$ é uma aplicação contínua $\pi \colon E \to B$ tal que para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança trivializante de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
+        <p class="text-justify">Um fibrado com fibra $F \neq \emptyset$ é uma aplicação contínua $\pi \colon E \to B$ tal que para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança trivializante de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
 
-      <p class="text-justify"><b>Exemplo 01:</b> o cilindo e a faixa de Möbius são fibrados com base $\mathbb{S}^1$ e fibra $[0,1]$. Ambos os mapas fibrados são projeções:</p>
+        <p class="text-justify"><b>Exemplo 01:</b> o cilindo e a faixa de Möbius são fibrados com base $\mathbb{S}^1$ e fibra $[0,1]$. Ambos os mapas fibrados são projeções:</p>
 
-      <img class="w-75 rounded mx-auto d-block" src="03/cilindro-mobius-fibrado.png" alt="Responsive image">
-      <p class="text-center">Projeções de fibrados em $\mathbb{S}^1$.</p>
+        <img class="w-75 rounded mx-auto d-block" src="03/cilindro-mobius-fibrado.png" alt="Responsive image">
+        <p class="text-center">Projeções de fibrados em $\mathbb{S}^1$.</p>
 
-      <p class="text-justify">Perceba como em cada ponto de $x \in \mathbb{S}^1$ podemos tomar uma vizinhança $U_x$ (em laranja) de forma que localmente, o fibrado se pareça muito com $U_x \times [0,1]$ e, além disso, de forma que essa parte do fibrado que se parece com $U_x \times [0,1]$ quando "projetada" por $\pi$ para $\mathbb{S}^1$ cai exatamente em $U_x$.</p>
+        <p class="text-justify">Perceba como em cada ponto de $x \in \mathbb{S}^1$ podemos tomar uma vizinhança $U_x$ (em laranja) de forma que localmente, o fibrado se pareça muito com $U_x \times [0,1]$ e, além disso, de forma que essa parte do fibrado que se parece com $U_x \times [0,1]$ quando "projetada" por $\pi$ para $\mathbb{S}^1$ cai exatamente em $U_x$.</p>
 
-      <p class="text-justify">Além desses dois, temos também que $\mathbb{R}$ pode ser visto com um fibrado com base $\mathbb{S}^1$, mas desta vez a fibra é diferente:</p>
+        <p class="text-justify">Além desses dois, temos também que $\mathbb{R}$ pode ser visto com um fibrado com base $\mathbb{S}^1$, mas desta vez a fibra é diferente:</p>
 
-      <img class="h-25 rounded mx-auto d-block" src="03/R-fibrado-S1.png" alt="Responsive image">
-      <p class="text-center">$\mathbb{R}$ como fibrado sobre $\mathbb{S}^1$</p>
+        <img class="h-25 rounded mx-auto d-block" src="03/R-fibrado-S1.png" alt="Responsive image">
+        <p class="text-center">$\mathbb{R}$ como fibrado sobre $\mathbb{S}^1$</p>
 
-      <p class="text-justify">Perceba como desta vez temos que o produto $U_x \times F$ é a união de um cópia de $U_x$ em cada intervalo da forma $[n, n+1]$ para $n$ inteiro, portanto $F = \mathbb{Z}$.</p>
+        <p class="text-justify">Perceba como desta vez temos que o produto $U_x \times F$ é a união de um cópia de $U_x$ em cada intervalo da forma $[n, n+1]$ para $n$ inteiro, portanto $F = \mathbb{Z}$.</p>
 
-      <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o levantamento de um caminho $f \colon [a,b] \to B$ é um caminho $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
+        <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o levantamento de um caminho $f \colon [a,b] \to B$ é um caminho $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
 
-      <p class="text-justify"><b>Proposição 02:</b> dados $\pi \colon E \to B$ um fibrado, $f \colon [a,b] \to B$ um caminho e $t_0 \in E$ tal que $\pi(t_0) = f(a)$, existe ao menos um levantamento $\tilde{f}$ tal que $\tilde{f}(a) = t_0$.</p>
-      <p class="text-justify"><i>Demonstração:</i> vamos supor que $\textrm{Im}f \subset U$ para alguma vizinhança trivializante $U$. Considerando agora o mapa $\phi_U \colon U \times F \to \pi^{-1}(U)$, fixe qualquer $y_0 \in F$ e tome $\tilde{f} \colon [a,b] \to E$ dado por $\tilde{f}(x) = \phi_U(a(x), y_0)$ (note que esse é o levantamento "horizontal", que fixa a segunda coordenada).</p>
+        <p class="text-justify"><b>Proposição 02:</b> dados $\pi \colon E \to B$ um fibrado, $f \colon [a,b] \to B$ um caminho e $t_0 \in E$ tal que $\pi(t_0) = f(a)$, existe ao menos um levantamento $\tilde{f}$ tal que $\tilde{f}(a) = t_0$.</p>
+        <p class="text-justify"><i>Demonstração:</i> vamos supor que $\textrm{Im}f \subset U$ para alguma vizinhança trivializante $U$. Considerando agora o mapa $\phi_U \colon U \times F \to \pi^{-1}(U)$, fixe qualquer $y_0 \in F$ e tome $\tilde{f} \colon [a,b] \to E$ dado por $\tilde{f}(x) = \phi_U(a(x), y_0)$ (note que esse é o levantamento "horizontal", que fixa a segunda coordenada).</p>
 
-      <img class="h-25 rounded mx-auto d-block" src="03/levantamento-simples.png" alt="Responsive image">
-      <p class="text-center">Ilustração do caso mais simples.</p>
+        <img class="h-25 rounded mx-auto d-block" src="03/levantamento-simples.png" alt="Responsive image">
+        <p class="text-center">Ilustração do caso mais simples.</p>
 
-      <p class="text-justify">Mais geralmente, para cada $x \in \textrm{Im}f$ tome $U_x$ vizinhança trivializante de $x$. Note que o conjunto $\{U_x \colon x \in \textrm{Im}f\}$ é uma cobertura para $\textrm{Im}f$ e assim $f^{-1}(U_x)$ formam uma cobertura para $[a,b]$. Sabemos que $[a,b]$ é métrico e compacto, portanto a cobertura das pré-imagens possui número de Lebesgue $r$. Assim, para todo $y \in [0,1]$ temos que $]y-r, y+r[ \subset f^{-1}(U_x)$ para algum $x$. Portanto, podemos quebrar o intervalo $[a,b]$ em $n$ intervalos pequenos de tamanho $1/n < 2r$ e cada um desses intervalos $[\alpha_i, \alpha_{i+1}]$ (note que $\alpha_0 = a$ e $\alpha_n = b$) está num aberto da cobertura das pré-imagens, e por conseguinte a restrição de $f$ a esses subintervalos são caminhos que satisfazem o primeiro caso. Para construirmos o levantamento geral, basta unirmos os levantamentos de cada restrição: levante $f_{[\alpha_0, \alpha_1]}$ de forma que $\tilde{f}_{[\alpha_0, \alpha_1]}$ comece em $t_0$ e levante $f_{[\alpha_i, \alpha_{i+1}]}$ de forma que $\tilde{f}_{[\alpha_i, \alpha_{i+1}]}$ comece no final de $\tilde{f}_{[\alpha_{i-1}, \alpha_i]}$.</p>
+        <p class="text-justify">Mais geralmente, para cada $x \in \textrm{Im}f$ tome $U_x$ vizinhança trivializante de $x$. Note que o conjunto $\{U_x \colon x \in \textrm{Im}f\}$ é uma cobertura para $\textrm{Im}f$ e assim $f^{-1}(U_x)$ formam uma cobertura para $[a,b]$. Sabemos que $[a,b]$ é métrico e compacto, portanto a cobertura das pré-imagens possui número de Lebesgue $r$. Assim, para todo $y \in [0,1]$ temos que $]y-r, y+r[ \subset f^{-1}(U_x)$ para algum $x$. Portanto, podemos quebrar o intervalo $[a,b]$ em $n$ intervalos pequenos de tamanho $1/n < 2r$ e cada um desses intervalos $[\alpha_i, \alpha_{i+1}]$ (note que $\alpha_0 = a$ e $\alpha_n = b$) está num aberto da cobertura das pré-imagens, e por conseguinte a restrição de $f$ a esses subintervalos são caminhos que satisfazem o primeiro caso. Para construirmos o levantamento geral, basta unirmos os levantamentos de cada restrição: levante $f_{[\alpha_0, \alpha_1]}$ de forma que $\tilde{f}_{[\alpha_0, \alpha_1]}$ comece em $t_0$ e levante $f_{[\alpha_i, \alpha_{i+1}]}$ de forma que $\tilde{f}_{[\alpha_i, \alpha_{i+1}]}$ comece no final de $\tilde{f}_{[\alpha_{i-1}, \alpha_i]}$.</p>
 
-      <img class="h-25 rounded mx-auto d-block" src="03/levantamento-geral.png" alt="Responsive image">
-      <p class="text-center">Ilustração do caso geral.  $\blacksquare$</p>
+        <img class="h-25 rounded mx-auto d-block" src="03/levantamento-geral.png" alt="Responsive image">
+        <p class="text-center">Ilustração do caso geral.  $\blacksquare$</p>
 
-      <p class="text-justify"><b>Observação 03:</b> como $\phi_U \colon U \times F \to \pi^{-1}(U)$ é homeomorfismo, podemos restringir o mapa para $\phi_U' \colon \{x\} \times F \to \pi^{-1}(\{x\})$ que é também um homeomorfismo. Portanto, a pré-imagem de todo ponto é homeomorfa à fibra e, em particular, não-vazia, portanto todo fibrado é sobrejetor.</p>
+        <p class="text-justify"><b>Observação 03:</b> como $\phi_U \colon U \times F \to \pi^{-1}(U)$ é homeomorfismo, podemos restringir o mapa para $\phi_U' \colon \{x\} \times F \to \pi^{-1}(\{x\})$ que é também um homeomorfismo. Portanto, a pré-imagem de todo ponto é homeomorfa à fibra e, em particular, não-vazia, portanto todo fibrado é sobrejetor.</p>
 
-      <p class="text-justify"><b>Proposição 04:</b> seja $\pi \colon E \to B$ um fibrado com fibra $F$ conexa por caminhos. Então o morfismo induzido $\pi_\sharp \colon \pi_1(E, e_0) \to \pi_1(B, \pi(e_0))$ é sobrejetivo.</p>
-      <p class="text-justify"><i>Demonstração:</i> dado $f \colon [0,1] \to B$ um caminho fechado com ponto base $\pi(e_0)$, como $f(0) = \pi(e_0)$ segue que existe um levantamento de $f$, $\tilde{f} \colon [0,1] \to E$ tal que $\tilde{f}(0) = e_0$. Daí, segue que $\tilde{f}(0) \in \pi^{-1}(\pi(e_0))$ e como $\pi(\tilde{f}(1)) = f(1) = \pi(e_0)$ temos $\tilde{f}(1) \in \pi^{-1}(\pi(e_0))$. Advém do fato de que $\pi^{-1}(\pi(e_0))$ é homeomorfo à fibra, que $\pi^{-1}(\pi(e_0))$ é conexo por caminhos, portanto existe um caminho $\gamma$ que conecta $\tilde{f}(1)$ e $\tilde{f}(0)$. Basta notar agora que $\pi_\sharp([\tilde{f}\gamma]) = [\pi \circ \tilde{f}\gamma] = [(\pi \circ \tilde{f})(\pi \circ \gamma)] = [fe_0] = [f]$. $\blacksquare$</p>
+        <p class="text-justify"><b>Proposição 04:</b> seja $\pi \colon E \to B$ um fibrado com fibra $F$ conexa por caminhos. Então o morfismo induzido $\pi_\sharp \colon \pi_1(E, e_0) \to \pi_1(B, \pi(e_0))$ é sobrejetivo.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $f \colon [0,1] \to B$ um caminho fechado com ponto base $\pi(e_0)$, como $f(0) = \pi(e_0)$ segue que existe um levantamento de $f$, $\tilde{f} \colon [0,1] \to E$ tal que $\tilde{f}(0) = e_0$. Daí, segue que $\tilde{f}(0) \in \pi^{-1}(\pi(e_0))$ e como $\pi(\tilde{f}(1)) = f(1) = \pi(e_0)$ temos $\tilde{f}(1) \in \pi^{-1}(\pi(e_0))$. Advém do fato de que $\pi^{-1}(\pi(e_0))$ é homeomorfo à fibra, que $\pi^{-1}(\pi(e_0))$ é conexo por caminhos, portanto existe um caminho $\gamma$ que conecta $\tilde{f}(1)$ e $\tilde{f}(0)$. Basta notar agora que $\pi_\sharp([\tilde{f}\gamma]) = [\pi \circ \tilde{f}\gamma] = [(\pi \circ \tilde{f})(\pi \circ \gamma)] = [fe_0] = [f]$. $\blacksquare$</p>
 
-      <hr>
-      <h5 class="text-center">Homeomorfismos locais</h5>
+        <hr>
+        <h5 class="text-center">Homeomorfismos locais</h5>
 
-      <p class="text-justify">Se $X, Y$ são Hausdorff, uma aplicação contínua $f \colon X \to Y$ é chamada de homeomorfismo local se todo ponto $x \in X$ tem alguma vizinhança aberta $U$ tal que $f(U)$ é aberto em $Y$ e a restrição $f' \colon U \to f(U)$ é um homeomorfismo.</p>
+        <p class="text-justify">Uma aplicação contínua $f \colon X \to Y$ é chamada de homeomorfismo local se todo ponto $x \in X$ tem alguma vizinhança aberta $U$ tal que $f(U)$ é aberto em $Y$ e a restrição $f' \colon U \to f(U)$ é um homeomorfismo.</p>
 
-      <p class="text-justify"><b>Exemplo 05:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
-      <ol>
-        <li>$f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$;</li>
-        <li>$f \colon \mathbb{R}^2 \to \mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ dada por $f(s,t) = (\cos s, \sin s, \cos t, \sin t)$;</li>
-        <li>$f \colon \mathbb{C} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = e^z$;</li>
-        <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
-        <li>$f \colon ]-10,10[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$.</li>
-      </ol>
+        <p class="text-justify"><b>Exemplo 05:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
+        <ol>
+          <li>$f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$;</li>
+          <li>$f \colon \mathbb{R}^2 \to \mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ dada por $f(s,t) = (\cos s, \sin s, \cos t, \sin t)$;</li>
+          <li>$f \colon \mathbb{C} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = e^z$;</li>
+          <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
+          <li>$f \colon ]-10,10[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$.</li>
+        </ol>
 
-      <p class="text-justify"><b>Observação 06:</b> aqui vão alguns fatos sobre homeomorfismos locais:</p>
-      <ol>
-        <li><p class="text-justify">todo homeomorfismo é um homeomorfismo local. Afinal, para todo ponto $x \in X$, a restrição de $f$ a $X$, que é $f$, é um homeomorfismo.</p></li>
-        <li><p class="text-justify">todo homeomorfismo local é localmente injetivo, ou seja, para todo $x$ no domínio existe uma vizinhança de $x$ tal que o mapa restrito a essa vizinhança é injetor. Esse item é imediato pois podemos tomar as vizinhanças da definição de homeomorfismo local, onde o mapa é não só injetor, mas um homeomorfismo;</p></li>
-        <li><p class="text-justify">todo homeomorfismo local $f \colon X \to Y$ é uma aplicação aberta. Dado $U$ um aberto de $X$, tome o conjunto $\mathcal{U} = \{U_x \subset X \colon x \in U, U_x$ e a restrição de $f$ à $U_x$ é um homeomorfismo$\}$. Agora, perceba que $U = \bigcup (U_x \cap U)$ e $f(U) = f(\bigcup (U_x \cap U)) = \bigcup f(U_x \cap U)$ é aberto (pois é união de abertos, já que $f$ restrita a cada $U_x$ é um homeomorfismo, portanto aberta, e $U_x \cap U \subset U_x$);</p></li>
-        <li><p class="text-justify">se $X$ é compacto, $Y$ é conexo e $f \colon X \to Y$ é homeomorfismo local então $f$ é sobrejetivo. De fato, como $f$ é aberta, $f(X)$ é aberto em $Y$ e como $Y$ é Hausdorff e $X$ é compacto, $f(X)$ é fechado. Porém, num conexo, os únicos conjuntos fechados e abertos são o vazio e o espaço todo, portanto $f(X) = Y$;</p></li>
-        <li><p class="text-justify">homeomorfismos locais sobrejetores são aplicações quociente, afinal, são contínuas (e portanto $U \subset Y$ aberto $\implies f^{-1}(U)$ aberto) e são abertas (ou seja, $f^{-1}(V)$ aberto $\implies f(f^{-1}(V))$ é aberto, mas como $f$ é sobrejetora temos $f(f^{-1}(V)) = V$ e assim $V$ é aberto).</p></li>
-      </ol>
+        <p class="text-justify"><b>Observação 06:</b> aqui vão alguns fatos sobre homeomorfismos locais:</p>
+        <ol>
+          <li><p class="text-justify">todo homeomorfismo é um homeomorfismo local. Afinal, para todo ponto $x \in X$, a restrição de $f$ a $X$, que é $f$, é um homeomorfismo.</p></li>
+          <li><p class="text-justify">todo homeomorfismo local é localmente injetivo, ou seja, para todo $x$ no domínio existe uma vizinhança de $x$ tal que o mapa restrito a essa vizinhança é injetor. Esse item é imediato pois podemos tomar as vizinhanças da definição de homeomorfismo local, onde o mapa é não só injetor, mas um homeomorfismo;</p></li>
+          <li><p class="text-justify">todo homeomorfismo local $f \colon X \to Y$ é uma aplicação aberta. Dado $U$ um aberto de $X$, tome o conjunto $\mathcal{U} = \{U_x \subset X \colon x \in U, U_x$ e a restrição de $f$ à $U_x$ é um homeomorfismo$\}$. Agora, perceba que $U = \bigcup (U_x \cap U)$ e $f(U) = f(\bigcup (U_x \cap U)) = \bigcup f(U_x \cap U)$ é aberto (pois é união de abertos, já que $f$ restrita a cada $U_x$ é um homeomorfismo, portanto aberta, e $U_x \cap U \subset U_x$);</p></li>
+          <li><p class="text-justify">se $X$ é compacto, $Y$ é conexo Hausdorff e $f \colon X \to Y$ é homeomorfismo local então $f$ é sobrejetivo. De fato, como $f$ é aberta, $f(X)$ é aberto em $Y$ e como $Y$ é Hausdorff e $X$ é compacto, $f(X)$ é fechado. Porém, num conexo, os únicos conjuntos fechados e abertos são o vazio e o espaço todo, portanto $f(X) = Y$;</p></li>
+          <li><p class="text-justify">homeomorfismos locais sobrejetores são aplicações quociente, afinal, são contínuas (e portanto $U \subset Y$ aberto $\implies f^{-1}(U)$ aberto) e são abertas (ou seja, $f^{-1}(V)$ aberto $\implies f(f^{-1}(V))$ é aberto, mas como $f$ é sobrejetora temos $f(f^{-1}(V)) = V$ e assim $V$ é aberto).</p></li>
+        </ol>
 
-      <p class="text-justify"><b>Proposição 07:</b> se $f \colon X \to Y$ é uma aplicação contínua localmente injetiva, então a imagem inversa $f^{-1}(y)$ de qualquer $y \in Y$ é um subconjunto discreto de $X$.</p>
-      <p class="text-justify"><i>Demonstração:</i> se $y \not\in \textrm{Im}f$, então o resultado segue pois $\emptyset$ é discreto. Agora, se $y \in \textrm{Im}f$, tome $x \in f^{-1}(y)$. Existe uma vizinhança $U$ de $x$ tal que $f$ restrita a $U$ é injetiva, portanto, como $f(x) = y$, $U \cap f^{-1}(y) = \{x\}$ e assim $\{x\}$ é aberto. $\blacksquare$</p>
+        <p class="text-justify"><b>Proposição 07:</b> se $f \colon X \to Y$ é uma aplicação contínua localmente injetiva, então a imagem inversa $f^{-1}(y)$ de qualquer $y \in Y$ é um subconjunto discreto de $X$.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $y \not\in \textrm{Im}f$, então o resultado segue pois $\emptyset$ é discreto. Agora, se $y \in \textrm{Im}f$, tome $x \in f^{-1}(y)$. Existe uma vizinhança $U$ de $x$ tal que $f$ restrita a $U$ é injetiva, portanto, como $f(x) = y$, $U \cap f^{-1}(y) = \{x\}$ e assim $\{x\}$ é aberto. $\blacksquare$</p>
 
-      <p class="text-justify"><b>Corolário 08:</b> se $X$ é compacto e $f \colon X \to Y$ é localmente injetiva, então $f^{-1}(y)$ é finito para todo $y \in Y$.</p>
-      <p class="text-justify"><i>Demonstração:</i> como $f^{-1}(y)$ é discreto e fechado e $X$ é compacto, segue que $f^{-1}(y)$ é finito. $\blacksquare$</p>
+        <p class="text-justify"><b>Corolário 08:</b> se $X$ é compacto e $f \colon X \to Y$ é localmente injetiva, então $f^{-1}(y)$ é finito para todo $y \in Y$.</p>
+        <p class="text-justify"><i>Demonstração:</i> como $f^{-1}(y)$ é discreto e fechado e $X$ é compacto, segue que $f^{-1}(y)$ é finito. $\blacksquare$</p>
 
-      <hr>
-      <h5 class="text-center">Levantamentos</h5>
+        <hr>
+        <h5 class="text-center">Levantamentos</h5>
 
-      <p class="text-justify">Já falamos sobre levantamentos de fibrados, porém, o estudo de levantamentos é mais geral do que isso e agora vamos estudar um pouco sobre. Sejam $f \colon X \to Y$ e $g \colon Z \to Y$ aplicações contínuas. Um levantamento de $g$ relativamente a $f$ é uma aplicação contínua $\tilde{g} \colon Z \to X$ tal que $f \circ \tilde{g} = g$. Podemos colocar hipóteses nos espaços para que o levantamento seja único.</p>
+        <p class="text-justify">Já falamos sobre levantamentos de fibrados, porém, o estudo de levantamentos é mais geral do que isso e agora vamos estudar um pouco sobre. Sejam $f \colon X \to Y$ e $g \colon Z \to Y$ aplicações contínuas. Um levantamento de $g$ relativamente a $f$ é uma aplicação contínua $\tilde{g} \colon Z \to X$ tal que $f \circ \tilde{g} = g$. Podemos colocar hipóteses nos espaços para que o levantamento seja único.</p>
 
-      <p class="text-justify"><b>Proposição 09:</b> sejam $f \colon X \to Y$ uma aplicação contínua localmente injetiva com $X$ Hausdorff e $Z$ um espaço topológico conexo. Para toda aplicação contínua $g \colon Z \to Y$, dois levantamentos $\tilde{g}, \hat{g} \colon Z \to X$ de $g$ relativamente a $f$ que coincidem em algum ponto $z_0$ são iguais.</p>
-      <p class="text-justify"><i>Demonstração:</i> vamos provar que o conjunto $A = \{z \in Z \colon \tilde{g}(z) = \hat{g}(z)\}$ é fechado e aberto, pois pela conexidade de $Z$ teremos que se $A \neq \emptyset$, então $A = Z$ e assim $\tilde{g} = \hat{g}$. Como $\tilde{g}, \hat{g}$ são contínuas, a aplicação $x \mapsto (\tilde{g}(x), \hat{g}(x))$ é contínua e como $X$ é hausdorff, a diagonal de $X$ é fechada. Perceba, por fim, que $A$ é a pré-imagem da diagonal de $X$ pelo mapa acima definido e daí segue que $A$ é fechado (pois pré-imagem de fechado é fechado).</p>
-      <p class="text-justify">Agora, dado $a \in A$, sabemos que existe uma vizinhança $V$ de $\tilde{g}(a) = \hat{g}(a)$ na qual $f$ é injetiva. Como ambos os levantamentos são contínuos, existem $\tilde{U}$ e $\hat{U}$ vizinhanças de $a$ tais que $\tilde{g}(\tilde{U}) \subset V$ e $\hat{g}(\hat{U}) \subset V$. Ou seja, para todo $x \in U = \tilde{U} \cap \hat{U}$, temos $f(\tilde{g}(x)) = g(x) = f(\hat{g}(x))$ e assim $\tilde{g}(x) = \hat{g}(x)$ pois $f$ é localmente injetiva em $V$. Portanto, temos que $x \in U \subset A$ e assim $A$ é aberto. $\blacksquare$</p>
+        <p class="text-justify"><b>Proposição 09:</b> sejam $f \colon X \to Y$ uma aplicação contínua localmente injetiva com $X$ Hausdorff e $Z$ um espaço topológico conexo. Para toda aplicação contínua $g \colon Z \to Y$, dois levantamentos $\tilde{g}, \hat{g} \colon Z \to X$ de $g$ relativamente a $f$ que coincidem em algum ponto $z_0$ são iguais.</p>
+        <p class="text-justify"><i>Demonstração:</i> vamos provar que o conjunto $A = \{z \in Z \colon \tilde{g}(z) = \hat{g}(z)\}$ é fechado e aberto, pois pela conexidade de $Z$ teremos que se $A \neq \emptyset$, então $A = Z$ e assim $\tilde{g} = \hat{g}$. Como $\tilde{g}, \hat{g}$ são contínuas, a aplicação $x \mapsto (\tilde{g}(x), \hat{g}(x))$ é contínua e como $X$ é hausdorff, a diagonal de $X$ é fechada. Perceba, por fim, que $A$ é a pré-imagem da diagonal de $X$ pelo mapa acima definido e daí segue que $A$ é fechado (pois pré-imagem de fechado é fechado).</p>
+        <p class="text-justify">Agora, dado $a \in A$, sabemos que existe uma vizinhança $V$ de $\tilde{g}(a) = \hat{g}(a)$ na qual $f$ é injetiva. Como ambos os levantamentos são contínuos, existem $\tilde{U}$ e $\hat{U}$ vizinhanças de $a$ tais que $\tilde{g}(\tilde{U}) \subset V$ e $\hat{g}(\hat{U}) \subset V$. Ou seja, para todo $x \in U = \tilde{U} \cap \hat{U}$, temos $f(\tilde{g}(x)) = g(x) = f(\hat{g}(x))$ e assim $\tilde{g}(x) = \hat{g}(x)$ pois $f$ é localmente injetiva em $V$. Portanto, temos que $x \in U \subset A$ e assim $A$ é aberto. $\blacksquare$</p>
 
-      <p class="text-justify">Uma secção de uma aplicação contínua $f \colon X \to Y$ é um levantamento da identidade $Id_Y$ relativamente a $f$, ou seja, uma aplicação contínua $\sigma \colon Y \to X$ tal que $f \circ \sigma = Id_Y$. Secções podem não existir:</p>
+        <p class="text-justify">Uma secção de uma aplicação contínua $f \colon X \to Y$ é um levantamento da identidade $Id_Y$ relativamente a $f$, ou seja, uma aplicação contínua $\sigma \colon Y \to X$ tal que $f \circ \sigma = Id_Y$. Secções podem não existir:</p>
 
-      <p class="text-justify"><b>Proposição 10:</b> se $X$ é um espaço conexo e Hausdorff e $f \colon X \to Y$ é localmente injetiva, então $f$ admite uma secção se, e somente se, $f$ é um homeomorfismo.</p>
-      <p class="text-justify"><i>Demonstração:</i> se $f$ é um homeomorfismo, basta tomar $\sigma = f^{-1}$. Agora, se $\sigma$ for uma secção de $f$, note que $f \circ (\sigma \circ f) = id_Y \circ f = f$ e $f \circ id_X = f$, portanto $\sigma \circ f$ e $id_X$ são levantamentos de $f$ relativamente a $f$ e, mais que isso, $\sigma \circ f = id_X$ pois $(\sigma \circ f)(\sigma(x)) = \sigma(x)$ e portanto $\sigma \circ f$ coincide com $id_X$ em $\textrm{Im}\sigma$. Assim, temos $\sigma \circ f = id_X$ e $f \circ \sigma = id_Y$ portanto $\sigma = f^{-1}$ e $f$ é homeomorfismo. $\blacksquare$</p>
+        <p class="text-justify"><b>Proposição 10:</b> se $X$ é um espaço conexo e Hausdorff e $f \colon X \to Y$ é localmente injetiva, então $f$ admite uma secção se, e somente se, $f$ é um homeomorfismo.</p>
+        <p class="text-justify"><i>Demonstração:</i> se $f$ é um homeomorfismo, basta tomar $\sigma = f^{-1}$. Agora, se $\sigma$ for uma secção de $f$, note que $f \circ (\sigma \circ f) = id_Y \circ f = f$ e $f \circ id_X = f$, portanto $\sigma \circ f$ e $id_X$ são levantamentos de $f$ relativamente a $f$ e, mais que isso, $\sigma \circ f = id_X$ pois $(\sigma \circ f)(\sigma(x)) = \sigma(x)$ e portanto $\sigma \circ f$ coincide com $id_X$ em $\textrm{Im}\sigma$. Assim, temos $\sigma \circ f = id_X$ e $f \circ \sigma = id_Y$ portanto $\sigma = f^{-1}$ e $f$ é homeomorfismo. $\blacksquare$</p>
 
-      <p class="text-justify"><b>Corolário 11:</b> se $Y$ é conexo, $X$ é Hausdorff, $f \colon X \to Y$ é localmente injetiva e $\sigma \colon Y \to X$ é uma secção de $f$, então a imagem $\sigma(Y)$ é uma componente conexa de $X$.</p>
-      <p class="text-justify"><i>Demonstração:</i> a restrição de $f$ à componente conexa $C$ que satisfaz $\sigma(Y) \subset C$ é um homeomorfismo com $Y$ (pela <b>Proposição 10</b>) e, além disso, a restrição de $f$ à $\sigma(Y)$ também é (também pela <b>Proposição 10</b>), portanto $C = f^{-1}(Y) = f^{-1}(f(\sigma(Y))) = \sigma(Y)$. $\blacksquare$</p>
+        <p class="text-justify"><b>Corolário 11:</b> se $Y$ é conexo, $X$ é Hausdorff, $f \colon X \to Y$ é localmente injetiva e $\sigma \colon Y \to X$ é uma secção de $f$, então a imagem $\sigma(Y)$ é uma componente conexa de $X$.</p>
+        <p class="text-justify"><i>Demonstração:</i> a restrição de $f$ à componente conexa $C$ que satisfaz $\sigma(Y) \subset C$ é um homeomorfismo com $Y$ (pela <b>Proposição 10</b>) e, além disso, a restrição de $f$ à $\sigma(Y)$ também é (também pela <b>Proposição 10</b>), portanto $C = f^{-1}(Y) = f^{-1}(f(\sigma(Y))) = \sigma(Y)$. $\blacksquare$</p>
 
-      <p class="text-justify"><b>Corolário 12:</b> suponha que $X = A \cup B$ é Hausorff, onde $A$ e $B$ são abertos conexos, e que $f \colon X \to Y$ é aplicação contínua tal que $f$ restrita à $A$ e $f$ restrita à $B$ são homeomorfismos sobre $Y$. Então $A$ e $B$ são componentes conexas de $X$ e portanto ou $A = B$ ou $A \cap B = \emptyset$.</p>
-      <p class="text-justify"><i>Demonstração:</i> Sabemos que $f$ é localmente injetiva pois, dado $x \in X$, $x \in A$ ou $x \in B$ e, em ambos os casos, temos uma vizinhança $V$ de $x$ que está contida no conjunto maior. Assim, como as restrições são homeomorfismos, temos que $f$ restrita à $V$ é injetora. Além disso, $Y = f(A) = f(B)$ é conexo e a inversa de $f$ restrita a $A$ é uma secção de $f$, pois $f(f_A^{-1}(x)) = x$. Assim, $f_A^{-1}(Y) = A$ é uma componente conexa de $X$ (da mesma maneira, provamos que vale também para $B$). $\blacksquare$</p>
+        <p class="text-justify"><b>Corolário 12:</b> suponha que $X = A \cup B$ é Hausorff, onde $A$ e $B$ são abertos conexos, e que $f \colon X \to Y$ é aplicação contínua tal que $f$ restrita à $A$ e $f$ restrita à $B$ são homeomorfismos sobre $Y$. Então $A$ e $B$ são componentes conexas de $X$ e portanto ou $A = B$ ou $A \cap B = \emptyset$.</p>
+        <p class="text-justify"><i>Demonstração:</i> Sabemos que $f$ é localmente injetiva pois, dado $x \in X$, $x \in A$ ou $x \in B$ e, em ambos os casos, temos uma vizinhança $V$ de $x$ que está contida no conjunto maior. Assim, como as restrições são homeomorfismos, temos que $f$ restrita à $V$ é injetora. Além disso, $Y = f(A) = f(B)$ é conexo e a inversa de $f$ restrita a $A$ é uma secção de $f$, pois $f(f_A^{-1}(x)) = x$. Assim, $f_A^{-1}(Y) = A$ é uma componente conexa de $X$ (da mesma maneira, provamos que vale também para $B$). $\blacksquare$</p>
 
-      <hr>
-      <h5 class="text-center">Recobrimentos</h5>
+        <hr>
+        <h5 class="text-center">Recobrimentos</h5>
 
-      <p class="text-justify">Vamos agora responder uma pergunta muito interessante: dado um homeomorfismo local $f \colon X \to Y$, em que condições podemos levantar todo caminho em $Y$ para o espaço $X$?</p>
+        <p class="text-justify">Vamos agora responder uma pergunta muito interessante: dado um homeomorfismo local $f \colon X \to Y$, em que condições podemos levantar todo caminho em $Y$ para o espaço $X$?</p>
 
-      <p class="text-justify"><b>Exemplo 13:</b> a aplicação $f \colon ]0, 3\pi[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é um homeomorfismo local, é sobrejetora, mas nem todo caminho em $\mathbb{S}^1$ pode ser levantado. Por exemplo, podemos tomar $\gamma(t) = (\cos 4\pi t, \sin 4\pi t)$.</p>
+        <p class="text-justify"><b>Exemplo 13:</b> a aplicação $f \colon ]0, 3\pi[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é um homeomorfismo local, é sobrejetora, mas nem todo caminho em $\mathbb{S}^1$ pode ser levantado. Por exemplo, podemos tomar $\gamma(t) = (\cos 4\pi t, \sin 4\pi t)$.</p>
 
-      <p class="text-justify"><b>Definição 14:</b> um recobrimento é um fibrado com fibra discreta. Chamaremos o espaço total de um recobrimento de espaço de recobrimento.</p>
+        <p class="text-justify"><b>Definição 14:</b> um recobrimento é um fibrado com fibra discreta. Chamaremos o espaço total de um recobrimento de espaço de recobrimento.</p>
 
-      <p class="text-justify"><b>Exemplo 15:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
-      <ol>
-        <li>$f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$;</li>
-        <li>$f \colon \mathbb{R}^2 \to \mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ dada por $f(s,t) = (\cos s, \sin s, \cos t, \sin t)$;</li>
-        <li>$f \colon \mathbb{C} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = e^z$;</li>
-        <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
-      </ol>
+        <p class="text-justify"><b>Exemplo 15:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
+        <ol>
+          <li>$f \colon \mathbb{R} \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$;</li>
+          <li>$f \colon \mathbb{R}^2 \to \mathbb{T}^2 = \mathbb{S}^1 \times \mathbb{S}^1$ dada por $f(s,t) = (\cos s, \sin s, \cos t, \sin t)$;</li>
+          <li>$f \colon \mathbb{C} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = e^z$;</li>
+          <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
+        </ol>
 
-      <p class="text-justify"><b>Observação 16:</b> podemos enxergar pré-imagens de vizinhanças trivializantes pelo recobrimento como sendo uniões disjuntas de cópias destas, ou seja: como $U_x \times F = \bigcup_{f \in F} U_x \times \{f\}$ e $F$ é discreto, cada $U_x \times \{f\}$ é aberto pois cada $\{f\}$ é aberto e podemos transformar essa união em uma união disjunta. Assim, já que $\pi^{-1}(U_x)$ é homeomorfo a $U_x \times F$, a observação segue.</p>
+        <p class="text-justify"><b>Observação 16:</b> podemos enxergar pré-imagens de vizinhanças trivializantes pelo recobrimento como sendo uniões disjuntas de cópias destas, ou seja: como $U_x \times F = \bigcup_{f \in F} U_x \times \{f\}$ e $F$ é discreto, cada $U_x \times \{f\}$ é aberto pois cada $\{f\}$ é aberto e podemos transformar essa união em uma união disjunta. Assim, já que $\pi^{-1}(U_x)$ é homeomorfo a $U_x \times F$, a observação segue.</p>
 
-      <p class="text-justify"><b>Proposição 17:</b> recobrimentos são homeomorfismos locais.</p>
-      <p class="text-justify"><i>Demonstração:</i> dado $\pi \colon M \to B$ recobrimento e $m \in M$, precisamos criar uma vizinhança de $m$ tal que $\pi$ restrito a ela seja um homeomorfismo e que a imagem dela por $\pi$ seja um aberto de $B$. Tome $U_{\pi(m)}$ vizinhança trivializante de $\pi(m)$ em $B$. Sabemos que $\pi^{-1}(U_{\pi(m)})$ é uma união disjunta de $\mid F \mid$ cópias de $U_{\pi(m)}$. Como $m$ pertece à pré-imagem, pertence também a uma dessas cópias, que será a vizinhança na qual a restrição de $\pi$ se torna um homeomorfismo com a imagem. $\blacksquare$</p>
+        <p class="text-justify"><b>Proposição 17:</b> recobrimentos são homeomorfismos locais.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $\pi \colon M \to B$ recobrimento e $m \in M$, precisamos criar uma vizinhança de $m$ tal que $\pi$ restrito a ela seja um homeomorfismo e que a imagem dela por $\pi$ seja um aberto de $B$. Tome $U_{\pi(m)}$ vizinhança trivializante de $\pi(m)$ em $B$. Sabemos que $\pi^{-1}(U_{\pi(m)})$ é uma união disjunta de $\mid F \mid$ cópias de $U_{\pi(m)}$. Como $m$ pertece à pré-imagem, pertence também a uma dessas cópias, que será a vizinhança na qual a restrição de $\pi$ se torna um homeomorfismo com a imagem. $\blacksquare$</p>
 
-      <hr>
-      <h5 class="text-center">Recobrimentos e Homeomorfismos Locais</h5>
+        <p class="text-justify"><b>Proposição 19:</b> se $X$ é compacto e $Y$ é conexo, então todo homeomorfismo local sobrejetivo $f \colon X \to Y$ é um recobrimento com fibra finita.</p>
+        <p class="text-justify"><i>Demonstração:</i> eu não sei. $\blacksquare$</p>
 
-      <p class="text-justify"><b>Lema 18:</b> uma aplicação $f \colon X \to Y$ é fechada (imagem de fechado é fechado) se, e somente se, para todo $y \in Y$ e todo aberto $U$ tal que $f^{-1}(y) \subset U$ existe um aberto $V \subset Y$ contendo $y$ e tal que $f^{-1}(V) \subset U$.</p>
-      <p class="text-justify"><i>Demonstração:</i> para a ida, dado $F$ fechado em $X$, precisamos provar que a imagem de $F$ é fechado. Dado $y \in Y \setminus f(F)$, sabemos que $f^{-1}(y) \subset X \setminus F$, que é um aberto, portanto existe $V \subset Y$ com $y \in V$ e $f^{-1}(V) \subset X \setminus F$. Portanto, temos que $f(f^{-1}(V)) \subset Y \setminus F$ e como $V \subset f(f^{-1}(V))$ segue que $Y \setminus F$ é aberto. Para a volta, se $f$ for fechada então para $y \in Y$ e $U$ aberto em $X$ com $f^{-1}(V) \subset U$, como $X \setminus U$ é fechado segue que $f(X \setminus U)$ é fechado e portanto $A = Y \setminus f(X \setminus U)$ é um aberto com $y \in A$ e $f^{-1}(A) \subset U$ pois se $x \in f^{-1}(A)$ segue que $f(x) \in A$ e portanto $f(x) \not\in f(X \setminus U)$. Daí, temos que $x \not\in X \setminus U$ e portanto $x \in U$. $\blacksquare$</p>
+        <hr>
+        <h5 class="text-center">Grupos de Homeomorfismos</h5>
 
-      <p class="text-justify">Diremos que uma aplicação $f \colon X \to Y$ é própria se é fechada e $f^{-1}(y)$ de todo $y \in Y$ é compacto em $X$.</p>
+        <p class="text-justify">O conjunto de todos os homeomorfismos com domínio e codomínio num espaço $X$, $\textrm{Aut}(X)$, é um grupo com a operação de composição (pois composição de homeomorfismos é homeomorfismo e homeomorfismos possuem inversas). Qualquer subgrupo $G$ deste é chamado de grupo de homeomorfismos de $X$. Podemos definir uma ação deste grupo em $X$ por $(f,x) \mapsto f(x)$. Daí, temos as órbitas $Gx = \{f(x) \colon f \in G\}$ e o quociente $X/G$ que é o conjunto das órbitas. A topologia quociente nesse espaço é a maior topologia em $X/G$ tal que $\pi \colon X \to X/G$ é contínua.</p>
 
-      <p class="text-justify"><b>Proposição 19:</b> para uma aplicação contínua $f \colon \mathbb{R} \to \mathbb{R}$ são equivalentes:</p>
-      <ol>
-        <li>$f$ é própria;</li>
-        <li>a pré-imagem $f^{-1}(K)$ de qualquer compacto $K \subset \mathbb{R}$ é um compacto;</li>
-        <li>$\displaystyle\lim_{|x| \to \infty} |f(x)| = \infty$.</li>
-      </ol>
+        <p class="text-justify">Diremos que um grupo $G$ de homeomorfismos de $X$ é propriamente descontínuo se todo $x \in X$ admite uma vizinhança $V$ tal que $gV = \{g(v) \colon v \in V\}$ é disjunto de $V$ para todo $g \in G \setminus \{1_G\}$. Chamaremos $V$ de vizinhança conveniente de $x$.</p>
 
-      <p class="text-justify"><i>Demonstração:</i> se $f$ é própria e $K$ é um compacto, </p>
+        <p class="text-justify"><b>Proposição 20:</b> se $G \subset Aut(X)$ é propriamente descontínuo, então: $g(x) \neq x$ para quaisquer $g \in G \setminus \{1_G\}$ e $x \in X$, $Gx$ é discreto e uma vizinhança $V$ é conveniente se, e somente se, possui no máximo um ponto de cada órbita.</p>
+        <p class="text-justify"><i>Demonstração:</i> para a primeira afirmação, se existirem $g \in G$ e $x \in X$ tais que $g(x) = x$ teríamos que $x \in gV \cap V$ para qualquer vizinhança $V$ de $x$, portanto $G$ não seria propriamente descontínuo. Para a segunda, se $V$ é uma vizinhança conveniente de um ponto $x$ fixado, $gV$ é uma vizinhança de $g(x)$ quee só possui esse ponto de $Gx$ (pois se $f(x) \in V$ para alguma outra $f$ sem ser a identidade, $f(x) \in fV \cap V$, o que é um absurdo).</p>
 
+        <p class="text-justify">Por fim, para a terceira, se $V$ é uma vizinhança conveniente e existe $v \in V$ com $g(v) \in V$ para algum $g$, teremos que $g(v) \in V \cap gV$ e assim $g = id_X$ e daí $g(v) = v$. Para o outro lado, se $|V \cap Gx| \leq 1$ para todo $x \in X$, para qualquer $v \in V$ temos que se $g \neq id_X$, $g(v) \neq v$ e assim $g(v) \not\in V$, portanto $V \cap gV = \emptyset$. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Proposição 21:</b> seja $G$ um grupo de homeomorfismos operando livremente num espaço $X$ conexo (ou seja, $g(x) \neq x$ para todos $g \in G \setminus \{1_G\}$, $x \in X$). As seguintes afirmações são equivalentes:</p>
+        <ol>
+          <li>$G$ é propriamente descontínuo;</li>
+          <li>A projeção $\pi \colon X \to X/G$ é um recobrimento;</li>
+          <li>$\pi \colon X \to X/G$ é localmente injetiva.</li>
+        </ol>
+
+        <p class="text-justify"><i>Demonstração:</i> A segunda afirmativa implica na terceira pois recobrimentos são homeomorfismos locais. A terceira afirmativa implica a primeira pois dado $x \in X$, existe uma vizinhança $U$ de $x$ tal que $\pi$ restrita a U é injetiva e isso significa que $U$ intersecta cada órbita em no máximo um ponto, portanto é uma vizinhança conveniente. Por fim, a primeira afirmativa implica a segunda pois...</p>
       </div> <!-- /container -->
     </main>
     <!-- Bootstrap core JavaScript
