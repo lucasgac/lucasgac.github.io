@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../reals.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+    <title>Fibrados e Recobrimentos</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a priary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Correspondência de Galois e mais Grupos Fundamentais</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <h5 class="text-center">Existência do Recobrimento Universal</h5>
+
+        <p class="text-justify">Dado um espaço $Y$ e um recobrimento $\pi \colon X \to Y,$ diremos que $\pi$ é universal se $X$ for simplesmente conexo. Vamos provar que todo espaço conexo por caminhos, localmente conexo por caminhos e localmente simplesmente conexo possui um único recobrimento universal. Dizemos que um espaço é localmente simplesmente conexo se para todo ponto $x$ e para toda vizinhança $V$ de $x,$ existe uma vizinhança $U$ de $x$ simplesmente conexa com $U \subset V.$</p>
+        
+        <p class="text-justify">A demonstração será feita de maneira construtiva através de lemas que facilitarão o entendimento das formalidades e darão alguma motivação que poderiam parecer tiradas da cartola se este método não fosse adotado. Quando eu digo que demonstraremos o teorema "de maneira construtiva", quero dizer que assumiremos que o teorema vale e assim vamos tentar entender como seria uma construção inteligente do espaço de recobrimento $X.$ Após essa construção ter sido estabelecida, aí sim provaremos que esta é de fato um recobrimento universal.</p> 
+
+        <p class="text-justify">Comece fixando um ponto $x_0 \in X$ e seja $y_0 = \pi(x_0).$ Dados dois caminhos $\gamma$ e $\tau$ de $x_0$ em $x,$ já que $X$ é simplesmente conexo temos que $\gamma$ e $\tau$ são homotópicos por uma homotopia $H,$ portanto temos que $\pi \circ \gamma$ e $\pi \circ \tau$ também são, pela homotopia $\pi \circ H.$ Além disso, podemos considerar "a volta": pelo <b>FR.Corolário 19</b> temos que dados dois caminhos $\tau'$ e $\gamma'$ homotópicos de $y_0$ em $y,$ seus levantamentos $\tau$ e $\gamma$ por $\pi$ começando em $x_0$ terminam no mesmo ponto e são homotópicos.</p>
+
+        <p class="text-justify">Essa ideia faz com que possamos identificar o ponto $x$ com o conjunto de todos os caminhos homtópicos que saem de $y_0$ e chegam em $y.$ Afinal, não pode haver um caminho $\gamma$ de $y_0$ em $y$ tal que seu levantamento termine em $x$ sem que ele seja homotópico a todos os outros (pelo argumento de descer a homotopia pelo recobrimento, feito no parágrafo acima). Além disso, para todo $x \in X$ temos pelo menos um caminho de $y_0$ até $\pi(x)$ (ambos esses fatos são a prova de que existe uma bijeção entre os pontos de $X$ e as classes de caminhos em $Y$).</p>
+
+        <p class="text-justify">Podemos então definir precisamente quem será o nosso espaço de recobrimento $X$: defina $X$ como $C / \simeq$ onde $C$ é o conjunto de todos os caminhos $\gamma \colon [0,1] \to Y$ satisfazendo $\gamma(0) = y_0$ e $\simeq$ é a relação de homotopia de caminhos com mesmos extremos. Além disso, definiremos o mapa $\pi$ da maneira mais conveniente possível, vista a nossa motivação. O mapa $\pi \colon X \to Y$ será dado por $\pi([\gamma]) = \gamma(1).$ Note que este mapa está bem definido pois qualquer outro representante de $[\gamma]$ terminará no mesmo ponto de $\gamma.$ A nossa próxima tarefa é colocar uma topologia adequada em $X.$</p>
+
+        <p class="text-justify">No curso de Topologia vimos que abertos são apenas conjuntos onde variações pequenas podem acontecer sem muita preocupação. O problema é essa questão da variação. Veja bem, variar mapas não é um trabalho fácil, porém, como todos os nossos caminhos começam no mesmo lugar, talvez possamos nos preocupar em variar apenas o fim de cada um deles! A ideia é tomar uma vizinhança no fim de cada caminho e deixar que caminhos maiores se formem, juntando o original com outros menores.</p>
+
+        <p class="text-justify">Dado um caminho $\gamma$ em $Y$ que começa em $y_0,$ tome $U$ aberto trivializante de $\gamma(1)$ conexo por caminhos (podemos pedir que seja conexo por caminhos pois $Y$ é localmente conexo por caminhos, assim podemos encolher $U$ para uma vizinhança menor, conexa por caminhos). Note que se percorrermos um caminho $\alpha$ começando em $\gamma(1)$ e que esteja inteiramente contido em $U,$ o final de $\alpha$ estará em $U$ e portanto se $U'$ é uma vizinhança em $X$ homeomorfa à $U,$ teremos $\alpha'(1) \in U',$ onde $\alpha'$ é o levantamento de $\alpha$ que tem sua imagem contida em $U'.$</p>
+
+        <p class="text-justify">O que quero mostrar com toda essa construção que parece a priori complicada, é que se construimos um caminho percorrendo $\gamma$ e depois percorrendo um outro caminho inteiramente contido em $U,$ um levantamento desse caminho irá percorrer um levantamento $\gamma'$ de $\gamma$ e depois percorrer um caminho que está inteiro em $U',$ onde $U'$ é uma vizinhança de $\gamma'(1)$ homeomorfa à $U.$ Esse fato nos dará motivo para a seguinte construção de uma topologia para $X.$</p>
+
+        <p class="text-justify">Dado $\gamma$ um caminho em $Y$ começando em $y_0$ e $U$ uma vizinhança de $\gamma(1),$ definiremos o conjunto $< U,\gamma >$ como sendo o conjunto de todos as classes de $X$ que podem ser representadas por um mapa da forma $\gamma \alpha,$ onde $\alpha$ é um caminho contido inteiramente em $U$ e que satisfaz $\alpha(0) = \gamma(1).$ Um subconjunto de $X$ é dito aberto se é uma união de conjuntos da forma $< U, \gamma >$ ou se for o vazio.</p>
+
+        <p class="text-justify"><b>Lema 01:</b> a topologia dos conjuntos da forma $< U, \gamma >$ definidos acima é de fato uma topologia.</p>
+        <p class="text-justify"><i>Demonstração:</i> note que $X = < X, y_0 >$ onde $y_0$ nesse caso é o mapa constante e igual a $y_0.$ Além disso, o vazio é um aberto por definição. Temos também que a união arbitrária de abertos é aberto, pois uma união de conjuntos que são união de outros conjuntos da forma $< U, \gamma >$ só pode também ser uma união de conjuntos dessa forma. Mais precisamente, sem a complicação da lingua portuguesa: dada $F = \{\bigcup_j < U_{i,j}, \gamma_{i,j} >\}$ temos $\bigcup F = \bigcup_{i,j} < U_{i,j}, \gamma_{i,j} >$ que é aberto. Por fim, basta provarmos que vale a propriedade da intersecção finita, mas essa é um pouco mais complicada.</p>
+
+        <p class="text-justify">Para mostrarmos que intersecção de dois abertos é aberto, vamos apenas provar que a intersecção de $< U, \gamma >$ e $< V, \tau >$ é aberta. Podemos fazer isso pois conjuntos dessa forma são uma base para a nossa topologia (por definição, já que conseguimos todos os abertos fazendo uniões de conjuntos desse tipo). Precisamos mostrar que dado $\sigma$ com $[\sigma] \in < U, \gamma > \cap < V, \tau >$ temos $W$ vizinhança de $\sigma(1)$ tal que $< W, \sigma > \subset < U, \gamma > \cap < V, \tau >.$ Faremos isso tomando $W = U \cap V$ e mostrando que $< U \cap V, \sigma > \subset < U, \gamma >,$ pois por simetria isso significa que $< U \cap V, \sigma > \subset < V, \tau >$ e portanto $< U \cap V, \sigma > \subset < U, \gamma > \cap < V, \tau >$</p>
+
+        <p class="text-justify">Como $< U \cap V, \sigma > \subset < U, \sigma >$ vamos provar que $< U, \sigma > \subset < U, \gamma >.$ Por hipótese sabemos que $\sigma$ é homotópico a $\gamma \alpha$ com $\alpha$ inteiramente contido em $U.$ Assim, se $[\lambda] \in < U, \sigma >$ então $\lambda$ é homotópico a $\sigma \beta$ para algum $\beta$ inteiramente contido em $U,$ portanto $\lambda$ é homotópico a $\gamma \alpha \beta$ e como $\alpha$ e $\beta$ estão contidos em $U$ temos que $\alpha \beta$ é um caminho inteiramente contido em $U,$ assim $\lambda \in < U, \gamma >.$ Agora que já sabemos que nossa definição de aberto satisfaz todas as propriedades de uma topologia, o próximo passo será provar que $\pi$ é contínua. Isso, porém, é imediato, pois $\pi^{-1}(U) = \bigcup_{\gamma} < U, \gamma >$ onde $\gamma$ percorre todos os caminhos que terminam em $U.$ $\blacksquare$</p>
+
+        <p class="text-justify">Terminar a prova do nosso teorema agora se resume a mostrarmos que $\pi$ é um recobrimento e que $X$ é simplesmente conexo.</p>
+
+        <p class="text-justify"><b>Lema 02:</b> $\pi$ é um mapa aberto.</p>
+        <p class="text-justify"><i>Demonstração:</i> note que se $U$ é conexo por caminhos, temos que $\pi(< U, \gamma >) = U,$ portanto basta mostrarmos que qualquer aberto de $X$ pode ser escrito como união de conjuntos da forma $< U_i, \gamma_i >$ com $U_i$ conexo por caminhos. Dado $V$ aberto de $X,$ sabemos que existe uma família $\{< U_i, \gamma_i >\}$ de abertos da base tais que $V = \bigcup_i \{< U_i, \gamma_i >\}.$ Dado $v \in V,$ sabemos que existe $< U_i, \gamma_i >$ tal que $v \in < U_i, \gamma_i >.$ Seja $\gamma_v$ um representante de $v.$ Como $\gamma_v(1) \in U_i$ tome $U_v$ vizinhança de $\gamma_v(1)$ conexa por caminhos e perceba que $v \in < U_v, \gamma_v >.$ Portanto, $V \subset \bigcup_{v \in V} < U_v, \gamma_v >.$</p>
+
+        <p class="text-justify">Dado $x \in \bigcup_{v \in V} < U_v, \gamma_v >,$ sabemos que para algum $v \in V,$ $x \in < U_v, \gamma_v >.$ Portanto, se $\gamma_x$ é um representante de $x,$ $\gamma_x \simeq \gamma_v\alpha$ para algum $\alpha$ inteiramente contido em $U_v.$ Porém, sabemos que $\gamma_v \simeq \gamma_i\beta$ para algum caminho $\beta$ contido inteiramente em $U_i.$ Portanto, como $U_v \subset U_i$ temos que $\beta\alpha$ está inteiramente contido em $U_i$ e $\gamma_x \simeq \gamma_i\beta\alpha,$ portanto $x \in < U_i, \gamma_i > \subset X.$ $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 03:</b> $\pi$ é um recobrimento.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $y \in Y$ podemos tomar $U$ vizinhança simplesmente conexa e conexa por caminhos. Vamos provar que $U$ é trivializante. Vamos primeiro separar todos os caminhos de $y_0$ a $y$ em classes de homotopia e tomar a família $\{\gamma_i\}$ que consiste de exatamente um representante de cada classe. Vamos então provar que a pré-imagem de $U$ pelo mapa $\pi$ é $\bigsqcup_i < U, \gamma_i >.$</p>
+
+        <p class="text-justify">Vamos provar primeiro que esses conjuntos são disjuntos, que é a parte difícil. Se $[\sigma] \in < U, \gamma_i > \cap < U, \gamma_j >,$ como $\sigma \in < U, \gamma_i >$ então existe um caminho $\alpha$ inteiramente contido em $U$ tal que $\sigma$ é homotópico a $\gamma_i \alpha.$ Da mesma maneira temos que $\sigma$ é homotópico a $\gamma_j \beta$ para algum $\beta$ inteiramente contido em $U.$ Por fim, temos $\sigma \beta^{-1} \simeq \gamma_i \alpha \beta^{-1} \simeq \gamma_i$ pois $\alpha \beta^{-1}$ é um caminho fechado inteiramente contido em $U$ e como $U$ é simplesmente conexo, $\alpha \beta^{-1}$ é homotópico a uma constante e, além disso, $\sigma \beta^{-1} \simeq \gamma_j \beta \beta^{-1} \simeq \gamma_j.$ Assim, $\gamma_i \simeq \gamma_j,$ o que é uma contradição pois escolhemos ambos como representantes de classes de homotopia diferentes.</p>
+
+        <p class="text-justify">Vamos agora mostrar que $\pi \colon < U, \gamma_i > \to U$ é um homeomorfismo. Perceba que o mapa é sobrejetor pois todo ponto de $U$ pode ser visto como o final de um caminho começando em $\gamma_i(1)$ (já que $U$ é conexo por caminhos). Temos também que o mapa é injetor pois dados $[\gamma_i \alpha]$ e $[\gamma_i \beta],$ se a imagem de ambos por $\pi$ é a mesma então $\alpha$ e $\beta$ tem mesmos extremos e estão contidos em $U,$ portanto de <b>GF.Proposição 17</b> temos que $\alpha$ e $\beta$ são homotópicos, assim $\gamma_i \alpha$ e $\gamma_i \beta$ também são e portanto $[\gamma_i \alpha] = [\gamma_i \beta].$ Por fim, como uma restrição de uma função contínua também é uma função contínua, basta mostrar que a inversa de $\pi$ é contínua. Porém, isso é consequência do fato de $\pi$ ser aberta. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 04:</b> $X$ é conexo por caminhos.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $x \in X,$ vamos mostrar que existe um caminho ligando $x$ em $x_0.$ Primeiramente, perceba que $x_0$ é exatamente a classe $[y_0]$ onde $y_0$ é o caminho constante em $y_0.$ Esse fato será importante mais para frente. Seja $\gamma$ um representante de $x.$ Para cada $t \in [0,1]$ defina o caminho $\gamma_t(x) = \gamma(x \cdot t).$ Esse caminho nada mais é que o caminho obtido ao sairmos de $\gamma(0)$ e chegarmos em $\gamma(t)$ percorrendo $\gamma.$ A ideia aqui é que podemos definir o caminho $\gamma' \colon [0,1] \to X$ dado por $t \mapsto [\gamma_t].$ Esse caminho começa em $[\gamma_0] = [\gamma(x \cdot 0)] = [\gamma(0)] = [y_0]$ e termina em $[\gamma_1] = [\gamma(x \cdot 1)] = [\gamma(x)] = [\gamma].$ $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 05:</b> se $\sigma \colon Z \to W$ é um recobrimento, $\sigma_\sharp \colon \pi_1(Z, z_0) \to \pi_1(W, \sigma(z_0))$ é injetor (as notações aqui estão diferentes apenas para não haver confusão com a notação já utilizada para os mapas e conjuntos que fazem parte do problema principal).</p>
+        <p class="text-justify"><i>Demonstração:</i> dados $[x],[y] \in \pi_1(Z, z_0),$ vamos assumir que $\pi_\sharp([x]) = \pi_\sharp([y]),$ ou seja, $[\pi \circ x] = [\pi \circ y].$ Isso significa que $\pi \circ x$ e $\pi \circ y$ são homotópicos. Porém, como $x$ e $y$ são levantamentos destes caminhos, isso significa que estes também são homtópicos (pelo <b>FR.Corolário 19</b>) e assim $[x] = [y].$ $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 06:</b> $X$ é simplesmente conexo.</p>
+        <p class="text-justify"><i>Demonstração:</i> o <b>Lema 04</b> nos garante que $X$ é conexo por caminhos. Dado $\gamma'$ um caminho fechado com ponto-base $x_0 = [y_0],$ podemos projetar $\gamma'$ para um caminho $\gamma$ em $Y$ que também é fechado e tem ponto base $y_0.$ Para cada $t \in [0,1]$ podemos tomar os caminhos $\gamma_t$ definidos no <b>Lema 04</b>. Note que o caminho $\gamma'$ pode ser representado pelo mapa $t \mapsto [\gamma_t],$ pois ambos são levantamentos de $\gamma$ começando em $x_0.$ Porém, temos que $\gamma'$ é fechado por hipótese, portanto $[\gamma_0] = [\gamma_1],$ ou seja, $[y_0] = [\gamma]$ e portanto $\gamma$ é homotópico ao seu ponto-base.</p>
+        <p class="text-justify">Por fim, do <b>Lema 05</b> temos que $\pi_\sharp$ é injetor e assim como $\pi_\sharp([\gamma']) = [\pi \circ \gamma'] = [\gamma] = [y_0] = [\pi \circ x_0] = \pi_\sharp([x_0]),$ temos que $[\gamma'] = [x_0]$ e $X$ é simplesmente conexo. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Teorema 07:</b> se $Y$ um espaço conexo por caminhos, localmente conexo por caminhos e localmente simplesmente conexo, então $Y$ possui um único recobrimento universal.</p>
+        <p class="text-justify"><i>Demonstração:</i> se vocês esperava encontrar alguma informação aqui, recomendo que re-leia a seção, você provavelmente não a entendeu completamente. $\blacksquare$</p>
+
+        <hr>
+        <h5 class="text-center">Unicidade do Recobrimento Universal</h5>
+
+        <p class="text-justify">O objetivo agora é outro: queremos mostrar que a construção acima é, de certa maneira, única. Isto é, que dados dois recobrimentos universais $\pi \colon X_1 \to Y$ e $\pi' \colon X_2 \to Y,$ então existe um homeomorfismo $\phi \colon X_1 \to X_2.$ Faremos isso utilizando um resultado mais geral sobre levantamento de mapas, que não havia sido provado ainda por falta de necessidade.</p>
+
+        <p class="text-justify"><b>Lema 08:</b> sejam $\pi \colon X' \to X$ um recobrimento, $Y$ um espaço conexo por caminhos e localmente conexo por caminhos e $f \colon Y \to X$ um mapa contínuo. Sejam $x'_0 \in X',$ $x_0 = \pi(x'_0),$ $y_0 \in Y$ e $x_0 = f(y_0).$ Existe um levantamento $f' \colon Y \to X'$ de $f$ por $\pi$ tal que $f'(y_0) = x'_0$ se, e somente se, $f_\sharp(\pi_1(Y,y_0)) \subset \pi_\sharp(\pi_1(X', x'_0)).$</p>
+
+        <p class="text-justify"><i>Demonstração:</i> se existe tal levantamento $f',$ pela <b>GF.Observação 12.2</b> temos que $f_\sharp = \pi_\sharp \circ f'_\sharp,$ portanto segue que $f_\sharp(\pi_1(Y,y_0)) \subset \pi_\sharp(\pi_1(X', x'_0)).$ Para a próxima parte, tome $y \in Y$ e seja $\gamma$ caminho ligando $y_0$ em $y.$ O mapa $f \circ \gamma$ é um caminho começando em $x_0.$ Assim, existe um único levantamento $f_\gamma$ de $f \circ \gamma$ com $f_\gamma(0) = x'_0.$ Defina então $f'(y) = f_{\gamma}(1).$</p>
+
+        <p class="text-justify">Esse mapa está bem definido, pois dado outro caminho $\sigma$ de $y_0$ em $y$ temos que $H_0$ dado por $(f \circ \sigma)(f \circ \gamma)^{-1}$ é um caminho fechado com ponto-base $(f \circ \sigma)(0) = f(y_0) = x_0.$ Além disso, temos que $[H_0] \in f_\sharp(\pi_1(Y,y_0)) \subset \pi_\sharp(\pi_1(X', x'_0))$ pois $f \circ \sigma\gamma^{-1} \simeq (f \circ \sigma)(f \circ \gamma)^{-1}.$ Portanto, existe $[x] \in \pi_1(X,x_0)$ com $H_0 \simeq \pi \circ x,$ que é um caminho em $X$ que vamos chamar de $H_1$ daqui para frente. Levante a homotopia usando o <b>FR.Corolário 19</b> e teremos que como $H'_1 = x$ (pela <b>FR.Proposição 17</b>) é um caminho fechado em $x'_0,$ $H'_0$ também é. Novamente pela <b>FR.Proposição 17</b> temos que $H'_0 = f_\sigma \circ f_\gamma^{-1}$ e portanto $f_\gamma(1) = f_\gamma^{-1}(0) = f_\sigma(1).$ Assim, segue que $f'$ está bem definida. Perceba também que $f'$ é de fato um levantamento de $f$ pois $(\pi \circ f')(y) = (\pi \circ f_\gamma)(1) = (f \circ \gamma)(1) = f(y).$</p>
+
+        <p class="text-justify">Por fim, $f'$ é contínua, pois dada $U$ vizinhança trivializante de $f(y) \in X,$ seja $U'$ um aberto homeomorfo a $U$ por $\pi$ tal que $f'(y) \in U'.$ Como $Y$ é localmente conexo por caminhos, seja $V$ vizinhança de $y$ conexa por caminhos com $V \subset f^{-1}(U)$ (note que $f^{-1}(U)$ é aberto pois $f$ é contínua). Vamos provar que $f'(V) \subset U'$ e assim poderemos escrever $\pi|_{U'} \circ f'|_V = f|_V$ e daí teremos $f'|_V = (\pi|_{U'})^{-1} \circ f|_V$, de onde segue que $f'$ é contínua em $V$ e, em particular, em $y$. Como $y$ é escolhido arbitrariamente, concluímos que $f'$ é contínua.</p>
+
+        <p class="text-justify"> Por definição, temos que $f'|_V(v) = f_{\gamma}(1)$ onde $\gamma$ é um caminho que liga $y_0$ em $v.$ Como $y \in V,$ tome $\gamma_v$ caminho que liga $y$ em $v$ e fixe $\sigma$ caminho ligando $y_0$ em $y.$ Note que $\sigma\gamma_v$ é um caminho ligando $y_0$ em $v.$ Além disso, temos que $f_{\sigma\gamma_v}$ é um levantamento de $f \circ \sigma\gamma_v = (f \circ \sigma)(f \circ \gamma_v)$ e portanto podemos escrever $f_{\sigma\gamma_v}(1) = (f_\sigma)(f \circ \gamma_v)'(1) = (f \circ \gamma_v)'(1) \in U'$ pois $f \circ \gamma_v$ está inteiramente contido em $V \subset U$. Assim, $f'|_V(v) \in U'$ e o resultado segue. $\blacksquare$</p>
+
+        <p class="text-justify">Chamaremos o lema acima de critério de levantamento. Agora, vamos provar o lema conhecido como propriedade do levantamento único.</p>
+
+        <p class="text-justify"><b>Lema 09:</b> dados um recobrimento $\pi \colon X' \to X$ e um mapa $f \colon Y \to X$ com $Y$ conexo, se dois levantamentos $f_1, f_2 \colon Y \to X'$ de $f$ coincidem em um ponto, então $f_1 = f_2$.</p>
+        <p class="text-justify"><i>Demonstração</i> dado um ponto $y \in Y$, seja $U$ uma vizinhança trivializante de $f(y)$. Sejam $U_1$ e $U_2$ abertos homeomorfos a $U$ por $\pi$ tais que $f_1(y) \in U_1$ e $f_2(y) \in U_2$. Pela continuidade de ambas, existe uma vizinhança $N$ de $y$ tal que $f_1(N) \subset U_1$ e $f(N) \subset U_2$. Se $f_1(y) \neq f_2(y)$ então temos $U_1 \neq U_2$ e portanto estas são disjuntas, o que significa que $f_1$ e $f_2$ diferem em todo o $N$ e portanto $\{t \colon f_1(t) = f_2(t)\}$ é fechado. Analogamente, se $f_1(y) = f_2(y)$ temos que $U_1 = U_2$ e assim $f_1$ e $f_2$ coincidem em todo o $N$ (pois $\pi \circ f_1 = \pi \circ f_2$ e $\pi$ é injetora em $U_1 = U_2$), portanto $\{t \colon f_1(t) = f_2(t)\}$ é aberto. Como este conjunto é aberto e fechado num conexo, então ou é vazio ou é todo o espaço. $\blacksquare$</p>
+
+        <p class="text-justify">Agora vamos provar o teorema principal dessa seção: recobrimentos universais são únicos a menos de isomorfismos. Resta sabermos agora o que seria um isomorfismo entre recobrimentos! Diremos que dois recobrimentos $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$ são isomorfos se existe um homeomorfismo $f \colon X \to X'$ tal que $\pi \circ f = \pi'$ ou, equivalentemente, $\pi' \circ f^{-1} = \pi$.</p>
+
+        <p class="text-justify"><b>Teorema 10:</b> se $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$ são dois recobrimentos universais, então $\pi$ e $\pi'$ são isomorfos.</p>
+        <p class="text-justify"><i>Demonstração:</i> </p>
+
+      </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -89,7 +89,7 @@
         <hr>
         <h5 class="text-center">Homotopias e Relações de Equivalência</h5>
 
-        <p class="text-justify"><b>Proposição 06:</b> $\simeq$ é uma relação de equivalência:</p>
+        <p class="text-justify"><b>Proposição 05:</b> $\simeq$ é uma relação de equivalência:</p>
         <p class="text-justify"><i>Demonstração:</i></p>
         <ol>
         	<li>
@@ -115,7 +115,7 @@
 
         <p class="text-justify">Perceba que na imagem acima, para facilitar a vida do desenhista (eu mesmo), representamos a homotopia para um ponto $x_0 \in X$ fixado, não para todo o domínio $X$ de $f$ e $g$.</p>
 
-        <p class="text-justify"><b>Proposição 07:</b> se $f, f' \colon X \to Y$ são homotópicas e $g, g' \colon Y \to Z$ também são, então $g \circ f, g' \circ f' \colon X \to Z$ são homotópicas.</p>
+        <p class="text-justify"><b>Proposição 06:</b> se $f, f' \colon X \to Y$ são homotópicas e $g, g' \colon Y \to Z$ também são, então $g \circ f, g' \circ f' \colon X \to Z$ são homotópicas.</p>
         <p class="text-justify"><i>Demonstração:</i> sejam $H, K$ homotopias entre $f, f'$ e $g,g'$, respectivamente. A função $J \colon X \times [0,1] \to Z$ dada por $J(x,t) = K(H(x,t),t)$ é uma homotopia de $g \circ f$ para $g' \circ f'$. Como $K$ e $H$ são contínuas, $J$ é contínua e além disso temos $J(x,0) = K(H(x,0),0) = K(f(x),0) = g(f(x))$ e $J(x,1) = K(H(x,1),1) = K(f'(x),1) = g'(f'(x))$. Assim, $J$ é de fato uma homotopia entre as duas funções. $\blacksquare$</p>
 
         <p class="text-justify">Dada $f \colon X \to Y$ contínua, definimos a classe de homotopia $[f]$ de $f$ como sendo o conjunto $\{g \colon f \simeq g\}$. A proposição acima apenas garante que a operação $[g] \circ [f] = [g \circ f]$ está bem definida.</p>
@@ -124,17 +124,18 @@
         <h5 class="text-center">Tipo de Homotopia</h5>
         <p>Dizemos que $f \colon X \to Y$ contínua é uma equivalência homotópica se existe $g \colon Y \to X$ também contínua tal que $g \circ f \simeq Id_X$ e $f \circ g \simeq Id_Y$. Diremos que $g$ é a inversa homotópica de $f$ e que $X$ e $Y$ tem o mesmo tipo de homotopia.</p>
 
-        <p class="text-justify"><b>Exemplo 08:</b> todo homeomorfismo é equivalência homotópica, afinal, basta tomar $g = f^{-1}$.</p>
+        <p class="text-justify"><b>Exemplo 07:</b> todo homeomorfismo é equivalência homotópica, afinal, basta tomar $g = f^{-1}$.</p>
 
-        <p class="text-justify"><b>Exemplo 09:</b> todo espaço vetorial normado tem o tipo de homotopia de um ponto, pois, dado um EVN $E$, temos que $f \colon E \to \{0\}$ dada por $f(v) = 0$ para todo $v \in E$ é contínua, pois é constante. Ainda mais, se $i \colon \{0\} \to E$ é a inclusão, note que $f \circ i \simeq Id_{\{0\}}$ e $i \circ f \simeq Id_E$ (quaisquer duas funções contínuas com contra-domínio num EVN são homotópicas).</p>
+        <p class="text-justify"><b>Exemplo 08:</b> todo espaço vetorial normado tem o tipo de homotopia de um ponto, pois, dado um EVN $E$, temos que $f \colon E \to \{0\}$ dada por $f(v) = 0$ para todo $v \in E$ é contínua, pois é constante. Ainda mais, se $i \colon \{0\} \to E$ é a inclusão, note que $f \circ i \simeq Id_{\{0\}}$ e $i \circ f \simeq Id_E$ (quaisquer duas funções contínuas com contra-domínio num EVN são homotópicas).</p>
 
-        <p class="text-justify"><b>Exemplo 10:</b> considere a inclusão $i \colon \mathbb{S}^n \to \mathbb{R}^{n+1}\setminus\{0\}$ e a função $r \colon \mathbb{R}^{n+1}\setminus\{0\} \to \mathbb{S}^n$ dada por $r(x) = x/|x|$. Primeiro, note que ambas $i$ e $r$ são contínuas. Agora, claramente $r \circ i = Id_{\mathbb{S}^n}$ e, além disso, pela homotopia linear segue também que $i \circ r \simeq Id_{\mathbb{R}^{n+1}}$. Assim, $\mathbb{R}^{n+1}\setminus\{0\}$ e $\mathbb{S}^n$ tem o mesmo tipo de homotopia. A ideia aqui é que para cada $x \in \mathbb{R}^{n+1}$ podemos percorrer o a reta que liga $x$ em $0$ até chegarmos em $\mathbb{S}^n$ (o que não aconteceria no caso de incluirmos o $0$ pois essa reta não estaria bem definida).</p>
+        <p class="text-justify"><b>Exemplo 09:</b> considere a inclusão $i \colon \mathbb{S}^n \to \mathbb{R}^{n+1}\setminus\{0\}$ e a função $r \colon \mathbb{R}^{n+1}\setminus\{0\} \to \mathbb{S}^n$ dada por $r(x) = x/|x|$. Primeiro, note que ambas $i$ e $r$ são contínuas. Agora, claramente $r \circ i = Id_{\mathbb{S}^n}$ e, além disso, pela homotopia linear segue também que $i \circ r \simeq Id_{\mathbb{R}^{n+1}}$. Assim, $\mathbb{R}^{n+1}\setminus\{0\}$ e $\mathbb{S}^n$ tem o mesmo tipo de homotopia. A ideia aqui é que para cada $x \in \mathbb{R}^{n+1}$ podemos percorrer o a reta que liga $x$ em $0$ até chegarmos em $\mathbb{S}^n$ (o que não aconteceria no caso de incluirmos o $0$ pois essa reta não estaria bem definida).</p>
 
         <img class="w-50 rounded mx-auto d-block" src="01/homotop-sn-rnm1.png" alt="Responsive image">
         <p class="text-center">Visualização de como funcionam as funções $i$ e $r$.</p>
 
         <p class="text-justify">Note que homotopia é um conceito muito mais fraco que homeomorfismo entre espaços topológicos. Por exemplo, como $\mathbb{R}^{n+1}$ é um EVN, temos que $\mathbb{S}^n$ tem o tipo de homotopia de um ponto. Porém, perceba que $\mathbb{S}^n$ separa o espaço em dois subespaços desconexos, enquanto um ponto não faz isso.</p>
 
+        <!--
         <hr>
         <h5 class="text-center">Homotopia de Pares</h5>
         <p class="text-justify">Um par de espaços topológicos é uma dupla $(X,A)$ onde $A$ é subespaço de $X$. Uma aplicação contínua de pares $f \colon (X,A) \to (Y,B)$ é uma função $f \colon X \to Y$ contínua tal que $f(A) \subset B$.</p>
@@ -145,21 +146,21 @@
 
         <p class="text-justify">Duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas relativamente a um subespaço $A \subset X$ se, e somente se, existe uma homotopia $H \colon X \times [0,1] \to Y$ entre $f$ e $g$ tal que $H(x,t) = f(x) = g(x)$ para todo $t \in [0,1]$ e para todo $x \in A$. Nesse caso, denotamos $f \simeq g$ $(rel.$ $A)$</p>
 
-        <p class="text-justify"><b>Exemplo 12:</b> as funções $Id_{\mathbb{R}^{n+1}}$ e $r$ do <b>Exemplo 10</b> são homotópicas relativamente ao subconjunto $\mathbb{S}^n$, pois quando restritas a este, ambas se tornam a identidade $Id_{\mathbb{S}^n}$ e, além disso, a homotopia $H(x,t) = (1-t)x + tr(x)$ é tal que se $x_0 \in \mathbb{S}^n$, $r(x_0) = x_0$ e assim $H(x_0,t)$ $= (1-t)x_0 + tx_0$ $= x_0$ $= r(x_0)$ $= Id_{\mathbb{R}^{n+1}}(x_0)$.</p>
+        <p class="text-justify"><b>Exemplo 12:</b> as funções $Id_{\mathbb{R}^{n+1}}$ e $r$ do <b>Exemplo 09</b> são homotópicas relativamente ao subconjunto $\mathbb{S}^n$, pois quando restritas a este, ambas se tornam a identidade $Id_{\mathbb{S}^n}$ e, além disso, a homotopia $H(x,t) = (1-t)x + tr(x)$ é tal que se $x_0 \in \mathbb{S}^n$, $r(x_0) = x_0$ e assim $H(x_0,t)$ $= (1-t)x_0 + tx_0$ $= x_0$ $= r(x_0)$ $= Id_{\mathbb{R}^{n+1}}(x_0)$.</p> -->
 
         <hr>
         <h5 class="text-center">Espaços Contráteis</h5>
         <p class="text-justify">Um espaço topológico $X$ diz-se contrátil se, e somente se, tem o tipo de homotopia de um ponto (conjunto unitário).</p>
 
-        <p class="text-justify"><b>Proposição 13:</b> $X$ é contrátil se, e somente se, $Id_X$ é homotópica a uma aplicação constante $X \to X$.</p>
+        <p class="text-justify"><b>Proposição 10:</b> $X$ é contrátil se, e somente se, $Id_X$ é homotópica a uma aplicação constante $X \to X$.</p>
         <p class="text-justify"><i>Demonstração:</i> se $X$ é contrátil então existe uma equivalência homotópica $f \colon X \to \{p\}$. Perceba que $f$ obrigatoriamente é a função $p$ (constante igual a $p$). Agora, se denotarmos por $g \colon \{p\} \to X$ sua inversa homotópica, teremos $(g \circ f)(x) = g(p)$ para todo $x \in X$, portanto $g\circ f$ é constante e por definição de inversa homotópica temos $g \circ f \simeq Id_X$. Agora, se $Id_X \simeq p$, então $Id_X \simeq p \circ Id_X$ e $Id_X \circ p \simeq Id_X$. $\blacksquare$</p>
 
-        <p class="text-justify"><b>Exemplo 14:</b> um subconjunto $X$ de um EVN $E$ é uma estrela de vértice $p$ se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
+        <p class="text-justify"><b>Exemplo 11:</b> um subconjunto $X$ de um EVN $E$ é uma estrela de vértice $p$ se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
 
         <img class="w-25 rounded mx-auto d-block" src="01/conj-estrela.png" alt="Responsive image">
         <p class="text-center">Exemplo de estrela. Nesse caso, qualquer ponto dentro da área rachurada pode ser um vértice.</p>
 
-        <p class="text-justify"><b>Observação 15:</b> todo espaço contrátil é também conexo por caminhos. Afinal, fixado $p \in X$ com $Id_X \simeq K_p$, dados $x,y \in X$ temos os caminhos $f_x(t) = H(x,t)$ e $f_y(t) = H(y,1-t)$ onde $H$ é a homotopia entre $Id_X$ e $p$. Basta notar que a função $f$ descrita abaixo é um caminho de $x$ para $y$:
+        <p class="text-justify"><b>Observação 12:</b> todo espaço contrátil é também conexo por caminhos. Afinal, fixado $p \in X$ com $Id_X \simeq K_p$, dados $x,y \in X$ temos os caminhos $f_x(t) = H(x,t)$ e $f_y(t) = H(y,1-t)$ onde $H$ é a homotopia entre $Id_X$ e $p$. Basta notar que a função $f$ descrita abaixo é um caminho de $x$ para $y$:
         $$f(t) = \left\{
 			\begin{array}{ll}
 				f_x(2t)  & \mbox{se } 0 \leq t \leq 1/2 \\
@@ -167,15 +168,16 @@
 			\end{array}
 		\right.$$</p>
 
-		<p class="text-justify"><b>Proposição 16:</b> se algum dos espaços $X$ ou $Y$ é contrátil, então toda aplicação contínua $f \colon X \to Y$ é homotópica a uma constante.</p>
-		<p class="text-justify"><i>Demonstração:</i> dada $f \colon X \to Y$ aplicação contínua, se $X$ for contrátil, então sabemos que $Id_X \simeq p$. Agora, podemos "compor dos dois lados" (pois $f \simeq f$ e pela <b>Proposição 07</b>) e assim temos $f \circ Id_X \simeq f \circ p$ e portanto $f \simeq f \circ p$. Basta notar que $f \circ p \colon X \to Y$ é a função $(f \circ p)(x) = f(p)$, que é constante, assim $f \simeq f(p)$. No caso de $Y$ ser contrátil, seja $H \colon Y \times [0,1] \to Y$ a homotopia entre $Id_Y$ e $q$. Temos que a aplicação $L \colon X \times [0,1] \to Y$ dada por $L(x,t) = K(f(x), t)$ é uma homotopia entre $f$ e $q$. $\blacksquare$</p>
+		<p class="text-justify"><b>Proposição 13:</b> se algum dos espaços $X$ ou $Y$ é contrátil, então toda aplicação contínua $f \colon X \to Y$ é homotópica a uma constante.</p>
+		<p class="text-justify"><i>Demonstração:</i> dada $f \colon X \to Y$ aplicação contínua, se $X$ for contrátil, então sabemos que $Id_X \simeq p$. Agora, podemos "compor dos dois lados" (pois $f \simeq f$ e pela <b>Proposição 06</b>) e assim temos $f \circ Id_X \simeq f \circ p$ e portanto $f \simeq f \circ p$. Basta notar que $f \circ p \colon X \to Y$ é a função $(f \circ p)(x) = f(p)$, que é constante, assim $f \simeq f(p)$. No caso de $Y$ ser contrátil, seja $H \colon Y \times [0,1] \to Y$ a homotopia entre $Id_Y$ e $q$. Temos que a aplicação $L \colon X \times [0,1] \to Y$ dada por $L(x,t) = K(f(x), t)$ é uma homotopia entre $f$ e $q$. $\blacksquare$</p>
 
-		<p class="text-justify"><b>Corolário 17:</b> se $Y$ é contrátil, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
-		<p class="text-justify"><i>Demonstração:</i> como $Y$ é contrátil, sabemos que $f \simeq q$ e $g \simeq q$. Assim, por ambas as propriedades simétrica e transitiva da <b>Proposição 06</b>, temos que $f \simeq g$ (note que a demonstração funciona pois ambas as funções são homotópicas à mesma constante). $\blacksquare$</p>
+		<p class="text-justify"><b>Corolário 14:</b> se $Y$ é contrátil, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
+		<p class="text-justify"><i>Demonstração:</i> como $Y$ é contrátil, sabemos que $f \simeq q$ e $g \simeq q$. Assim, por ambas as propriedades simétrica e transitiva da <b>Proposição 05</b>, temos que $f \simeq g$ (note que a demonstração funciona pois ambas as funções são homotópicas à mesma constante). $\blacksquare$</p>
 
-		<p class="text-justify"><b>Corolário 18:</b> se $X$ é contrátil e $Y$ é conexo por caminhos, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
+		<p class="text-justify"><b>Corolário 15:</b> se $X$ é contrátil e $Y$ é conexo por caminhos, então quaisquer duas aplicações contínuas $f,g \colon X \to Y$ são homotópicas.</p>
 		<p class="text-justify"><i>Demonstração:</i> a demonstração é similar à anterior, porém, nesse caso sabemos que $f \simeq f(p)$ e que $g \simeq g(p)$. Como estas duas constantes podem ser diferentes, precisamos que $Y$ seja um espaço que faça $f(p) \simeq g(p)$. A condição que utilizamos aqui é que $Y$ seja conexo por caminhos (tome $f \colon [0,1] \to Y$ caminho que conecta $f(p)$ em $g(p)$, temos que $H(x,t) = f(t)$ também as conecta). $\blacksquare$</p>
 
+        <!--
 		<hr>
 		<h5 class="text-center">Árvores</h5>
 
@@ -220,30 +222,30 @@
 		<p class="text-justify"><i>Demonstração:</i> uma árvore de apenas uma aresta possui dois vértices livres, que são os seus únicos vértices. Se supusermos que toda árvore de $n-1$ arestas possui um vértice livre, como todo subgrafo de uma árvore é também uma árvore, toda árvore de $n$ arestas é construida adicionando uma aresta a uma árvore de $n-1$ vértices. Agora, dada uma árvore de $n-1$ vértices, podemos adicionar uma aresta a ela conectando-a de duas maneiras: se conectarmos apenas um vértice, o outro vértice dessa aresta será livre. Se conectarmos ambos os vértices $u, v$ dessa nova aresta em vértices $g,h$ já existentes na árvore, então o novo vértice junto com o caminho de $g$ para $h$ forma um ciclo, portanto o nosso novo grafo não é uma árvore. $\blacksquare$</p>
 
 		<p class="text-justify"><b>Teorema 22:</b> toda árvore é contrátil.</p>
-        <p class="text-justify"><i>Demonstração:</i> fixado $a$ um vértice de $G$, para cada outro ponto $b$ de $G$ existe apenas um caminho de $a$ para $b$ (pois $G$ é uma árvore), vamos denotar esse caminho por $ab$. Para cada $t \in [0,1]$ o caminho $t \cdot ab$ é o caminho que parte de $a$ e percorre $100t\%$ do caminho $ab$. Note que $(b,t) \mapsto end(t \cdot ab)$ (onde o operador $end$ retorna o outro extremo que não o $a$) é uma homotopia entre a identidade e o mapa constante em $a$. $\blacksquare$</p>
+        <p class="text-justify"><i>Demonstração:</i> fixado $a$ um vértice de $G$, para cada outro ponto $b$ de $G$ existe apenas um caminho de $a$ para $b$ (pois $G$ é uma árvore), vamos denotar esse caminho por $ab$. Para cada $t \in [0,1]$ o caminho $t \cdot ab$ é o caminho que parte de $a$ e percorre $100t\%$ do caminho $ab$. Note que $(b,t) \mapsto end(t \cdot ab)$ (onde o operador $end$ retorna o outro extremo que não o $a$) é uma homotopia entre a identidade e o mapa constante em $a$. $\blacksquare$</p> -->
 		
 		<hr>
 		<h5 class="text-center">Retrações</h5>
 
 		<p class="text-justify">Dado um espaço $X$ e $Y \subset X$, uma aplicação contínua $r \colon X \to Y$ é chamada de retração se $r(y) = y$ para todo $y \in Y$. Ou seja, $r$ é uma extensão contínua da aplicação identidade $Id_Y$. Se existe uma retração $r \colon X \to Y$, dizemos que $Y$ é um retrato de $X$.</p>
 
-		<p class="text-justify"><b>Exemplo 23:</b> a função $r$ dada no <b>Exemplo 10</b> é uma retração.</p>
+		<p class="text-justify"><b>Exemplo 16:</b> a função $r$ dada no <b>Exemplo 09</b> é uma retração.</p>
 
 		<p class="text-justify">Dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$, dizemos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, se existir uma retração $r \colon V \to Y$.</p>
 
-		<p class="text-justify"><b>Exemplo 24:</b> como vimos no <b>Exemplo 23</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
+		<p class="text-justify"><b>Exemplo 17:</b> como vimos no <b>Exemplo 16</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
 
-		<p class="text-justify"><b>Proposição 25:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
+		<p class="text-justify"><b>Proposição 18:</b> dados $Y,V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ compacto, se $Y$ é retrato de $V$ em $\mathbb{R}^n$, então existe $\varepsilon > 0$ tal que dadas $f, g \colon X \to Y$ aplicações contínuas, se $d(f(x), g(x)) < \varepsilon$ para todo $x \in X$ com $X$ espaço topológico qualquer, então $f \simeq g$.</p>
 		<p class="text-justify"><i>Demonstração:</i> bom, vamos supor que existe tal $\varepsilon > 0$ e trabalhar um pouco com nossa intuição, para que consigamos construi-lo de maneira esperta. Bom, sabemos que $f(x), g(x) \in Y$ para qualquer $x \in X$ e, além disso, se o objetivo é mostrar que $f \simeq g$, talvez adaptar a homotopia linear seja interessante (já que $\mathbb{R}^n$ é EVN). Bom, aqui temos um problema, pois não há como garantir que o segmento ligando $f(x)$ e $g(x)$ esteja inteiramente em $X$. Resolver isso parece complicado, mas se lembrarmos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, percebemos que basta garantir que esse segmento esteja dentro dessa vizinhança! Bom, isso é fácil, pois basta escolher um $\varepsilon$ que faça com que $B(y, \varepsilon) \subset V$ para qualquer $y \in Y$ (afinal, $g(x) \in B(f(x), \varepsilon)$ e portanto o segmento que liga ambos os pontos estaria automaticamente dentro de $V$).</p>
 
-		<p class="text-justify">Bom, sabemos que a distância de $Y$ até $\mathbb{R}^n \setminus V$ é positiva, pois a função $y \mapsto d(y, \mathbb{R}^n\setminus V)$ é contínua e como $Y$ é compacto, a função possui mínimo, que é positivo pois a função é positiva para todo $y$ (já que $y \not\in \mathbb{R}^n \setminus V$). Bom, basta que esse seja nosso $\varepsilon$! Escolha $\varepsilon = \min\{d(x,F) \colon x \in Y\} > 0$ e assim teremos que pra todo $y \in Y$, se $b \in B(y, \varepsilon)$ então $d(b,y) < \varepsilon$ e portanto $b \in V$. $\blacksquare$</p>
+		<p class="text-justify">Sabemos que a distância de $Y$ até $\mathbb{R}^n \setminus V$ é positiva, pois a função $y \mapsto d(y, \mathbb{R}^n\setminus V)$ é contínua e como $Y$ é compacto, a função possui mínimo, que é positivo pois a função é positiva para todo $y$ (já que $y \not\in \mathbb{R}^n \setminus V$). Basta que esse seja nosso $\varepsilon$! Escolha $\varepsilon = \min\{d(x,F) \colon x \in Y\} > 0$ e assim teremos que pra todo $y \in Y$, se $b \in B(y, \varepsilon)$ então $d(b,y) < \varepsilon$ e portanto $b \in V$. $\blacksquare$</p>
 
         <hr>
         <h5 class="text-center">Extensão de Aplicações</h5>
 
         <p class="text-justify">Dada $f \colon A \to Y$ uma aplicação contínua, onde $A \subset X$, uma extensão contínua é uma aplicação contínua $F \colon X \to Y$ tal que $F(x) = f(x)$ se $x \in A$. O problema que queremos estudar é: quando que uma aplicação admite extensão contínua? O teorema de Tietze-Urysohn afirma que se $A$ é fechado, $X$ é normal e $Y = \mathbb{R}^n$, então essa extensão existe.</p>
 
-        <p class="text-justify"><b>Proposição 26:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
+        <p class="text-justify"><b>Proposição 19:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
         <p class="text-justify"><i>Demonstração:</i> primeiramente, vamos definir a aplicação contínua $\phi$ que "conifica" o cilindro $\mathbb{S}^n \times [0,1]$, ou seja, $\phi \colon \mathbb{S}^n \times [0,1] \to \mathbb{B}^{n+1}$ dada por $\phi(x,t) = (1-t)x$. Note que $\phi$ é injetiva em $\mathbb{S}^n \times [0,1)$, sobrejetora e contínua. Agora, perceba que o mapa $$\phi' \colon \frac{\mathbb{S}^n \times [0,1]}{\mathbb{S}^n \times \{1\}} \to \mathbb{B}^{n+1}$$ dado por $\phi'(x,t) = (1-t)x$ é bijetor, pois é igual ao mapa $\phi$ em $\mathbb{S}^n \times [0,1)$ e todo o conjunto que impedia $\phi$ de ser injetor agora está colapsado a um único ponto. Além disso, o único ponto que impede $\phi$ restrito à $\mathbb{S}^n \times [0,1)$ de ser sobrejetora é o $0$, que é a imagem do agora colapsado $\mathbb{S}^n \times \{1\}$.</p>
 
         <p>Pela propriedade universal do quociente, segue que $\phi'$ é contínuo, pois $\phi = \phi' \circ \pi$, onde $\pi$ é o mapa projeção $\pi \colon \mathbb{S}^{n} \times [0,1] \to \frac{\mathbb{S}^n \times [0,1]}{\mathbb{S}^n \times \{1\}}$. Agora, como o domínio de $\phi'$ é compacto, segue que $\phi'$ é um homeomorfismo. Para realizarmos a demonstração da proposição, vamos fazer a ida e a volta separadamente: </p>
@@ -253,7 +255,7 @@
             <li><b>Volta:</b> tome a aplicação $F = H \circ \phi'^{-1} \colon \mathbb{B}^{n+1} \to Y$ e perceba que se $a \in \mathbb{S}^n$, temos $F(a) = H(\phi'^{-1}(a)) = H(a,0) = f(a)$. $\blacksquare$</li>
         </ol>        
 
-        <p class="text-justify"><b>Proposição 27:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
+        <p class="text-justify"><b>Proposição 20:</b> dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço normal e $A \subset X$ fechado. Temos que toda aplicação contínua $f \colon A \to Y$ possui extensão contínua para alguma vizinhança de $A$.</p>
         <p class="text-justify"><i>Demonstração:</i> primeiramente, perceba que podemos tomar o contra-domínio de $f$ como sendo todo o $\mathbb{R}^n$, sem perder nenhuma informação. Isso é importante pois agora temos que $f$ se enquadra nos requisitos para aplicarmos o teorema de Tietze-Urysohn! Fazendo isso, conseguimos uma extensão contínua $\phi \colon X \to \mathbb{R}^n$ de $f$. Agora, se $U = \phi^{-1}(V)$, perceba que $U$ é uma vizinhança de $A$ (pois $A \subset \phi^{-1}(Y) \subset \phi^{-1}(V)$). Por fim basta notar que $F = r \circ \phi_U \colon U \to Y$, onde $r$ é a retração de $V$ em $Y$, é contínua (composição de funções contínuas) e se $x \in A$, então $F(x)$ $= r(\phi_U(a))$ $= r(f(a))$ $= f(a)$ (note que aqui denotamos por $\phi_U$ a restrição de $\phi$ ao conjunto $U$). $\blacksquare$</p>
 
         <hr>
@@ -261,7 +263,7 @@
 
         <p class="text-justify">Agora, provaremos um resultado que de certa maneira implica o teorema de Tietze-Urysohn (de certa maneira, pois precisamos supor algo que não é necessário no teorema descrito). Esse resultado, chamado de teorema da Extensão de Borsuk, diz que a propriedade de admitir extensão contínua depende apenas da classe de homotopia da aplicação.</p>
 
-        <p class="text-justify"><b>Teorema 28:</b> sejam $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço métrico e $A \subset X$ fechado. Dadas $f,g \colon A \to Y$ aplicações contínuas homotópicas, se $F \colon X \to Y$ é uma extensão contínua de $f$, temos que toda homotopia entre $f$ e $g$ se estende para uma homotopia entre $F$ e uma extensão contínua de $g$.</p>
+        <p class="text-justify"><b>Teorema 21:</b> sejam $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$ e $Y$ retrato de vizinhança de $V$ em $\mathbb{R}^n$. Sejam também $X$ um espaço métrico e $A \subset X$ fechado. Dadas $f,g \colon A \to Y$ aplicações contínuas homotópicas, se $F \colon X \to Y$ é uma extensão contínua de $f$, temos que toda homotopia entre $f$ e $g$ se estende para uma homotopia entre $F$ e uma extensão contínua de $g$.</p>
         <p class="text-justify"><i>Demonstração:</i> seja $H \colon A \times [0,1] \to Y$ uma homotopia entre $f$ e $g$. Definiremos a extensão de $H$ primeiramente no conjunto $X \times \{0\}$: $$H_0 \colon (X \times \{0\}) \cup (A \times [0,1]) \to Y, \quad
         H_0(x,t) = \left\{      
         \begin{array}{ll}
@@ -269,23 +271,23 @@
             H(x,t) & \mbox{se } (x,t) \in A \times [0,1]
         \end{array}
         \right.$$
-    	Pela <b>Proposição 27</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado). Agora, como $[0,1]$ é compacto, existe $U$ vizinhança de $A$ tal que $U \times [0,1] \subset W$ (basta notar que a aplicação com domínio $[0,1]$ dada por $t \mapsto d(A \times \{t\}, X \times [0,1] \setminus W)$ é contínua).</p>
+    	Pela <b>Proposição 20</b>, $H_0$ se extende continuamente para uma vizinhança $W$ do seu domínio (note que $X \times [0,1]$ é métrico, portanto normal. Além disso, como $A$ e $\{0\}$ são fechados em seus respectivos espaços, o domínio de $H_0$ é também fechado). Agora, como $[0,1]$ é compacto, existe $U$ vizinhança de $A$ tal que $U \times [0,1] \subset W$ (basta notar que a aplicação com domínio $[0,1]$ dada por $t \mapsto d(A \times \{t\}, X \times [0,1] \setminus W)$ é contínua).</p>
 
     	<p class="text-justify">Pelo lema de Urysohn, como $A$ e $X \setminus U$ são fechados e $X$ é normal, então existe uma aplicação $\lambda \colon X \to [0,1]$ que satisfaz: 
     	$$\lambda(x) = \left\{ \begin{array}{ll} 0 & \mbox{se } x \in A \\ 1 & \mbox{se } x \in X \setminus U \end{array}\right.$$
     	Defina, portanto, $G \colon X \times [0,1] \to Y$ por $G(x,t) = H_0(x, \lambda(x)t)$. Temos que $G(a,t) = H_0(a, \lambda(a)t)$ $= H_0(a,t)$ $= H(a,t)$ para todo $a \in A$. Além disso, $G(x,0)$ $= H_0(x, \lambda(x)0)$ $= H_0(x,0)$ $= F(x)$ e ainda $G(x,1)$ $= H_0(x, \lambda(x))$ e se $x \in A$ temos $G(x,1)$ $= H_0(x,1)$ $= H(a,1)$ $= g(x)$ e assim $G(x,1)$ é extensão contínua de $g$. $\blacksquare$</p>
 
         <img class="w-50 rounded mx-auto d-block" src="01/bursuk-extension.png" alt="Responsive image">
-        <p class="text-center" >Ilustração do <b>Teorema 28</b>.</p>
+        <p class="text-center" >Ilustração do <b>Teorema 21</b>.</p>
 
-    	<p class="text-justify"><b>Corolário 29:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
-    	<p class="text-justify"><i>Demonstração:</i> se $Y$ é contrátil, quaisquer $f, g \colon A \to Y$ são homotópicas (<b>Corolário 17</b>) e portanto podemos tomar $g$ constante. Como $g$ admite extensão contínua, $f$ também admite pelo <b>Teorema 28</b>. $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 22:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e contrátil, e $A$ é subconjunto fechado de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $Y$ é contrátil, quaisquer $f, g \colon A \to Y$ são homotópicas (<b>Corolário 14</b>) e portanto podemos tomar $g$ constante. Como $g$ admite extensão contínua, $f$ também admite pelo <b>Teorema 21</b>. $\blacksquare$</p>
 
-    	<p class="text-justify"><b>Corolário 30:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$, conexo por caminhos, e $A$ é subconjunto fechado contrátil de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
-    	<p class="text-justify"><i>Demonstração:</i> agora pelo <b>Corolário 18</b>, como $Y \subset \mathbb{R}^n$ é conexo por caminhos temos que $f$ é homotópico a qualquer mapa constante, que possui extensão contínua, portanto o <b>Teorema 28</b> nos diz que $f$ também possui. $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 23:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$, conexo por caminhos, e $A$ é subconjunto fechado contrátil de um espaço métrico $X$, toda aplicação contínua $f \colon A \to Y$ admite extensão contínua $F \colon X \to Y$.</p>
+    	<p class="text-justify"><i>Demonstração:</i> agora pelo <b>Corolário 15</b>, como $Y \subset \mathbb{R}^n$ é conexo por caminhos temos que $f$ é homotópico a qualquer mapa constante, que possui extensão contínua, portanto o <b>Teorema 21</b> nos diz que $f$ também possui. $\blacksquare$</p>
 
-    	<p class="text-justify"><b>Corolário 31:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e $A$ é subconjunto fechado de um espaço métrico contrátil $X$, uma aplicação contínua $f \colon A \to Y$ admite extensão contínua se, e somente se, for homotópica a uma constante.</p>
-    	<p class="text-justify"><i>Demonstração:</i> se $f$ for homotópica a uma constante o resultado segue do <b>Teorema 28</b>. Se $f$ possuir extensão contínua $F \colon X \to Y$, como $X$ é contrátil então $F$ é homotópica a uma constante e assim $f$ também será (basta restringir a homotopia). $\blacksquare$</p>
+    	<p class="text-justify"><b>Corolário 24:</b> se $Y \subset \mathbb{R}^n$ é retrato de vizinhança de uma vizinhança $V$ em $\mathbb{R}^n$ e $A$ é subconjunto fechado de um espaço métrico contrátil $X$, uma aplicação contínua $f \colon A \to Y$ admite extensão contínua se, e somente se, for homotópica a uma constante.</p>
+    	<p class="text-justify"><i>Demonstração:</i> se $f$ for homotópica a uma constante o resultado segue do <b>Teorema 21</b>. Se $f$ possuir extensão contínua $F \colon X \to Y$, como $X$ é contrátil então $F$ é homotópica a uma constante e assim $f$ também será (basta restringir a homotopia). $\blacksquare$</p>
 
 	  </div> <!-- /container -->
     </main>
