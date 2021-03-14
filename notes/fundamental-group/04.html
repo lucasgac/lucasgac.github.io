@@ -137,8 +137,15 @@
 
         <p class="text-justify">Agora vamos provar o teorema principal dessa seção: recobrimentos universais são únicos a menos de isomorfismos. Resta sabermos agora o que seria um isomorfismo entre recobrimentos! Diremos que dois recobrimentos $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$ são isomorfos se existe um homeomorfismo $f \colon X \to X'$ tal que $\pi \circ f = \pi'$ ou, equivalentemente, $\pi' \circ f^{-1} = \pi$.</p>
 
-        <p class="text-justify"><b>Teorema 10:</b> se $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$ são dois recobrimentos universais, então $\pi$ e $\pi'$ são isomorfos.</p>
-        <p class="text-justify"><i>Demonstração:</i> </p>
+        <p class="text-justify"><b>Teorema 11:</b> se $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$ são dois recobrimentos universais com $X$ e $X'$ localmente conexos por caminhos, então $\pi$ e $\pi'$ são isomorfos.</p>
+        <p class="text-justify"><i>Demonstração:</i> seja $y \in Y$. Sejam $x \in \pi^{-1}(y)$ e $x' \in \pi'^{-1}(y)$. Como ambos os recobrimentos são universais, sabemos que $\pi_1(X, x) = \pi_1(X', x') = \{1\}$ e portanto $\pi_\sharp(\pi_1(X,x)) = \pi'_\sharp(\pi_1(X', x)) = \{1\}$. Portanto, pelo <b>Lema 08</b>, existem levantamentos $f \colon X \to X'$ de $\pi$ por $\pi'$ e $f' \colon X' \to X$ de $\pi'$ por $\pi$. Mais que isso, esses levantamentos são únicos se assumirmos que $f(x) = x'$ e $f'(x') = x$ (pelo <b>Lema 09</b>).</p>
+
+        <p class="text-justify">Note que $f \circ f' \colon X' \to X'$ é um levantamento de $\pi'$ por $\pi'$, pois $\pi' \circ (f \circ f') = (\pi' \circ f) \circ f' = \pi \circ f' = \pi'$ e temos $(f \circ f')(x') = f(x) = x'$. Assim, novamente pelo <b>Lema 09</b> temos que $f \circ f' = Id_{X'}$. Da mesma maneira provamos que $f' \circ f = Id_{X}$ e portanto temos que tanto $f$ quanto $f'$ são homeomorfismos entre $X$ e $X'$. Dá definição de levantamento segue que $f$ e $f'$ são isomorfismos entre $\pi$ e $\pi'$. $\blacksquare$</p>
+
+        <!-- <hr>
+        <h5 class="text-center">O Grupo Deck</h5>
+
+        <p class="text-justify">Dados dois recobrimentos de mesma base $\pi \colon X \to Y$ e $\pi' \colon X' \to Y$, um morfismo entre eles é uma função contínua $f \colon$ tal que $$</p> -->
 
       </div> <!-- /container -->
     </main>
