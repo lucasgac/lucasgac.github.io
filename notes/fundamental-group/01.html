@@ -27,6 +27,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../../jumbotron.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+        .def {
+            color: rgb(255, 0, 0);
+        }
+    </style>
   </head>
 
   <body>
@@ -63,7 +69,7 @@
 
       <div class="container">
         <h5 class="text-center">Aplicações Homotópicas</h5>
-        <p class="text-justify">Sejam $X, Y$ espaços topológicos e $f,g \colon X \to Y$ duas aplicações contínuas. Dizemos que $f$ e $g$ são homotópicas ou homotopicamente equivalentes se, e somente se, existe outra aplicação contínua $H \colon X \times [0,1] \to Y$ tal que $H(x,0) = f(x)$ e $H(x,1) = g(x)$ para todo $x$. Nesse caso, escrevemos $f \simeq g$ e chamamos $H$ de uma homotopia entre $f$ e $g$. Aqui, podemos pensar que para cada instante de tempo $t$ existe uma função contínua $H_t \colon X \to Y$, essas funções são bem parecidas com $f$ se $t \approx 0$ e bem parecidas com $g$ se $t \approx 1$ (pois $H$ é contínua).</p>
+        <p class="text-justify">Sejam $X, Y$ espaços topológicos e $f,g \colon X \to Y$ duas aplicações contínuas. Dizemos que $f$ e $g$ são <span class="def">homotópicas</span> ou <span class="def">homotopicamente equivalentes</span> se, e somente se, existe outra aplicação contínua $H \colon X \times [0,1] \to Y$ tal que $H(x,0) = f(x)$ e $H(x,1) = g(x)$ para todo $x$. Nesse caso, escrevemos $f \simeq g$ e chamamos $H$ de uma <span class="def">homotopia</span> entre $f$ e $g$. Aqui, podemos pensar que para cada instante de tempo $t$ existe uma função contínua $H_t \colon X \to Y$, essas funções são bem parecidas com $f$ se $t \approx 0$ e bem parecidas com $g$ se $t \approx 1$ (pois $H$ é contínua).</p>
 
         <p class="text-justify"><b>Exemplo 01:</b> se $E$ é um espaço vetorial normado e $f,g \colon X \to E$ são duas aplicações contínuas, então $f$ e $g$ são homotópicas: podemos considerar a homotopia $H(x,t) = (1-t)f(x) + tg(x)$. Esse tipo de homotopia é chamada de homotopia linear. Note aqui que para definirmos a homotopia não fizemos uso da norma de $E$. O que acontece é que estamos utilizando o fato de $E$ ser normado para inserirmos a topologia gerada pela métrica induzida pela norma (ou seja, se $|| \cdot ||$ é a norma de $E$, temos a métrica $d(x,y) = ||x - y||$ e a topologia $\tau = \{A \subset E \colon \forall a \in A, \exists \varepsilon > 0, B_d(a,\varepsilon) \subset A\}$).</b></p>
 
@@ -118,11 +124,11 @@
         <p class="text-justify"><b>Proposição 06:</b> se $f, f' \colon X \to Y$ são homotópicas e $g, g' \colon Y \to Z$ também são, então $g \circ f, g' \circ f' \colon X \to Z$ são homotópicas.</p>
         <p class="text-justify"><i>Demonstração:</i> sejam $H, K$ homotopias entre $f, f'$ e $g,g'$, respectivamente. A função $J \colon X \times [0,1] \to Z$ dada por $J(x,t) = K(H(x,t),t)$ é uma homotopia de $g \circ f$ para $g' \circ f'$. Como $K$ e $H$ são contínuas, $J$ é contínua e além disso temos $J(x,0) = K(H(x,0),0) = K(f(x),0) = g(f(x))$ e $J(x,1) = K(H(x,1),1) = K(f'(x),1) = g'(f'(x))$. Assim, $J$ é de fato uma homotopia entre as duas funções. $\blacksquare$</p>
 
-        <p class="text-justify">Dada $f \colon X \to Y$ contínua, definimos a classe de homotopia $[f]$ de $f$ como sendo o conjunto $\{g \colon f \simeq g\}$. A proposição acima apenas garante que a operação $[g] \circ [f] = [g \circ f]$ está bem definida.</p>
+        <p class="text-justify">Dada $f \colon X \to Y$ contínua, definimos a <span class="def">classe de homotopia</span> $[f]$ de $f$ como sendo o conjunto $\{g \colon f \simeq g\}$. A proposição acima apenas garante que a operação $[g] \circ [f] = [g \circ f]$ está bem definida.</p>
 
         <hr>
         <h5 class="text-center">Tipo de Homotopia</h5>
-        <p>Dizemos que $f \colon X \to Y$ contínua é uma equivalência homotópica se existe $g \colon Y \to X$ também contínua tal que $g \circ f \simeq Id_X$ e $f \circ g \simeq Id_Y$. Diremos que $g$ é a inversa homotópica de $f$ e que $X$ e $Y$ tem o mesmo tipo de homotopia.</p>
+        <p>Dizemos que $f \colon X \to Y$ contínua é uma <span class="def">equivalência homotópica</span> se existe $g \colon Y \to X$ também contínua tal que $g \circ f \simeq Id_X$ e $f \circ g \simeq Id_Y$. Diremos que $g$ é a <span class="def">inversa homotópica</span> de $f$ e que $X$ e $Y$ tem o mesmo <span class="def">tipo de homotopia</span>.</p>
 
         <p class="text-justify"><b>Exemplo 07:</b> todo homeomorfismo é equivalência homotópica, afinal, basta tomar $g = f^{-1}$.</p>
 
@@ -150,12 +156,12 @@
 
         <hr>
         <h5 class="text-center">Espaços Contráteis</h5>
-        <p class="text-justify">Um espaço topológico $X$ diz-se contrátil se, e somente se, tem o tipo de homotopia de um ponto (conjunto unitário).</p>
+        <p class="text-justify">Um espaço topológico $X$ diz-se <span class="def">contrátil</span> se, e somente se, tem o tipo de homotopia de um ponto (conjunto unitário).</p>
 
         <p class="text-justify"><b>Proposição 10:</b> $X$ é contrátil se, e somente se, $Id_X$ é homotópica a uma aplicação constante $X \to X$.</p>
         <p class="text-justify"><i>Demonstração:</i> se $X$ é contrátil então existe uma equivalência homotópica $f \colon X \to \{p\}$. Perceba que $f$ obrigatoriamente é a função $p$ (constante igual a $p$). Agora, se denotarmos por $g \colon \{p\} \to X$ sua inversa homotópica, teremos $(g \circ f)(x) = g(p)$ para todo $x \in X$, portanto $g\circ f$ é constante e por definição de inversa homotópica temos $g \circ f \simeq Id_X$. Agora, se $Id_X \simeq p$, então $Id_X \simeq p \circ Id_X$ e $Id_X \circ p \simeq Id_X$. $\blacksquare$</p>
 
-        <p class="text-justify"><b>Exemplo 11:</b> um subconjunto $X$ de um EVN $E$ é uma estrela de vértice $p$ se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
+        <p class="text-justify"><b>Exemplo 11:</b> um subconjunto $X$ de um EVN $E$ é uma <span class="def">estrela de vértice $p$</span> se contém o segmento de reta $[p,x] = \{y \colon \exists t \in [0,1]$ tal que $y = (1-t)p + tx\}$, $(t \in [0,1])$ para todo $x \in X$. Bom, note que $H(x,t) = (1-t)p + tx$ é uma homotopia entre a função constante $x \mapsto p$ e a identidade em $X$, portanto $X$ é contrátil.</p>
 
         <img class="w-25 rounded mx-auto d-block" src="01/conj-estrela.png" alt="Responsive image">
         <p class="text-center">Exemplo de estrela. Nesse caso, qualquer ponto dentro da área rachurada pode ser um vértice.</p>
@@ -227,11 +233,11 @@
 		<hr>
 		<h5 class="text-center">Retrações</h5>
 
-		<p class="text-justify">Dado um espaço $X$ e $Y \subset X$, uma aplicação contínua $r \colon X \to Y$ é chamada de retração se $r(y) = y$ para todo $y \in Y$. Ou seja, $r$ é uma extensão contínua da aplicação identidade $Id_Y$. Se existe uma retração $r \colon X \to Y$, dizemos que $Y$ é um retrato de $X$.</p>
+		<p class="text-justify">Dado um espaço $X$ e $Y \subset X$, uma aplicação contínua $r \colon X \to Y$ é chamada de <span class="def">retração</span> se $r(y) = y$ para todo $y \in Y$. Ou seja, $r$ é uma extensão contínua da aplicação identidade $Id_Y$. Se existe uma retração $r \colon X \to Y$, dizemos que $Y$ é um <span class="def">retrato</span> de $X$.</p>
 
 		<p class="text-justify"><b>Exemplo 16:</b> a função $r$ dada no <b>Exemplo 09</b> é uma retração.</p>
 
-		<p class="text-justify">Dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$, dizemos que $Y$ é retrato de $V$ em $\mathbb{R}^n$, se existir uma retração $r \colon V \to Y$.</p>
+		<p class="text-justify">Dados $Y, V \subset \mathbb{R}^n$ com $V$ vizinhança de $Y$, dizemos que $Y$ é <span class="def">retrato de $V$ em $\mathbb{R}^n$</span>, se existir uma retração $r \colon V \to Y$.</p>
 
 		<p class="text-justify"><b>Exemplo 17:</b> como vimos no <b>Exemplo 16</b>, $\mathbb{S}^n$ é retrato de $\mathbb{R}^{n+1}\setminus\{0\}$ em $\mathbb{R}^{n+1}$.</p>
 
@@ -243,7 +249,7 @@
         <hr>
         <h5 class="text-center">Extensão de Aplicações</h5>
 
-        <p class="text-justify">Dada $f \colon A \to Y$ uma aplicação contínua, onde $A \subset X$, uma extensão contínua é uma aplicação contínua $F \colon X \to Y$ tal que $F(x) = f(x)$ se $x \in A$. O problema que queremos estudar é: quando que uma aplicação admite extensão contínua? O teorema de Tietze-Urysohn afirma que se $A$ é fechado, $X$ é normal e $Y = \mathbb{R}^n$, então essa extensão existe.</p>
+        <p class="text-justify">O problema que queremos estudar é: quando que uma aplicação admite extensão contínua? O teorema de Tietze-Urysohn afirma que se $A$ é fechado, $X$ é normal e $Y = \mathbb{R}^n$, então essa extensão existe.</p>
 
         <p class="text-justify"><b>Proposição 19:</b> uma aplicação contínua $f \colon \mathbb{S}^n \to Y$ possui extensão contínua $F \colon \mathbb{B}^{n+1} \to Y$ se, e somente se, esta é homotópica a uma constante.</p>
         <p class="text-justify"><i>Demonstração:</i> primeiramente, vamos definir a aplicação contínua $\phi$ que "conifica" o cilindro $\mathbb{S}^n \times [0,1]$, ou seja, $\phi \colon \mathbb{S}^n \times [0,1] \to \mathbb{B}^{n+1}$ dada por $\phi(x,t) = (1-t)x$. Note que $\phi$ é injetiva em $\mathbb{S}^n \times [0,1)$, sobrejetora e contínua. Agora, perceba que o mapa $$\phi' \colon \frac{\mathbb{S}^n \times [0,1]}{\mathbb{S}^n \times \{1\}} \to \mathbb{B}^{n+1}$$ dado por $\phi'(x,t) = (1-t)x$ é bijetor, pois é igual ao mapa $\phi$ em $\mathbb{S}^n \times [0,1)$ e todo o conjunto que impedia $\phi$ de ser injetor agora está colapsado a um único ponto. Além disso, o único ponto que impede $\phi$ restrito à $\mathbb{S}^n \times [0,1)$ de ser sobrejetora é o $0$, que é a imagem do agora colapsado $\mathbb{S}^n \times \{1\}$.</p>

@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../../jumbotron.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+        .def {
+            color: rgb(255, 0, 0);
+        }
+    </style>
   </head>
 
   <body>
@@ -63,7 +69,7 @@
       <div class="container">
         <h5 class="text-center">Fibrados</h5>
 
-        <p class="text-justify">Um fibrado com fibra $F \neq \emptyset$ é uma aplicação contínua $\pi \colon E \to B$ tal que para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança trivializante de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
+        <p class="text-justify">Um <span class="def">fibrado com fibra $F \neq \emptyset$</span> é uma aplicação contínua $\pi \colon E \to B$ tal que para todo $x \in B$ existe uma vizinhança $U_x \subset B$ (chamada vizinhança trivializante de $x$) e um homeomorfismo $\phi_{U_x} \colon U_x \times F \to \pi^{-1}(U_x)$ tal que $\pi_{U_x} = \pi \circ \phi_{U_x}$ é a projeção na primeira coordenada. $E$ é chamado de espaço total do fibrado, $B$ de base do fibrado e $F$ de fibra do fibrado. Vamos nos utilizar, daqui para frente, de um abuso de linguagem e dizer que o espaço total do fibrado é, na verdade, o fibrado (ou seja, fibrado agora passa a ser um espaço que é espaço total de um fibrado).</p>
 
         <p class="text-justify"><b>Exemplo 01:</b> o cilindro e a faixa de Möbius são fibrados com base $\mathbb{S}^1$ e fibra $[0,1]$. Ambos os mapas fibrados são projeções:</p>
 
@@ -79,7 +85,7 @@
 
         <p class="text-justify">Perceba como desta vez temos que o produto $U_x \times F$ é a união de um cópia de $U_x$ em cada intervalo da forma $[n, n+1]$ para $n$ inteiro, portanto $F = \mathbb{Z}$.</p>
 
-        <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o levantamento de um caminho $f \colon [a,b] \to B$ é um caminho $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
+        <p class="text-justify">Se $\pi \colon E \to B$ é um fibrado, o <span class="def">levantamento de um caminho</span> $f \colon [a,b] \to B$ é um caminho $\tilde{f} \colon [a,b] \to E$ tal que $\pi \circ \tilde{f} = f$. Aqui, o nome levantamento vem do fato de que ao representarmos fibrados sempre desenhamos o espaço total em cima da base, portanto o caminho de fato é "levantado".</p>
 
         <p class="text-justify"><b>Proposição 02:</b> dados $\pi \colon E \to B$ um fibrado, $f \colon [a,b] \to B$ um caminho e $t_0 \in E$ tal que $\pi(t_0) = f(a)$, existe ao menos um levantamento $\tilde{f}$ tal que $\tilde{f}(a) = t_0$.</p>
         <p class="text-justify"><i>Demonstração:</i> vamos supor que $\textrm{Im}f \subset U$ para alguma vizinhança trivializante $U$. Considerando agora o mapa $\phi_U \colon U \times F \to \pi^{-1}(U)$, fixe qualquer $y_0 \in F$ e tome $\tilde{f} \colon [a,b] \to E$ dado por $\tilde{f}(x) = \phi_U(a(x), y_0)$ (note que esse é o levantamento "horizontal", que fixa a segunda coordenada).</p>
@@ -92,7 +98,7 @@
         <img class="h-25 rounded mx-auto d-block" src="03/levantamento-geral.png" alt="Responsive image">
         <p class="text-center">Ilustração do caso geral. $\blacksquare$</p>
 
-        <p class="text-justify"><b>Observação 03:</b> como $\phi_U \colon U \times F \to \pi^{-1}(U)$ é homeomorfismo, podemos restringir o mapa para $\phi_U' \colon \{x\} \times F \to \pi^{-1}(\{x\})$ que é também um homeomorfismo. Portanto, a pré-imagem de todo ponto é homeomorfa à fibra e, em particular, não-vazia, portanto todo fibrado é sobrejetor.</p>
+        <p class="text-justify"><b>Observação 03:</b> como $\phi_U \colon U \times F \to \pi^{-1}(U)$ é homeomorfismo, podemos restringir o mapa para $\phi_U' \colon \{x\} \times F \to \pi^{-1}(\{x\})$ que é também um homeomorfismo. Portanto, a pré-imagem de todo ponto é homeomorfa à fibra e, em particular, não-vazia, concluindo que todo fibrado é sobrejetor.</p>
 
         <p class="text-justify"><b>Proposição 04:</b> seja $\pi \colon E \to B$ um fibrado com fibra $F$ conexa por caminhos. Então o morfismo induzido $\pi_\sharp \colon \pi_1(E, e_0) \to \pi_1(B, \pi(e_0))$ é sobrejetivo.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $f \colon [0,1] \to B$ um caminho fechado com ponto base $\pi(e_0)$, como $f(0) = \pi(e_0)$ segue que existe um levantamento de $f$, $\tilde{f} \colon [0,1] \to E$ tal que $\tilde{f}(0) = e_0$. Daí, segue que $\tilde{f}(0) \in \pi^{-1}(\pi(e_0))$ e como $\pi(\tilde{f}(1)) = f(1) = \pi(e_0)$ temos $\tilde{f}(1) \in \pi^{-1}(\pi(e_0))$. Advém do fato de que $\pi^{-1}(\pi(e_0))$ é homeomorfo à fibra, que $\pi^{-1}(\pi(e_0))$ é conexo por caminhos, portanto existe um caminho $\gamma$ que conecta $\tilde{f}(1)$ e $\tilde{f}(0)$. Basta notar agora que $\pi_\sharp([\tilde{f}\gamma]) = [\pi \circ \tilde{f}\gamma] = [(\pi \circ \tilde{f})(\pi \circ \gamma)] = [fe_0] = [f]$. $\blacksquare$</p>
@@ -100,7 +106,7 @@
         <hr>
         <h5 class="text-center">Homeomorfismos locais</h5>
 
-        <p class="text-justify">Uma aplicação contínua $f \colon X \to Y$ é chamada de homeomorfismo local se todo ponto $x \in X$ tem alguma vizinhança aberta $U$ tal que $f(U)$ é aberto em $Y$ e a restrição $f' \colon U \to f(U)$ é um homeomorfismo.</p>
+        <p class="text-justify">Uma aplicação contínua $f \colon X \to Y$ é chamada de <span class="def">homeomorfismo local</span> se todo ponto $x \in X$ tem alguma vizinhança aberta $U$ tal que $f(U)$ é aberto em $Y$ e a restrição $f' \colon U \to f(U)$ é um homeomorfismo.</p>
 
         <p class="text-justify"><b>Exemplo 05:</b> agora vamos apresentar alguns exemplos de homeomorfismos locais:</p>
         <ol>
@@ -130,9 +136,9 @@
 
         <p class="text-justify">Vamos agora responder uma pergunta muito interessante: dado um homeomorfismo local $f \colon X \to Y$, em que condições podemos levantar todo caminho em $Y$ para o espaço $X$ relativamente a $f$?</p>
 
-        <p class="text-justify"><b>Exemplo 09:</b> a aplicação $f \colon ]0, 3\pi[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é um homeomorfismo local, é sobrejetora, mas nem todo caminho em $\mathbb{S}^1$ pode ser levantado. Por exemplo, podemos tomar $\gamma(t) = (\cos 4\pi t, \sin 4\pi t)$.</p>
+        <p class="text-justify"><b>Exemplo 09:</b> a aplicação $f \colon ]0, 3\pi[ \to \mathbb{S}^1$ dada por $f(t) = (\cos t, \sin t)$ é um homeomorfismo local, é sobrejetora, mas nem todo caminho em $\mathbb{S}^1$ pode ser levantado. Por exemplo, $\gamma(t) = (\cos 4\pi t, \sin 4\pi t)$.</p>
 
-        <p class="text-justify">Um recobrimento é um fibrado com fibra discreta. Chamaremos o espaço total de um recobrimento de espaço de recobrimento.</p>
+        <p class="text-justify">Um <span class="def">recobrimento</span> é um fibrado com fibra discreta. Chamaremos o espaço total de um recobrimento de espaço de recobrimento.</p>
 
         <p class="text-justify"><b>Exemplo 10:</b> agora vamos apresentar alguns exemplos de recobrimentos:</p>
         <ol>
@@ -142,12 +148,12 @@
           <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
         </ol>
 
-        <p class="text-justify"><b>Observação 11:</b> uma construção interessante que devemos destacar é a seguinte. Sabemos que $U_x \times F = \bigsqcup_{f \in F} U_x \times \{f\}$ e, como $F$ é discreto, cada um dos $U_x \times \{f\}$ é aberto. Isso será importante na proposição a seguir.</p>
+        <p class="text-justify"><b>Observação 11:</b> uma construção interessante que devemos destacar é a seguinte. Sabemos que $U_x \times F = \bigsqcup_{f \in F} U_x \times \{f\}$ e, como $F$ é discreto, cada um dos $U_x \times \{f\}$ é aberto. Isso será importante na proposição a seguir, pois nos mostra que podemos enxergar a pré-imagem de $U_x$ por $\pi$ como união disjunta de várias cópias de $U_x$.</p>
 
         <p class="text-justify"><b>Proposição 12:</b> recobrimentos são homeomorfismos locais.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $\pi \colon M \to B$ recobrimento e $m \in M$, precisamos criar uma vizinhança de $m$ tal que $\pi$ restrito a ela seja um homeomorfismo e que a imagem dela por $\pi$ seja um aberto de $B$. Tome $U_{\pi(m)}$ vizinhança trivializante de $\pi(m)$ em $B$. Sabemos que $\pi^{-1}(U_{\pi(m)})$ é uma união disjunta de $\mid F \mid$ cópias de $U_{\pi(m)}$. Como $m$ pertece à pré-imagem, pertence também a uma dessas cópias, que será a vizinhança na qual a restrição de $\pi$ se torna um homeomorfismo com a imagem. $\blacksquare$</p>
 
-        <p class="text-justify">Um conceito que será importante para nós é o de recobrimento*. Um recobrimento* é um mapa $\pi \colon X \to Y$ tal que para todo $y \in Y$ existe uma vizinhança $V$ de $y$ e uma família de abertos $\{U_i\}$ em $X$ tais que $\pi^{-1}(V) = \bigsqcup_i U_i$ e $\pi \colon U_i \to V$ é homeomorfismo. Chamaremos $V$ de vizinhança trivializante* de $y$, $X$ de espaço de recobrimento*, $Y$ de base* e cada $\pi^{-1}(x)$ de fibra* de $x$.</p>
+        <p class="text-justify">Um conceito que será importante para nós é o de recobrimento*. Um <span class="def">recobrimento*</span> é um mapa $\pi \colon X \to Y$ tal que para todo $y \in Y$ existe uma vizinhança $V$ de $y$ e uma família de abertos $\{U_i\}$ em $X$ tais que $\pi^{-1}(V) = \bigsqcup_i U_i$ e $\pi \colon U_i \to V$ é homeomorfismo. Chamaremos $V$ de vizinhança trivializante* de $y$, $X$ de espaço de recobrimento*, $Y$ de base* e cada $\pi^{-1}(x)$ de fibra* de $x$.</p>
 
         <p class="text-justify"><b>Proposição 13:</b> recobrimentos* são homeomorfismos locais.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, tome $V$ vizinhança trivializante de $\pi(x)$. Sabemos que existe uma família $\{U_i\}$ de abertos de $X$ homeomorfos à $V$ por $\pi$ com $\pi^{-1}(V) = \bigsqcup_i U_i$ e assim $x \in U_k$ para algum $k$. $\blacksquare$</p>
@@ -173,7 +179,7 @@
         <p class="text-justify"><b>Proposição 17:</b> dados $\pi \colon X \to Y$ um recobrimento, $y \in Y$ e $\gamma$ um caminho de $Y$ começando em $y$, para todo $x \in \pi^{-1}(y)$ existe um único levantamento de $\gamma$ começando em $x$.</p>
         <p class="text-justify"><i>Demonstração:</i> pela <b>Proposição 02</b> temos a existência. Dados $\gamma_1$ e $\gamma_2$ dois levantamentos de $\gamma$ começando em $x$, se $\gamma$ está em uma vizinhança trivializante temos que $\pi$ é um homeomorfismo nesta vizinhança e como $\pi \circ \gamma_1 = \pi \circ \gamma_2$ segue que $\gamma_1 = \gamma_2$. Se $\gamma$ não éstá contido em uma vizinhança trivializante, a unicidade continua valendo pois podemos repetir o argumento anterior para cada restrição construída na demonstração de existência. Como cada uma das restrições será única, o levantamento tem que ser também. $\blacksquare$</p>
 
-        <p class="text-justify"><b>Proposição 18:</b> dados $\pi \colon X \to Y$ um recobrimento e $H \colon [0,1]^2 \to Y$ uma homotopia de caminhos, para cada $x_{0,0} \in \pi^{-1}(H(0,0))$ existe um levantamento $H'$ de $H$ com respeito a $\pi$ tal que $H'(0,0) = x_{0,0}$.</p>
+        <p class="text-justify"><b>Proposição 18:</b> dados $\pi \colon X \to Y$ um recobrimento e $H \colon [0,1]^2 \to Y$ uma homotopia de caminhos, para cada $x_{0,0} \in \pi^{-1}(H_0(0))$ existe um levantamento $H'$ de $H$ com respeito a $\pi$ tal que $H'(0,0) = x_{0,0}$.</p>
         <p class="text-justify"><i>Demonstração:</i> seja $\{V_i\}$ uma cobertura de $\textrm{Im}H$ por abertos trivializantes (podemos por exemplo tomar um aberto trivializante para cada ponto da imagem), temos que $\{H^{-1}(V_i)\}$ é uma cobertura de $[0,1]^2$ e como este é um espaço métrico compacto, segue que existe um número de Lebesgue $d$ dessa cobertura, ou seja, um número $d$ tal que todo conjunto com diâmetro $d$ está contido num aberto dessa. Queremos agora construir um $n$ inteiro positivo tal que qualquer quadrado de lado $1/n$ esteja contido em algum aberto da cobertura. Para isso, precisamos incluir estes quadrados em conjuntos com diâmetro $d$. Esses conjuntos podem ser, em particular, bolas com raio $d/2$, portanto basta escolhermos $n$ tal que $\sqrt{2}/n < d$.</p>
 
         <p class="text-justify">Defina $Q_{i,j} = \{(x,t) \colon i/n \leq x \leq (i+1)/n, j/n \leq t \leq (j+1)/n\}$ (com $0 \leq i,j \leq n - 1$). Note que $Q_{i,j}$ é um quadrado de lado $1/n$, portanto está contido em um aberto $H^{-1}(V_{k})$ da nossa cobertura. Para cada $Q_{i,j}$ fixe um desses $V_k$ que satisfazem $Q_{i,j} \subset H^{-1}(V_k)$, vamos denotá-lo por $V_{i,j}$. Por fim, uma última consideração a se fazer é a de que $\{Q_{i,j}\}$ é uma cobertura para $[0,1]^2$.</p>

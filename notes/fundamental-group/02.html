@@ -26,6 +26,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="../../jumbotron.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+        .def {
+            color: rgb(255, 0, 0);
+        }
+    </style>
   </head>
 
   <body>
@@ -63,8 +69,8 @@
       <div class="container">
         <h5 class="text-center">Caminhos</h5>
         <p class="text-justify">Por mais que a noção de caminho já tenha sido informalmente utilizada no capítulo anterior, vamos agora entender precisamente o que são caminhos e como se comportam sob várias circustâncias.</p>
-        <p class="text-justify">Dado um espaço topológico $X$, um caminho em $X$ é uma aplicação contínua $f \colon [a,b] \to X$ com $a,b \in \mathbb{R}$. Note que a escolha de $a$ e $b$ não fazem muita diferença para a construção do caminho pois quaisquer dois intervalos fechados são homeomorfos, portanto iremos adotar $a = 0$ e $b = 1$ para a grande maioria dos exemplos. Além disso, como $[0,1]$ é contrátil, todo caminho é homotópico a uma constante.</p>
-        <p class="text-justify">Dizemos que dois caminhos $f,g \colon [0,1] \to X$ são homotópicos se $f \simeq g$ $(rel.$ $\{0,1\})$, ou seja, se existe uma aplicação contínua $H \colon [0,1]^2 \to X$ tal que $H(x,0) = f(x)$, $H(x,1) = g(x)$, $H(0,t) = f(0) = g(0)$ e $H(1,t) = f(1) = g(1)$. Nesse caso escreveremos $f \cong g$.</p>
+        <p class="text-justify">Dado um espaço topológico $X$, um <span class="def">caminho</span> em $X$ é uma aplicação contínua $f \colon [a,b] \to X$ com $a,b \in \mathbb{R}$. Note que a escolha de $a$ e $b$ não fazem muita diferença para a construção do caminho pois quaisquer dois intervalos fechados são homeomorfos, portanto iremos adotar $a = 0$ e $b = 1$ para a grande maioria dos exemplos. Além disso, como $[0,1]$ é contrátil, todo caminho é homotópico a uma constante.</p>
+        <p class="text-justify">Dizemos que dois caminhos $f,g \colon [0,1] \to X$ são <span class="def">homotópicos</span> se $f \simeq g$ $(rel.$ $\{0,1\})$, ou seja, se existe uma aplicação contínua $H \colon [0,1]^2 \to X$ tal que $H(x,0) = f(x)$, $H(x,1) = g(x)$, $H(0,t) = f(0) = g(0)$ e $H(1,t) = f(1) = g(1)$. Nesse caso escreveremos $f \cong g$.</p>
 
         <p class="text-justify"><b>Proposição 01:</b> $\cong$ é uma relação de equivalência. Escreveremos a classe de equivalência de um caminho $f$ como $[f]$.</p>
         <p class="text-justify"><i>Demonstração:</i></p>
@@ -109,7 +115,7 @@
         <img class="w-25 rounded mx-auto d-block" src="02/produto-caminhos.png" alt="Responsive image">
         <p class="text-center">Essa é a demonstração.</p>
 
-        <p class="text-justify">Além de podermos multiplicar dois caminhos, podemos também tomar caminhos inversos: dado $f \colon [0,1] \to X$ um caminho, defina $f^{-1} \colon [0,1] \to X$ como $f(t) = f(1-t)$. Dada essa definição, perceba que:
+        <p class="text-justify">Além de podermos multiplicar dois caminhos, podemos também tomar <span class="def">caminhos inversos</span>: dado $f \colon [0,1] \to X$ um caminho, defina $f^{-1} \colon [0,1] \to X$ como $f(t) = f(1-t)$. Dada essa definição, perceba que:
         $$ff^{-1} = \left\{
             \begin{array}{ll}
                 f(2t) & \mbox{se } 0 \leq t \leq 1/2 \\
@@ -166,9 +172,9 @@
             \end{array}
         \right.$$ é uma homotopia entre $ab$ e $a'b'$. Além disso, $G \colon [0,1] \to X$ dada por $G(x,t) = H(1-x,t)$ é um homotopia entre $a^{-1}$ e $a'^{-1}$. $\blacksquare$</p>
 
-        Por fim, vamos agora finalmente entender como se dá a estrutura de grupo procurada: fixado $x \in X$, escrevemos $\pi_1(x, X)$ para representar o grupo fundamental de $X$ centrado em $x$. Esse grupo é simplesmente o conjunto de todas as classes de homotopia de caminhos fechados em $x$, munido da operação definida na <b>Proposição 03</b>.</p>
+        Por fim, vamos agora finalmente entender como se dá a estrutura de grupo procurada: fixado $x \in X$, escrevemos $\pi_1(x, X)$ para representar o <span class="def">grupo fundamental de $X$ centrado em $x$</span>. Esse grupo é o conjunto de todas as classes de homotopia de caminhos fechados em $x$, munido da operação definida na <b>Proposição 03</b>.</p>
 
-        <p class="text-justify"><b>Teorema 04:</b> (por mais que o resultado seja só provar que um conjunto munido de uma operação é um grupo, este é um grupo importante o suficiente pra que essa demonstração ganhe de mim o título de teorema) fixado $x \in X$, o conjunto $\pi_1(X,x)$ munido da operação definida na <b>Proposição 03</b> é um grupo.</p>
+        <p class="text-justify"><b>Teorema 04:</b> fixado $x \in X$, o conjunto $\pi_1(X,x)$ munido da operação definida na <b>Proposição 03</b> é um grupo.</p>
         <p class="text-justify"><i>Demonstração:</i> como já vimos, a operação $[a][b] = [ab]$ está bem definida quando $a$ termina onde $b$ começa. Bom, como ambos são fechados em $x$, segue que $a(1) = x = b(0)$. Além disso, sabemos que $aa^{-1} \cong a(0) = x = a(1) \cong a^{-1}a$ e $ax \cong a \cong xa$, o que mostra que o mapa constante igual a $x$ é uma identidade em $\pi_1(X, x)$. Por fim, já mostramos que para quaiquer $f,g,h$ caminhos fechados em $x$, $f(gh) \cong (fg)h$ e portanto $[f]([g][h]) = ([f][g])[h]$. $\blacksquare$</p>
 
         <p class="text-justify">Agora que já conhecemos o grupo fundamental, podemos nos perguntar: quanta informação o grupo fundamental de um espaço dá sobre ele? Melhor ainda, O QUE É o grupo fundamental de um espaço? Note que a nossa definição depende de um ponto fixado $x \in X$ e assim para cada elemento do espaço podemos definir um grupo fundamental, portanto não podemos falar de grupo fundamental de um espaço, certo?</p>
@@ -184,7 +190,7 @@
         <hr>
         <h5 class="text-center">Homotopia Livre de Caminhos Fechados</h5>
 
-        <p class="text-justify">Dados dois caminhos fechados $a, b \colon [0,1] \to X$, diremos que $a$ e $b$ são livremente homotópicos se existe uma homotopia $H$ entre $a$ e $b$ tal que $H(0,t) = H(1,t)$ para todo $t \in [0,1]$. Note que isso significa que cada função intermediária $x \mapsto H(x,t)$ é também um caminho fechado.</p>
+        <p class="text-justify">Dados dois caminhos fechados $a, b \colon [0,1] \to X$, diremos que $a$ e $b$ são <span class="def">livremente homotópicos</span> se existe uma homotopia $H$ entre $a$ e $b$ tal que $H(0,t) = H(1,t)$ para todo $t \in [0,1]$. Note que isso significa que cada função intermediária $x \mapsto H(x,t)$ é também um caminho fechado.</p>
         
         <p class="text-justify"><b>Proposição 07:</b> homotopia livre é uma relação de equivalência.</p>
         <p class="text-justify"><i>Demonstração:</i> basta checar que as homotopias definidas na <b>Proposição 01</b> satisfazem a condição adicional imposta na definição de homotopia livre de caminhos fechados. $\blacksquare$</p>
@@ -229,7 +235,7 @@
                 f(a(2t)) & \mbox{se } 0 \leq t \leq 1/2 \\
                 f(b(2t-1)) & \mbox{se } 1/2 \leq t \leq 1
             \end{array}
-        \right. = (f \circ a)(f \circ b)(t),$$ portanto $f_\sharp$ é morfismo de grupos. Chamaremos de $f_\sharp$ o morfismo de grupos induzido por $f$.</p>
+        \right. = (f \circ a)(f \circ b)(t),$$ portanto $f_\sharp$ é morfismo de grupos. Chamaremos de $f_\sharp$ o <span class="def">morfismo de grupos induzido por $f$</span>.</p>
 
         <p class="text-justify"><b>Observação 12:</b> Vamos fazer algumas observações sobre morfismos induzidos:</p>
         <ol>
@@ -248,12 +254,12 @@
         <p class="text-justify">Por fim, note que as aplicações $\Gamma \colon \pi_1(X, x_0) \to \pi_1(X, g(y_0))$ dada por $\Gamma([a]) = \gamma [a] \gamma^{-1}$ e $\Delta \colon \pi_1(Y, y_0) \to \pi_1(Y,f(g(y_0)))$ dada por $\Delta([b]) = \delta [b] \delta^{-1}$ são isomorfismos. Portanto do parágrafo anterior concluímos que $g_\sharp$ é também um isomorfismo. Daí, segue que $f_\sharp = (g_\sharp)^{-1} \circ \Gamma$ é isomorfismo.</p>
 
         <p class="text-justify"><b>Corolário 15:</b> se $X$ é contrátil, $\pi_1(X)$ é trivial.</p>
-        <p class="text-justify"><i>Demonstração:</i> note que o grupo fundamental de $\{x\}$ qualquer que seja $x$ é trivial, pois o único caminho possível é o constante igual a $x$. Além disso, claramente $\{x\}$ é contrátil.</p>
+        <p class="text-justify"><i>Demonstração:</i> note que o grupo fundamental de $\{x\}$, qualquer que seja $x$, é trivial. Afinal, o único caminho possível é o constante igual a $x$. Além disso, claramente $\{x\}$ é contrátil.</p>
 
         <hr>
         <h5 class="text-center">Espaços Simplesmente Conexos</h5>
 
-        <p class="text-justify">Diremos que $X$ um espaço conexo por caminhos é simplesmente conexo se $\pi_1(X)$ é trivial. Em outras palavras, todo caminho fechado $a \colon [0,1] \to X$ satisfaz $a \cong a(0)$. Outras formulações para esta definição são equivalentes, como veremos abaixo.</p>
+        <p class="text-justify">Diremos que $X$ um espaço conexo por caminhos é <span class="def">simplesmente conexo</span> se $\pi_1(X)$ é trivial. Em outras palavras, todo caminho fechado $a \colon [0,1] \to X$ satisfaz $a \cong a(0)$. Outras formulações para esta definição são equivalentes, como veremos abaixo.</p>
 
         <p class="text-justify"><b>Observação 16:</b> aqui vai uma observação importante para a próxima proposição: existe um paralelo entre aplicações $\mathbb{S}^1 \to X$ e caminhos fechados em $X$. O paralelo é: eles são a mesma coisa. Dado $f \colon [0,1] \to X$ um caminho fechado, podemos criar $f' \colon \frac{[0,1]}{\{0,1\}} \to X$ o mapa que "desce $f$ para o quociente". Essa mapa nada mais é que $f'([x]) = f(x)$. Note que este está bem definido, pois a única classe com mais de um representante é $[0]$ e esse outro representante é $1$ (e $f(0) = f(1)$ por definição de caminho fechado). Perceba também que esse mapa é contínuo pela propriedade universal do quociente: dada a projeção $\pi \colon [0,1] \to \frac{[0,1]}{\{0,1\}}$ temos que $f' \circ \pi = f$ e como $f$ é contínua, segue que $f'$ é contínua. Por fim basta notarmos que esse quociente é homeomorfo à $\mathbb{S}^1$ pelo mapa $\phi([t]) = (\cos(2\pi t), \sin(2\pi t))$ (perceba que $\cos(2\pi)$ $=$ $\cos(0)$ e $\sin(2\pi)$ $=$ $\sin(0)$ e assim $\phi$ está bem definido no quociente. Além disso, é homeomorfismo pois é bijeção, contínua e com domínio compacto). Assim, temos o mapa $f_{\mathbb{S}^1} \colon \mathbb{S}^1 \to X$ dado por $f_{\mathbb{S}^1} = f' \circ \phi^{-1}$.</p>
         <p class="text-justify">Agora, dada $f \colon \mathbb{S}^1 \to X$ uma aplicação contínua, basta criar o mapa $f_{[0,1]} \colon [0,1] \to X$ dado por $f_{[0,1]} = f \circ \varphi$ onde $\varphi \colon [0,1] \to \mathbb{S}^1$ é o mapa $\phi$, mas sem identificar o bordo do intervalo: $\varphi(t) = (\cos(2\pi t), \sin(2\pi t))$. Note que $f_{[0,1]}$ é um caminho fechado, pois $(f \circ \varphi)(0) = f(1,0)$ e $(f \circ \varphi)(1) = f(1,0)$. A parte interessante é que essas noções são inversas uma da outra, ou seja, $(f_{[0,1]})_{\mathbb{S}^1} = f$. Isso acontece pois se $x \neq (1,0)$ sabemos que $\phi^{-1}(x) \subset ]0,1[$ e assim se $v$ é o único representante de $\phi^{-1}(x)$ temos: $$f_{[0,1]}'(\phi^{-1}(x)) = f_{[0,1]}(v) = f(\varphi(v)) = f(x).$$ Além disso: $$f_{[0,1]}'(\phi^{-1}(1,0)) = f_{[0,1]}'([0]) = f_{[0,1]}(0) = f(\varphi(0)) = f(1,0).$$</p>
@@ -317,7 +323,7 @@
         <hr>
         <h5 class="text-center">Grupos Topológicos</h5>
 
-        <p class="text-justify">Um grupo $G$ é dito topológico se é equipado com uma topologia que faz com que os mapas $(x,y) \mapsto x \cdot y$ e $x \mapsto x^{-1}$ sejam contínuos.</p>
+        <p class="text-justify">Um grupo $G$ é dito <span class="def">topológico</span> se é equipado com uma topologia que faz com que os mapas $(x,y) \mapsto x \cdot y$ e $x \mapsto x^{-1}$ sejam contínuos.</p>
 
         <p class="text-justify"><b>Exemplo 23:</b> o grupo $GL(d)$ das matrizes $d \times d$ ($d \geq 2$) invertíveis e com entradas reais é um grupo (com o produto de matrizes) topológico. Podemos imaginar que matrizes de $GL(d)$ são elementos de $\mathbb{R}^{d^2}$ e portanto este grupo vem equipado com a topologia de subespaço e essa topologia deixa as aplicações pedidas contínuas. Temos que $GL(d)$ não é abeliano.</p>
 
