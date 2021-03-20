@@ -160,7 +160,26 @@
 
         <p class="text-justify">Um recobrimento $\pi \colon X \to Y$ é dito universal se, para cada $y \in Y$ e cada par de elementos $x, x' \in \pi^{-1}(y)$ existe uma transformação deck $f$ tal que $f(x) = x'$.</p>
 
-        <p class="text-justify"><b>Exemplo 13:</b> o recobrimento $\pi \colon \mathbb{R} \to \mathbb{S}^1$ dado por $\pi(t) = (\cos{t}, \sin{t}) é normal, pois dados $x, y \in \mathbb{R}$ temos que $f(t) = $</p>
+        <p class="text-justify"><b>Exemplo 13:</b> o recobrimento $\pi \colon \mathbb{R} \to \mathbb{S}^1$ dado por $\pi(t) = (\cos{t}, \sin{t})$ é normal, pois dados $x \in \mathbb{S}^1$ e $y, z \in \pi^{-1}(x)$, podemos definir $f(t) = t - y + z$. Note que $f(y) = z$, $f$ tem inversa $g(t) = t + y - z$ e ambas são contínuas. Mais ainda, $\pi(f(t)) = \pi(t - y + z) = \pi(t)$ pois como $y,z \in \pi^{-1}(x)$ temos que $|y - z| = 2k\pi$ para algum $k$ inteiro.</p>
+
+        <p class="text-justify">Recobrimentos normais podem ser chamados de <span class="def">recobrimentos regulares</span>. O nome recobrimento normal é justificado majoritariamente pela correspondência de Galois.</p>
+
+        <hr>
+        <h5 class="text-center">Correspondência de Galois</h5>
+
+        <p class="text-justify">Na teoria de corpos, a correspondência de Galois traduz problemas de extensões de corpos para problemas sobre grupos. Mais especificamente, dado uma extensão $E/F$ de corpos, podemos achar seu grupo de Galois $\textrm{Gal}(E/F)$. A correspondência diz que os corpos intermediários desta extensão, ou seja, corpos $K$ tais que $F \subset K \subset E$ estão em correspondência direta com os subgrupos de $\textrm{Gal}(E/F)$.</p>
+
+        <p class="text-justify"><b>Proposição 14:</b> dado um recobrimento universal $\pi \colon X \to Y$ e um outro recobrimento $\sigma \colon X' \to Y$ com $X'$ conexo por caminhos e localmente conexo por caminhos, existe um recobrimento $\lambda \colon X \to X'$. Diremos que esse recobrimento $\sigma$ é um <span class="def">recobrimento intermediário</span> de $\pi$.</p>
+        <p class="text-justify"><i>Demonstração:</i> $\blacksquare$</p>
+
+        <p class="text-justify">Vamos agora entender o paralelo da correspondêncoa de Galois para corpos com a correspondência de Galois para recobrimentos. Dado $\pi \colon X \to Y$ um recobrimento, defina $\textrm{Gal}(X/Y)$ por $\textrm{Deck}(\pi)$. Se $\pi$ é universal, dado um recobrimento intermediário $\sigma \colon X' \to Y$ de $\pi$, a correspondência de Galois para recobrimentos associa a esse recobrimento o grupo $\textrm{Gal}(X/X')$. Note que $\textrm{Gal}(X/X') \subset \textrm{Gal}(X/Y)$. A correspondência diz justamente que $\textrm{Gal}(X/X')$ é normal em $\textrm{Gal}(X/Y)$ se, e somente se, $\sigma$ é normal. Mais do que isso, $\textrm{Gal}(X'/Y)$ é isomorfo a $\textrm{Gal}(X/Y) / \textrm{Gal}(X/X')$. A notação de grupo de galois acabará por aqui, pois esta foi introduzida apenas para criarmos o paralelo entre a correspondência para corpos e para recobrimentos.</p>
+
+        <p class="text-justify"><b>Teorema 15:</b> a correspondência de Galois é verdade.</p>
+        <p class="text-justify"><i>Demonstração:</i> $\blacksquare$</p>
+
+        <p class="text-justify">A pergunta que fica é, para que serve a correspondência de Galois? A resposta é simples: recobrimentos tem uma função muito interessante, que é a de ajudar com o cálculo de grupos fundamentais. A correspondência é a principal ferramenta para que esse cálculo seja feito.</p>
+
+        <p class="text-justify"></p>
 
       </div> <!-- /container -->
     </main>
