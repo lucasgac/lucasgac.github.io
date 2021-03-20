@@ -178,7 +178,7 @@
 
         <p class="text-justify">Seja agora $V$ uma componente conexa por caminhos de $\lambda^{-1}(V')$. Vamos provar que $V = V_i$ para algum $i$. Pela inclusão anterior sabemos que $V \subset V_i$ para algum $i$, pois cada $V_i$ é uma componente conexa por caminhos de $\pi^{-1}(U)$. Dado $b \in V_i$, perceba que um caminho $\gamma$ ligando $x \in V$ em $b$ é levado para um caminho ligando $x' \in \sigma^{-1}(\pi(x))$ em $\lambda(b) \in V'$, assim $b \in \lambda^{-1}(V')$ e portanto $V_i \subset \lambda^{-1}(V')$. Como $V_i$ é conexo por caminhos e $V$ é uma componente conexa de $\lambda^{-1}(V')$, devemos ter $V_i = V$. Por fim, como $\pi|_{V_i}$ e $\sigma|_{V'}$ são homeomorfismos, temos que $\lambda|_V = \pi_{V} \circ (\sigma|_{V'})^{-1}$ é homeomorfismo. $\blacksquare$</p>
 
-        <p class="text-justify">Note que na demonstração acima utilizamos, sem escrever explicitamente, que algumas vizinhanças eram conexas por caminhos. Isso será feito com mais frequência daqui para frente, pois a grande maioria dos espaços bons tem propriedades locais como esta.</p>
+        <p class="text-justify">Note que na demonstração acima utilizamos que algumas vizinhanças eram conexas por caminhos sem garantir explicitamente que elas existiam. Isso será feito com mais frequência daqui para frente, pois a grande maioria dos espaços bons tem propriedades locais.</p>
 
         <p class="text-justify">Dado $\pi \colon X \to Y$ um recobrimento universal e $\sigma \colon X' \to Y$ um recobrimento não necessariamente universal, temos que para cada espaço podemos associar um grupo da seguinte maneira:</p>
 
@@ -186,7 +186,21 @@
         <p class="text-center">$\lambda$ é o recobrimento que vem da <b>Proposição 14</b>.</p>
 
         <p class="text-justify"><b>Lema 15:</b> $\textrm{Deck}(X/X') \subset \textrm{Deck}(X/Y)$.</p>
-        <p class="text-justify"><i>Demonstração:</i> dado $f \in \textrm{Deck}(X/X')$, temos que $\lambda \circ f = \lambda$ e compondo com $\sigma$ de ambos os lados temos $\sigma \circ \lambda f = \sigma \circ \lambda$, assim $\pi \circ f = \pi$ e portanto $f \in \textrm{Deck}(X/Y)$. $\blacksquare$</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $f \in \textrm{Deck}(X/X')$, temos que $\lambda \circ f = \lambda$ e compondo com $\sigma$ de ambos os lados temos $\sigma \circ \lambda \circ f = \sigma \circ \lambda$, assim $\pi \circ f = \pi$ e portanto $f \in \textrm{Deck}(X/Y)$. $\blacksquare$</p>
+
+        <p class="text-justify">Além disso, temos também "a volta": dado um subgrupo $H$ de $\textrm{Deck}(X/Y)$, podemos provar que $X \to X/H$ é um recobrimento. Mais ainda, podemos definir o mapa $X/H \to Y$ dado por $Hx \mapsto \pi(x)$, onde $Hx$ é o conjunto $\{hx \colon h \in H\}$ ($hx$ é a imagem de $(h,x)$ pela ação de $H$ em $X$).</p>
+
+        <p class="text-justify"><b>Lema 16:</b> a ação de $\textrm{Deck}(X/Y)$ em $X$ é uma <span class="def">ação de recobrimento</span>, ou seja, todo ponto $x \in X$ possui uma vizinhança $V$ tal que $g(V) \cap V \neq \emptyset$ implica que $g = Id_X$.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, tome $U$ vizinhança de $\pi(x)$ trivializante e conexa por caminhos. Seja $V$ componente conexa por caminhos de $\pi^{-1}(U) = \bigsqcup V_i$ com $x \in V$. Como $U$ é conexa por caminhos, cada um dos $V_i$ é uma componente conexa por caminhos, assim $V = V_i$ para algum $i$ e portanto $V$ é homeomorfo à $U$.</p>
+
+        <p class="text-justify">Vamos provar agora que se $g(V) \cap V \neq \emptyset$, então $g(V) = V$. Isso vem do fato de $\pi \colon g(V) \to U$ ser um homeomorfismo, já que $\pi|_{g(V)} = \pi_{V} \circ g^{-1}$ (afinal, $\pi|_{V}(g^{-1}(g(v))) = \pi|_V(v) = \pi(v)$ e $\pi|_{g(V)}(g(v)) = \pi(g(v)) = \pi(v)$). A partir daí, temos que $g(V)$ é conexa por caminhos.</p>
+
+        <p class="text-justify">Dado $v \in g(V) \cap V$, sejam $e \in V$ e $\gamma$ o caminho ligando $v$ em $e$. Note que $\pi \circ \gamma$ é um caminho começando em $\pi(v)$. Podemos então levantar esse caminho para um caminho inteiramente contido em $g(V)$, ainda começando em $v$, ou seja, este caminho irá terminar num elemento $g(e') \in g(V)$. Porém, pela unicidade do levantamento de caminhos temos que $g(e') = e$ e assim $e \in g(V)$ e portanto $V \subset g(V)$.</p>
+
+        <p class="text-justify">De maneira análoga podemos provar que $V \subset g^{-1}(V)$ e assim temos que $g(V) \subset V$, o que significa que $g(V) = V$. Basta então mostrarmos que $g$ possui um ponto fixo, pois como transformações deck estão determinadas pela imagem de um ponto, teremos $g = Id_X$. Isso, porém, é imediato, já que $g(v) = v$, afinal ambos são pontos de $V$ que estão satisfazem $\pi(g(v)) = \pi(v)$. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 17:</b> se $H$ age por recobrimento em $X$, então o mapa quociente $\pi \colon X \to X/H$ é um recobrimento.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, seja $U$ vizinhança de $x$ que satisfaz a coindição da ação de recobrimento.</p>
 
       </div> <!-- /container -->
     </main>
