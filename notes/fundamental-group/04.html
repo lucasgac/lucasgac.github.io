@@ -188,7 +188,7 @@
         <p class="text-justify"><b>Lema 15:</b> $\textrm{Deck}(X/X') \subset \textrm{Deck}(X/Y)$.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $f \in \textrm{Deck}(X/X')$, temos que $\lambda \circ f = \lambda$ e compondo com $\sigma$ de ambos os lados temos $\sigma \circ \lambda \circ f = \sigma \circ \lambda$, assim $\pi \circ f = \pi$ e portanto $f \in \textrm{Deck}(X/Y)$. $\blacksquare$</p>
 
-        <p class="text-justify">Além disso, temos também "a volta": dado um subgrupo $H$ de $\textrm{Deck}(X/Y)$, podemos provar que $X \to X/H$ é um recobrimento. Mais ainda, podemos definir o mapa $X/H \to Y$ dado por $Hx \mapsto \pi(x)$, onde $Hx$ é o conjunto $\{hx \colon h \in H\}$ ($hx$ é a imagem de $(h,x)$ pela ação de $H$ em $X$).</p>
+        <p class="text-justify">Além disso, temos também "a volta": dado um subgrupo $H$ de $\textrm{Deck}(X/Y)$, podemos provar que $X \to X/H$ é um recobrimento. Mais ainda, podemos definir o mapa $X/H \to Y$ dado por $Hx \mapsto \pi(x)$, onde $Hx$ é o conjunto $\{hx \colon h \in H\}$ ($hx$ é a imagem de $(h,x)$ pela ação de $H$ em $X$). Esse mapa também será um recobrimento.</p>
 
         <p class="text-justify"><b>Lema 16:</b> a ação de $\textrm{Deck}(X/Y)$ em $X$ é uma <span class="def">ação de recobrimento</span>, ou seja, todo ponto $x \in X$ possui uma vizinhança $V$ tal que $g(V) \cap V \neq \emptyset$ implica que $g = Id_X$.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, tome $U$ vizinhança de $\pi(x)$ trivializante e conexa por caminhos. Seja $V$ componente conexa por caminhos de $\pi^{-1}(U) = \bigsqcup V_i$ com $x \in V$. Como $U$ é conexa por caminhos, cada um dos $V_i$ é uma componente conexa por caminhos, assim $V = V_i$ para algum $i$ e portanto $V$ é homeomorfo à $U$.</p>
@@ -199,8 +199,17 @@
 
         <p class="text-justify">De maneira análoga podemos provar que $V \subset g^{-1}(V)$ e assim temos que $g(V) \subset V$, o que significa que $g(V) = V$. Basta então mostrarmos que $g$ possui um ponto fixo, pois como transformações deck estão determinadas pela imagem de um ponto, teremos $g = Id_X$. Isso, porém, é imediato, já que $g(v) = v$, afinal ambos são pontos de $V$ que estão satisfazem $\pi(g(v)) = \pi(v)$. $\blacksquare$</p>
 
-        <p class="text-justify"><b>Lema 17:</b> se $H$ age por recobrimento em $X$, então o mapa quociente $\pi \colon X \to X/H$ é um recobrimento.</p>
-        <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, seja $U$ vizinhança de $x$ que satisfaz a coindição da ação de recobrimento.</p>
+        <p class="text-justify"><b>Lema 17:</b> se $H$ é um grupo de isomorfismos que age por recobrimento em $X$, então o mapa quociente $\pi \colon X \to X/H$ é um recobrimento.</p>
+        <p class="text-justify"><i>Demonstração:</i> primeiramente, vamos provar que a apliação $\pi$ é aberta. Note que dado $W$ um aberto temos $\pi^{-1}(\pi(W)) = \bigcup_g g(W)$ e na topologia quociente temos que $V$ é aberto em $X/H$ se, e somente se, $\pi^{-1}(V)$ é aberto em $X$. A igualdade não é difícil de entender, já que se $c \in \pi^{-1}(\pi(W))$ temos que $\pi(c) = \pi(w)$ para algum $w \in W$, o que significa que $Hc = Hw$ e portanto existe $h \in H$ com $c = hw$. Daí segue que $c \in hW \subset \bigcup_g g(W)$. Para a volta, se $g(w) \in g(W)$ temos $\pi(g(w)) = Hg(w) = Hw = \pi(w)$ e portanto $g(w) \in \pi^{-1}(\pi(W))$.</p>
+
+        <p class="text-justify">Tome $[x]$ em $X/H$. Seja $W$ vizinhança de $x$ que satisfaz a condição da ação de recobrimento. Temos que $\pi(W)$ é aberto e $\pi^{-1}(\pi(W)) = \bigcup_g g(W)$. Porém, podemos escrever $\bigcup_g g(W) = \bigsqcup_g g(W)$, pois cada um dos $g(W)$ é disjunto. Basta mostrarmos agora que o mapa $\pi \colon g(W) \to \pi(g(W))$é um homeomorfismo para todo $g$. Como $\pi$ é contínua e aberta, basta mostrarmos que o mapa é uma bijeção.</p>
+
+        <p class="text-justify">Sejam $g(w_1), g(w_2) \in g(W)$ tais que $\pi(g(w_1)) = \pi(g(w_2))$. Temos que $\pi(w_1) = \pi(w_2)$ e portanto $Hw_1 = Hw_2$ e assim $w_1 = hw_2$ para algum $h$. Porém, isso mostra que $w_1 \in W \cap h(W)$ e assim $h = Id_X$ e portanto $w_1 = w_2$.</p>
+
+        <p class="text-justify">Para a sobrejeção, basta notarmos que dado $[x] \in \pi(g(W))$ existe $g(w) \in g(W)$ com $\pi(g(w)) = [x]$ e portanto $\pi(w) = [x]$. $\blacksquare$</p>
+
+        <p class="text-justify"><b>Lema 18:</b> o mapa $X/H \to Y$ dado por $Hx \mapsto \pi(x)$ é um recobrimento.</p>
+        <p class="text-justify"><i>Demonstração:</i> dado $y \in Y$ seja $V$ vizinhança trivializante de $y$ por $\pi$. Temos que $\pi^{-1}(V) = \bigsqcup_i V_i$.</p>
 
       </div> <!-- /container -->
     </main>
