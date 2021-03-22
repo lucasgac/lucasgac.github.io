@@ -29,7 +29,7 @@
 
     <style type="text/css">
         .def {
-            color: rgb(255, 0, 0);
+          color: rgb(255, 0, 0);
         }
     </style>
   </head>
@@ -148,12 +148,23 @@
           <li>$f \colon \mathbb{C} \setminus \{0\} \to \mathbb{C} \setminus \{0\}$ dada por $f(z) = z^2$;</li>
         </ol>
 
+        <img class="w-25 rounded mx-auto d-block" src="03/recob-2xS1.png" alt="Responsive image">
+        <p class="text-center">Exemplo do recobrimento $\pi \colon \mathbb{S}^1 \coprod \mathbb{S}^1 \to \mathbb{S}^1$ dado por $\pi(x,n) = x$ com $x \in \mathbb{S}^1$ e $n \in \{0,1\}$.</p>
+        <img class="w-25 rounded mx-auto d-block" src="03/torus-recob.png" alt="Responsive image">
+        <p class="text-center">Recobrimento do Toro pelo plano $\mathbb{R}^2$.</p>
+
+        <p class="text-justify">Acho interessante descrever melhor como o recobrimento do Toro acima desenhado funciona: podemos construir o Toro como sendo o quadrado $[0,1]^2$ quocientado pela relação que satisfaz $(x,y) \sim (x, y+1)$ e $(x,y) \sim (x+1,y)$, ou seja, é o quadrado de lado 1 no qual lados opostos estão identificados, como na parte de baixo da segunda figura.</p>
+
+        <p class="text-justify">O recobrimento é o que está desenhado na figua: vizinhanças trivializantes que não passam pela borda são simplesmente projetadas, já as que passam devem continuar pelo outro lado.</p>
+
         <p class="text-justify"><b>Observação 11:</b> uma construção interessante que devemos destacar é a seguinte. Sabemos que $U_x \times F = \bigsqcup_{f \in F} U_x \times \{f\}$ e, como $F$ é discreto, cada um dos $U_x \times \{f\}$ é aberto. Isso será importante na proposição a seguir, pois nos mostra que podemos enxergar a pré-imagem de $U_x$ por $\pi$ como união disjunta de várias cópias de $U_x$.</p>
 
         <p class="text-justify"><b>Proposição 12:</b> recobrimentos são homeomorfismos locais.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $\pi \colon M \to B$ recobrimento e $m \in M$, precisamos criar uma vizinhança de $m$ tal que $\pi$ restrito a ela seja um homeomorfismo e que a imagem dela por $\pi$ seja um aberto de $B$. Tome $U_{\pi(m)}$ vizinhança trivializante de $\pi(m)$ em $B$. Sabemos que $\pi^{-1}(U_{\pi(m)})$ é uma união disjunta de $\mid F \mid$ cópias de $U_{\pi(m)}$. Como $m$ pertece à pré-imagem, pertence também a uma dessas cópias, que será a vizinhança na qual a restrição de $\pi$ se torna um homeomorfismo com a imagem. $\blacksquare$</p>
 
         <p class="text-justify">Um conceito que será importante para nós é o de recobrimento*. Um <span class="def">recobrimento*</span> é um mapa $\pi \colon X \to Y$ tal que para todo $y \in Y$ existe uma vizinhança $V$ de $y$ e uma família de abertos $\{U_i\}$ em $X$ tais que $\pi^{-1}(V) = \bigsqcup_i U_i$ e $\pi \colon U_i \to V$ é homeomorfismo. Chamaremos $V$ de vizinhança trivializante* de $y$, $X$ de espaço de recobrimento*, $Y$ de base* e cada $\pi^{-1}(x)$ de fibra* de $x$.</p>
+
+        <p class="text-justify">Note como os dois conceitos tem uma visão intuitiva parecida: em um fibrado, a pré-imagen de cada vizinhança trivializante $U$ é homeomorfa ao quadrado $U \times F$. Quando $F$ é discreta, podemos pensar que $U \times F$ é apenas uma união de $|F|$ cópias de $U$ disjuntas (essa visão já foi passada na <b>Observação 11</b>). No caso de recobrimentos*, isso é justamente o que acontece na definição, de maneira explicita. As cópias de $V$ são justamente as vizinhanças $U_i$.</p>
 
         <p class="text-justify"><b>Proposição 13:</b> recobrimentos* são homeomorfismos locais.</p>
         <p class="text-justify"><i>Demonstração:</i> dado $x \in X$, tome $V$ vizinhança trivializante de $\pi(x)$. Sabemos que existe uma família $\{U_i\}$ de abertos de $X$ homeomorfos à $V$ por $\pi$ com $\pi^{-1}(V) = \bigsqcup_i U_i$ e assim $x \in U_k$ para algum $k$. $\blacksquare$</p>
