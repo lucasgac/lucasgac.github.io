@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../reals.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+    <title>Teoria Ingênua dos Conjuntos - Parte I</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+      .def {
+        color: rgb(255,0,0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a priary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Teoria Ingênua dos Conjuntos - Parte I</h1>
+        </div>
+      </div>
+
+      <div class="container">
+
+        <h5 class="text-center">Conjuntos</h5>
+
+        <p class="text-justify">A matemática é o estudo de funções. Funções são conceitos incrivelmente ligados com a ideia de conjunto. A principal pergunta que não iremos responder é: o que é um conjunto? Não iremos responder essa pergunta pois um conjunto é, formalmente, um objeto que satisfaz certos axiomas. Esses axiomas, porém, tem um cunho de abstração muito intensificado e não são interessantes para matemáticos iniciantes (podemos discutir sobre a ideia de eles não serem interessantes nem para matemáticos avançados, mas isso fica para outra hora).</p>
+
+        <p class="text-justify">O problema agora está em como estudar coisas que não sabemos o que são. Claro, para estudarmos conjuntos, daremos uma definição abrangente e não muito precisa, que gera problemas. A parte interessante é que esses problemas são específicos o suficiente para que eles simplesmente não importem para a grande maioria dos matemáticos.</p>
+
+        <p class="text-justify">Um <span class="def">conjunto</span> é uma coleção de objetos. Podemos pegar, por exemplo, todas as pedras que existem no jardim da casa do Lin-Emanuel Miranda. Conjuntos geralmente são denotados por letras maiúsculas, mas isso não necessariamente será algo recorrente, até por que conjuntos aparecem em várias áreas da matemática e cada área vai se encarregar de utilizar a notação conveniente.</p>
+
+        <p class="text-justify">A notação padrão para conjuntos será $A = \{a \colon a$ satisfaz alguma condição$\}$. No exemplo acima poderíamos escrever $B = \{p \colon p$ é uma pedra no jardim da casa do Lin-Emanuel Miranda$\}$. Um exemplo mais "matemático" seria, por exemplo, o conjunto dos números primos maiores do que $3$, que seria denotado por $C = \{x \colon x$ é primo, $x$ é maior que $3\}$. Essas condições mais para frente irão se tornar símbolos, mas esses símbolos serão introduzidos mais para frente. Além disso, se você não sabe o que é um número primo, não se estresse, eles serão introduzidos mais para frente.</p>
+
+        <p class="text-justify">Provavelmente o símbolo mais importante para a teoria dos conjuntos é o símbolo de pertencimento, denotado $\in.$ Escrever $x \in X$ significa dizer que $x$ é um <span class="def">elemento</span> de $X$. No exemplo acima, se $x$ é uma pedra do jardim da casa do Lin-Emanuel Miranda, podemos escrever $x \in B$. É importante notar que conjuntos podem pertencer a outros conjuntos. Por exemplo, podemos criar o conjunto de todos tipos de animais. Nesse caso, cada tipo será um conjunto dos animais desse tipo. Podemos escrever coisas como $Cobra$ $\in$ $Repteis$ $\in$ $Animais$ (a falta de acentuação é uma limitação técnica).</p>
+
+        <hr>
+        <h5 class="text-center">Axioma da Extensão</h5>
+
+        <p class="text-justify"><b>Axioma 01:</b> dois conjuntos $A$ e $B$ são iguais se possuem os mesmos elementos. Nesse caso escrevemos $A = B$.</p>
+
+        <p class="text-justify"></p>
+
+      </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
