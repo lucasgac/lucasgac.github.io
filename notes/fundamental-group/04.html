@@ -230,15 +230,27 @@
         <p class="text-justify"><i>Demonstração:</i> do <b>Lema 16</b> temos que $H$ age por recobrimento em $X$ e do <b>Lema 17</b> o corolário segue.</p>
 
         <p class="text-justify"><b>Lema 19:</b> o mapa $\sigma \colon X/H \to Y$ dado por $Hx \mapsto \pi(x)$ é um recobrimento.</p>
-        <p class="text-justify"><i>Demonstração:</i> seja $y \in Y$ com $V$ vizinhança trivializante de $y$ por $\pi$. Se $\pi^{-1}(V) = \bigsqcup_i V_i$, vamos começar demonstrando que $\sigma^{-1}(V) = \bigsqcup_i \lambda(V_i)$. 
-          
-          
-          
-          
-          
-          
-        A união é de fato disjunta pois se $x \in \lambda(V_i) \cap \lambda(V_j)$, então existem $v_i \in V_i$ e $v_j \in V_j$ tais que $\lambda(v_i) = \lambda(v_j)$, ou seja, $Hv_i = Hv_j$. Isso significa que $\pi(v_i) = \pi(v_j)$ (basta aplicar $\sigma$ de ambos os lados da igualdade) e assim </p>
+        <p class="text-justify"><i>Demonstração:</i> o mapa está bem definido pois se $Hx = Hy$ temos que $x = h(y)$ para algum $h \in H$ e assim $\pi(x) = \pi(h(y)) = \pi(y)$. Além disso, $\sigma$ é contínuo, pois dado $W$ aberto em $Y$, sabemos que $\pi^{-1}(W)$ é aberto. Isso significa que $(\sigma \circ \lambda)^{1}(W) = \lambda^{-1}(\sigma^{-1}(W))$ é aberto e pela definição da topologia quociente segue que $\sigma^{-1}(W)$ é aberto.</p>
+         
+        <p class="text-justify">Seja $y \in Y$ com $V$ vizinhança trivializante de $y$ por $\pi$. Se $\pi^{-1}(V) = \bigsqcup_i V_i$. Para cada $x_i \in V_i$ com $\pi(x_i) = y$, tome $U_i$ vizinhança de $x_i$ que satisfaz a condição da ação de recobrimento de $H$ em $X$. Defina $U = \bigcap_i \pi(U_i)$. Como cada $\pi(U_i) \subset V$, sabemos que $U$ é trivializante de $y$. Mais do que isso, se $\pi^{-1}(U) = \bigsqcup_i W_i$, então cada $W_i \subset U_j$ para algum $j$ (em particular, vamos reindexar para que $j$ seja $i$).</p>
 
+        <p class="text-justify">Note agora que dado $g \in H$, se existe $x \in gW_i \cap W_i$, então $x \in gU_i \cap U_i$ e portanto $g = Id_X$, ou seja, os conjuntos $W_i$ satisfazem a condição da ação de recobrimento. Vamos provar que $\sigma^{-1}(U) = \bigsqcup_i \lambda(W_i)$. Primeiro, perceba que se existe $x \in \lambda(W_i) \cap \lambda(W_j)$, então $x = \lambda(w_i) = \lambda(w_j)$ para $w_i \in W_i$ e $w_j \in W_j$. Assim, $Hw_i = Hw_j$ e portanto $w_i = h(w_j)$ para algum $h \in H$ e daí segue que $w_i \in W_i \cap hW_i$ e portanto $h = Id_x$. Isso implica que $w_i = w_j$ e portanto $w_i \in W_i \cap W_j$, o que é um absurdo pois $W_i$ e $W_j$ são disjuntos.</p>
+
+        <p class="text-justify">Agora que já provamos que a união $\bigcup_i \lambda(W_i)$ é disjunta, ou seja, podemos escrevê-la como $\bigsqcup_i \lambda(W_i)$. Basta provarmos que $\sigma^{-1}(U) = \bigsqcup_i \lambda(W_i)$. Dado $Hx \in \sigma^{-1}(U)$, sabemos que $\sigma(Hx) \in U$ e portanto $\pi(x) \in U$. Portanto $x \in W_i$ e assim $Hx \in \lambda(W_i) \subset \bigsqcup_i W_i$. Se $Hx \in \bigsqcup_i \lambda(W_i)$ então $Hx \in \lambda(W_i)$ para algum $i$. Isso significa que $Hx = \lambda(w_i)$ para algum $w_i \in W_i$ e portanto $\sigma(Hx) = \pi(w_i) \in U$, o que significa que $Hx \in \sigma^{-1}(U)$.</p>
+
+        <p class="text-justify">Por fim, cada $\lambda(W_i)$ é homeomorfo a $U$ por $\sigma$ pois $\sigma \circ \lambda = \pi$. Assim, $\sigma|_{\lambda(W_i)} \circ \lambda|_{W_i} = \pi|_{W_i}$ e temos que $\sigma|_{\lambda(W_i)} = \pi|_{W_i} \circ (\lambda|_{W_i})^{-1}$. $\blacksquare$</p>
+
+        <p class="text-justify">Com isso, provamos que existe uma correspondência entre recobrimentos intermediários e subgrupos do grupo deck de um recobrimento universal. A questão que fica é: como isso nos ajuda a calcular grupos fundamentais? Na verdade, veremos agora que $\textrm{Deck}(X/Y)$ é isomorfo à $\pi_1(Y)$.</p>
+
+        <hr>
+        <h5 class="text-center">Calculando Grupos Fundamentais</h5>
+
+        <p class="text-justify"><b>Teorema:</b> se $\pi \colon X \to Y$ é um recobrimento universal com $Y$ é conexo por caminhos, então $\textrm{Deck}(X/Y)$ é isomorfo a $\pi_1(Y)$.</p>
+        <p class="text-justify"><i>Demonstração:</i> fixe $y_0 \in Y$. Como recobrimentos universais são únicos, podemos assumir que $X$ é construído da maneira feita no <b>Teorema 07</b>. Dessa forma, cada elemento $[x] \in \pi_1(Y, y_0)$ é também um elemento de $X$. Considere portanto o isomorfismo $\phi \colon \textrm{Deck}(X/Y) \to \pi_1(Y, y_0)$ dado por $h \mapsto h([y_0])$. Primeiro, devemos mostrar que esse mapa está bem definido, ou seja, que $h([y_0]) \in \pi_1(Y, y_0)$. Seja $\gamma$ um representante de $h([y_0])$. Devemos provar que $\gamma(0) = \gamma(1) = y_0$. Note que $\pi(h([y_0])) = \gamma(1)$ e portanto $\gamma(1) = \pi([y_0]) = y_0$ já que $h \in \textrm{Deck}(X/Y)$. A outra parte é imediata, já que por definição $h([y_0]) \in X$ e assim é uma classe de caminhos começando em $y_0$.</p>
+
+        <p class="text-justify">Perceba também que o mapa é sobrejetivo pois recobrimentos universais são normais e assim para todo $x \in \pi_1(Y, y_0)$ existe $h \in \textrm{Deck}(X/Y)$ tal que $h([y_0]) = x$. Para provarmos a injeção, tome $g,h \in \textrm{Deck}(X/Y)$ com $g([y_0]) = h([y_0])$. Pela unicidade das transformações deck temos que $g = h$.</p>
+
+        <p class="text-justify">Basta provarmos que esse mapa é um morfismo. Dados $g, h \in \textrm{Deck}(X/Y)$, sejam $\gamma_g \in g([y_0])$ e $\gamma_h \in h([y_0])$. Vamos mostrar que $\gamma = \gamma_g\gamma_h \in (g \circ h)([y_0])$.</p>
       </div> <!-- /container -->
     </main>
     <!-- Bootstrap core JavaScript
@@ -250,4 +262,3 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
   </body>
 </html>
-1 < 7.000.000
