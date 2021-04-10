@@ -75,16 +75,25 @@
         
         <p class="text-justify"><b>Exemplo 01:</b> o grupo livre gerado por dois elementos é representado por $< a,b >,$ mas, o produto livre $\mathbb{Z}_2 \ast \mathbb{Z}_2$ é representado por $< a,b \mid a^2 = b^2 = 1 >,$ pois temos a identidade $1$ que corresponde a ambas as identidades das cópias de $\mathbb{Z}_2$. Além disso, como $a \cdot a = 1$ em $\mathbb{Z}_2$, temos que $a^2 = aa$ no grupo livre, mas $aa = a \cdot a = 1$ no produto livre, portanto $a^2 = 1$ e o mesmo vale para $b^2 = 1$.</p>
 
-        <p class="text-justify">Uma propriedade importante do produto livre é a de que ele é o coproduto na categoria $\textrm{Grp}$, ou seja, dado $K$ um grupo e dois morfismos $g \colon G \to K$ e $h \colon H \to K$, podemos extender esses mapas para um $\phi \colon G \ast H \to K$. Um mapa desse tipo deve satisfazer $\phi \circ i_G = g$ e $\phi \circ i_H = h$, onde $i_G$ e $i_H$ são as inclusões de $G$ e $H$ em $G \ast H$ ("inclusões", que não são bem inclusões e sim mergulhos, que identificam elementos dos grupos com palavras unitárias). Além disso, queremos que esse mapa seja também um morfismo, portanto temos $\phi(g_1h_1 \cdots g_nh_n)$ $=$ $\phi(g_1)\phi(h_1)\cdots \phi(g_n)\phi(h_n)$ e para cada $x \in G$ temos $\phi(x)$ $=$ $\phi(i_G(x))$ $=$ $g(x)$, da mesma forma para elementos de $H$. Portanto, temos finalmente nossa definição de $\phi$: $\phi(g_1h_1 \cdots g_nh_n)$ $=$ $g(g_1)h(h_1)\cdots g(g_n)h(h_n)$.</p>
+        <p class="text-justify">Uma propriedade importante do produto livre é a de que ele é o coproduto na categoria $\textrm{Grp}$: dados dois morfismos $j_G \colon G \to J$ e $j_H \colon H \to J$, podemos definir unicamente um morfismo $\phi \colon G \ast H \to K$ satisfazendo $\phi \circ i_G = j_G$ e $\phi \circ i_H = j_H$, onde $i_G$ e $i_H$ são as inclusões de $G$ e $H$ em $G \ast H$ ("inclusões", que não são bem inclusões e sim mergulhos, que identificam elementos dos grupos com palavras unitárias). Do fato de $\phi$ ser um morfismo temos $\phi(g_1h_1 \cdots g_nh_n)$ $=$ $\phi(g_1)\phi(h_1)\cdots \phi(g_n)\phi(h_n)$ e para cada $x \in G$ temos $\phi(x)$ $=$ $\phi(i_G(x))$ $=$ $j_G(x)$, da mesma forma para elementos de $H$. Portanto, temos finalmente nossa definição de $\phi$: $\phi(g_1h_1 \cdots g_nh_n)$ $=$ $j_G(g_1)j_H(h_1)\cdots j_G(g_n)j_H(h_n)$.</p>
 
         <p class="text-justify">Como a definição acima foi forçada pelas propriedades que a função deveria satisfazer, temos a unicidade. AO mapa está bem definido pois definimos este numa palavra reduzida da melhor maneira possível: como cada $g_k \in G$ e cada $h_k \in H$, não existe mais simplificações a serem feitas.</p>
 
         <hr>
         <h5 class="text-center">Produto Amalgamado</h5>
 
-        <p class="text-justify">Definimos o <span class="def">produto amalgamado $G {\Large{*}}_K H$</span> como sendo o quociente $G \ast_K H = G \ast H / N(A)$, onde $A = \langle f(k)g(k)^{-1} \colon k \in K \rangle$ e $N(A)$ é o seu normalizador, ou seja, $\{g \in G \ast H \colon gA = Ag\}$. Perceba que o produto amalgamado só diz que todo elemento da forma $f(k)g(k)^{-1}$ é identificado com a identidade, portanto temos $f(k) = g(k)$ para todo $k \in K$, ou seja, todo elemento de $K$ se mantém fixo quando olhado pelos olhos de $G$ ou pelos olhos de $H$.</p>
+        <p class="text-justify">Dados morfismos $g \colon K \to G$ e $h \colon K \to H$, definimos o <span class="def">produto amalgamado $G {\Large{*}}_K H$</span> como sendo o quociente $G \ast_K H = G \ast H / N(A)$, onde $A = \langle g(k)h(k)^{-1} \colon k \in K \rangle$ e $N(A)$ é o seu normalizador, ou seja, $\{g \in G \ast H \colon gA = Ag\}$. Perceba que o produto amalgamado só diz que todo elemento da forma $f(k)g(k)^{-1}$ é identificado com a identidade, portanto temos $f(k) = g(k)$ para todo $k \in K$, ou seja, todo elemento de $K$ se mantém fixo quando olhado pelos olhos de $G$ ou pelos olhos de $H$.</p>
 
-        <p class="text-justify">Para o Teorema de Van-Kampen, queremos estudar o produto amalgamado de grupos fundamentais.</p>
+        <p class="text-justify"><b>Propriedade 02:</b> dados morfismos $j_G \colon G \to J$ e $j_H \colon H \to J$, existe um único morfismo $\phi \colon G \ast_K H \to J$ tal que o diagrama abaixo comuta.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="05/diagrama-1.png" alt="Responsive image">
+
+        <p class="text-justify"><i>Demonstração:</i> sabemos que existe um mapa $\phi' \colon G \ast H \to J$ dado por $\phi'(g_1h_1\cdots g_nh_n) = j_G(g_1)j_H(h_1) \cdots j_G(g_n)j_H(h_n)$, portanto basta mostrarmos que $A \subset \textrm{ker}\phi'$, pois desta forma teremos $N(A) \triangleleft \textrm{ker}\phi'$ e assim o mapa $\phi$ procurado estará bem definido, visto que é apenas o mapa que faz o diagrama abaixo comutar.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="05/diagrama-2.png" alt="Responsive image">
+
+        <p class="text-justify">Dado $g(k)h(k)^{-1} \in A$, temos $\phi'(g(k)h(k)^{-1})$ $=$ $\phi'(g(k)h(k^{-1}))$ $=$ $\phi'(g(k))\phi'(h(k^{-1}))$ $=$ $j_G(g(k))j_H(h(k^{-1}))$ $=$ $(j_G \circ g)(k)(j_H \circ h)(k^{-1})$ $=$ $(j_G \circ g)(k)(j_G \circ g)(k^{-1})$ $=$ $(j_G \circ g)(kk^{-1})$ $=$ $1$.</p>
+
         <hr>
         <h5 class="text-justify"></h5>
       </div> <!-- /container -->
