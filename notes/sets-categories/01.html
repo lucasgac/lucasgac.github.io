@@ -83,7 +83,37 @@
         <hr>
         <h5 class="text-center">Axioma da Extensão</h5>
 
+        <p class="text-justify">Um axioma nada mais é do que algo que assumimos como verdade absoluta, que não precisa ser provado verdadeiro, que é verdade pois escolhemos assim.</p>
+
         <p class="text-justify"><b>Axioma 01:</b> dois conjuntos $A$ e $B$ são iguais se possuem os mesmos elementos. Nesse caso escrevemos $A = B$.</p>
+
+        <p class="text-justify">O axioma acima pode parecer intuitivo a princípio e até óbvio para alguns, mas acontece que este é, na verdade, bastante não-trivial. Vamos pensar em um análogo, retirado do livro "Naive Set Theory", do autor Paul R. Halmos: se $A$ e $B$ são seres humanos, definimos que $A \in B$ se $A$ é um ancestral de $B$. Perceba que nesse caso, o análogo do Axioma da Extensão nos diria que</p>
+        <ol>
+          <li><p class="text-justify">se dois seres humanos são iguais, então estes possuem os mesmos ancestrais, o que é bastante óbvio e verdadeiro.</p></li>
+          <li><p class="text-justify">se dois seres humanos possuem os mesmos ancestrais, então estes são iguais. Perceba que essa parte está bastante errada, afinal, dois irmãos possuem os mesmos ancestrais, mas não são a mesma pessoa.</p></li>
+        </ol>
+
+        <p class="text-justify">Se todo elemento de $A$ é um elemento de $B$, diremos que $A$ está <span class="def">contido</span> em $B$ ou que $A$ é um <span class="def">subconjunto</span> de $B$ e escrevemos $A \subset B$. Note que diretamente da definição temos algumas propriedades importantes, por exemplo, se $A \subset B$ e $B \subset C$, então $A \subset C$. Mais ainda, para qualquer $A$ sabemos que $A \subset A$. As propriedades descritas se chamam, respectivamente, <span class="def">transitividade</span> e <span class="def">reflexividade</span>. Dizemos que a relação de inclusão é <span class="def">transitiva</span> e <span class="def">reflexiva</span>.</p>
+
+        <p class="text-justify">Perceba que dizer $A \subset B$ e $B \subset A$ é equivalente a dizer $A = B$. Afinal, se $A = B$ então como $A \subset A$ podemos trocar $A$ por $B$ em qualquer uma das instâncias de $A$ na afirmação e assim temos $A \subset B$ e $B \subset A$. Agora, se $A \subset B$ então todo elemento de $A$ é um elemento de $B$ e se $B \subset A$ então todo elemento de $B$ é um elemento de $A$, assim ambos $A$ e $B$ tem os mesmos elementos. Chamaremos essa propriedade de <span class="def">antissimetria</span> e diremos que a inclusão é <span class="def">antissimétrica</span></p>
+
+        <hr>
+        <h5 class="text-center">Lógica e Demonstrações</h5>
+
+        <p class="text-justify">Aproveitando o último parágrafo da seção anterior, vamos agora entender o que é de fato uma demonstração. Faremos isso olhando para o exemplo dado acima. Primeiramente, vamos começar entendendo o que é uma <span class="def">sentença</span>. A definição de sentença será feita de maneira indutiva, ou seja, vamos começar com sentenças simples e construir mais complicadas através destas.</p>
+
+        <p class="text-justify">Existem dois tipos básicos de sentença, as de <span class="def">igualdade</span> e as de <span class="def">pertencimento</span>. Uma sentença de pertencimento será sempre da forma $a \in A$ para um conjunto $A$ e um elemento $a$ de $A$. Já uma sentença de igualdade será sempre da forma $A = B$ para $A$ e $B$ objetos quaisquer, sendo conjuntos ou não. Esses tipos de sentenças são as chamadas <span class="def">sentenças atômicas</span>.</p>
+
+        <p class="text-justify">Podemos juntar sentenças atômicas com os operadores lógicos usuais:</p>
+        <ol>
+          <li><p class="text-justify">o símbolo $\implies$ significa que a parte da frente é consequência da parte de trás. Por exemplo, podemos escrever a sentença $x \in B \implies x \in A$. Essa sentença significa que se $x$ é um elemento de $B$, então $x$ é um elemento de $A$. Perceba que se todo elemento de $B$ satisfaz essa <span class="def">implicação</span>, então $B \subset A$. De fato, esse seria o jeito correto de definir o que significa um conjunto $B$ estar contido num conjunto $A$. Porém, isso exigiria que escrevessemos a implicação para todo $x \in B$, certo?</p></li>
+          <li><p class="text-justify">não! O símbolo $\forall$ é lido como "para todo" e podemos utilizá-lo para criar sentenças do tipo "$\forall x \in B$ $(x \in B \implies x \in A)$".</p></li>
+          <li><p class="text-justify"></p></li>
+          <li><p class="text-justify"></p></li>
+          <li><p class="text-justify"></p></li>
+          <li><p class="text-justify"></p></li>
+          <li><p class="text-justify"></p></li>
+        </ol>
 
         <p class="text-justify"></p>
 

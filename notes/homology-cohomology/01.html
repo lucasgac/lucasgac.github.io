@@ -1,0 +1,174 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../reals.ico">
+
+    <script type="text/javascript" async
+  		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+	</script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+  			tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+
+    <title>Invariantes e Homologia</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+        .def {
+            color: rgb(255, 0, 0);
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Invariantes e Homologia</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <h5 class="text-center">Invariantes</h5>
+
+        <p class="text-justify">No curso sobre o grupo fundamental e sobre espaços de recobrimento, aprendemos sobre como definir um importantíssimo invariante topológico, ou seja, uma propriedade sobre espaços preservada por homeomorfismos. Acontece que existem muitos outros invariantes e, em particular, dois destes serão muito úteis para nós, portanto vamos estudá-los com mais detalhe: os grupos de homologia e os grupos de cohomologia. Porém, antes de chegarmos neles, vamos passar rapidamente por outros invariantes que aparecem na natureza para que estimular a curiosidade e perceber que a matemática é de fato bem maior do que aparenta.</p>
+
+        <p class="text-justify">Definimos o grupo fundamental $\pi_1(X, x_0)$ como uma coleção de caminhos fechados com ponto-base $x_0$ ou de mapas $\gamma \colon \mathbb{S}^1 \to X$ tais que $x_0 \in \textrm{Im }\phi$ (lembrando que existe uma correspondência entre ambos os conceitos, que foi vista também no curso sobre o assunto). De maneira análoga podemos definir os outros <span class="def">grupos de homotopia</span>, quue são grupos que se comportam de maneira similar ao grupo fundamental.</p>
+
+        <p class="text-justify">Se $X$ é um espaço qualquer, dado $x_0 \in X$ defina $\pi_n(X, x_0)$ como sendo o quociente $C/\sim$, onde $C$ é o conjunto de todos os mapas $f \colon \mathbb{S}^n \to X$ tais que $x_0 \in \textrm{Im }f$ e $\sim$ é a relação de homotopia. Esses conjuntos são grupos com as operações corretas e também são preservados por homeomorfismos. Existem relações entre esses grupos e definições precisas, que não serão abordadas neste curso.</p>
+
+        <p class="text-justify">Será que podemos generalizar ainda mais essa construção? Bem, existe uma classe de espaços que engloba todos os espaços da forma $\mathbb{S}^n$, que são as variedades. De fato, dada $M$ uma variedade $n-$dimensional, $X$ um espaço qualquer e $x_0 \in X$, podemos definir os <space class="def">grupos de bordismo</space>, que são grupos compostos por classes de caminhos $f \colon M \to X$ com a relação de equivalência apropriada, assim como a operação apropriada para que essa construção seja de fato um grupo.</p>
+
+        <hr>
+        <h5 class="text-center">Preparativos Formais</h5>
+
+        <p class="text-justify">Um dos principais invariantes topológicos que serão estudados neste curso é a homologia singular, porém, antes de construirmos uma definição precisa para esta, precisamos estabelecer algumas outras definições. Definimos a <span class="def">envoltória convexa $[M]$</span> de um conjunto $M \subset \mathbb{R}^n$ como sendo o menor conjunto $C$ convexo tal que $M \subset C$. Explicitamente, podemos escrever $[M] = \bigcap_\mathcal{C} C$, onde $\mathcal{C} = \{C \subset \mathbb{R}^n \colon M \subset C, C$ é convexo$\}$. Se $e_0, \dots, e_n$ é a base canônica de $\mathbb{R}^{n+1}$, então definimos o <span class="def">$n-$simplex $\Delta^n$</span> como sendo a envoltória convexa de $\{e_0, \dots, e_n\}$, ou melhor dizendo, $[e_0, \dots, e_n]$. Explicitamente, podemos escrever $\Delta^n = \{(x_0, \dots, x_n) \in \mathbb{R}^{n+1} \colon \displaystyle\sum_{i=0}^{n} x_i = 1$ e $x_i \geq 0\}$.</p>
+
+        <img class="w-75 rounded mx-auto d-block" src="01/simplex.png" alt="Responsive image">
+        <p class="text-center">Os $4$ primeiros simplexes.</p>
+
+        <p class="text-justify">Defina o <span class="def">$n-$ésimo grupo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X)$</span> como sendo $\textrm{Free}_{\textrm{Ab}}(\sigma \colon \Delta^n \to X \mid \sigma$ é contínuo$)$. Chamaremos um mapa $\sigma \colon \Delta^n \to X$ de <span class="def">$n-$simplex singular</span>. A palavra "singular" no nome do mapa vem deste não ser necessariamente injetor, pois isso faz com que possamos ter singularidades, como a que está no desenho abaixo.</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="01/singularidade.png" alt="Responsive image">
+        <p class="text-center">O mapa neste caso pega um segmento ligando duas das arestas de $\Delta^2$ e o leva para apenas um ponto, criando a singularidade.</p>
+
+        <p class="text-justify">Um elemento de $\mathcal{C}_n^{\textrm{sing}}(X)$ é uma <span class="def">$n-$cadeia singular</span>. Uma parte importante é perceber que essa construção é um funtor da categoria $\textrm{Top}$ na categoria $\textrm{AbGrp}$. É interessante perceber também que ele é de certa forma mais "geral" que o funtor grupo fundamental, pois não precisamos fixar pontos nos espaços.</p>
+
+        <p class="text-justify"><b>Proposição 01:</b> $\mathcal{C}_n^{\textrm{sing}} \colon \textrm{Top} \to \textrm{AbGrp}$ é um funtor.</p>
+
+        <p class="text-justify"><i>Demonstração:</i> dado $X$ um espaço topológico, já conhecemos $\mathcal{C}_n^{\textrm{sing}}(X)$. Agora, dada uma função contínua $f \colon X \to Y$, definimos $\mathcal{C}_n^{\textrm{sing}}(f) \colon \mathcal{C}_n^{\textrm{sing}}(X) \to \mathcal{C}_n^{\textrm{sing}}(Y)$ por $\mathcal{C}_n^{\textrm{sing}}(f)(\sigma) = f \circ \sigma$.</p>
+
+        <p class="text-justify">Note que $\mathcal{C}_n^{\textrm{sing}}(Id_X)(\sigma)$ $=$ $Id_X \circ \sigma$ $=$ $\sigma$ e portanto $\mathcal{C}_n^{\textrm{sing}}(Id_X)$ $=$ $Id_{\mathcal{C}_n^{\textrm{sing}}(X)}$. Além disso, como $(f \circ g) \circ \sigma$ $=$ $f \circ (g \circ \sigma)$, temos que $\mathcal{C}_n^{\textrm{sing}}(f \circ g)$ $=$ $\mathcal{C}_n^{\textrm{sing}}(f) \circ \mathcal{C}_n^{\textrm{sing}}(g)$. Basta mostrarmos que $\mathcal{C}_n^{\textrm{sing}}(f)$ é morfismo de grupos.</p>
+
+        <p class="text-justify">Se $\alpha, \beta \in \mathcal{C}_n^{\textrm{sing}}(X)$, então $\alpha = \sum_{i=0}^n \alpha_i \sigma_i$ e $\beta = \sum_{j=0}^m \beta_j \lambda_j$. Assim, temos $\mathcal{C}_n^{\textrm{sing}}(f)(\alpha + \beta)$ $=$ $\mathcal{C}_n^{\textrm{sing}}(f)(\sum_{i=0}^n \alpha_i \sigma_i + \sum_{j=0}^m \beta_j \lambda_j)$ $=$ $\sum_{i=0}^n \alpha_i (f \circ \sigma_i) + \sum_{j=0}^m \beta_j (f \circ \lambda_j)$ $=$ $\mathcal{C}_n^{\textrm{sing}}(f)(\alpha) + \mathcal{C}_n^{\textrm{sing}}(f)(\beta)$. $\blacksquare$</p>
+
+        <p class="text-justify">Para cada $n \geq 1$, se $V_i$ é a envoltória $[v_0, \cdots, v_{i-1}, v_{i+1}, \cdots, v_n]$ temos o <span class="def">morfismo de fronteira</span>, que é um morfismo de grupos $\partial_n \colon \mathcal{C}_n^{\textrm{sing}}(X) \to \mathcal{C}_{n-1}^{\textrm{sing}}(X)$ dado por $\sigma \mapsto \sum_{i=0}^n (-1)^i \sigma|_{V_i}$. Perceba primeiramente que cada $V_i$ é de fato um $(n-1)-$simplex, pois podemos identificar $\Delta^{n-1}$ com $V_i$ pelo isomorfismo linear que preserva a ordem dos vértices. Por exemplo, se $n = 1$ temos que o $2-$simplex é o triângulo equilátero, cujas faces são todas $1-$simplexes.</p>
+
+        <img class="w-25 rounded mx-auto d-block" src="01/2-simplex-faces.png" alt="Responsive image">
+        <p class="text-center">Aqui, um $2-$simplex só que com apenas as faces, sem o interior. Perceba como cada face pode ser vista com um $1-$simplex em seus respecitvos planos.</p>
+
+        <img class="w-50 rounded mx-auto d-block" src="01/1-simplexes.png" alt="Responsive image">
+        <p class="text-center">Faces do $2-$simplex.</p>
+
+        <p class="text-justify">Assim, o mapa está bem definido (no sentido de que a imagem de cada mapa $\sigma$ de fato é um elemento de $\mathcal{C}_{n-1}^{\textrm{sing}}$).</p>
+
+        <p class="text-justify"><b>Lema 02:</b> $\partial_{n-1} \circ \partial_{n} = 0$.</p>
+
+        <hr>
+        <h5 class="text-center">Homologia Singular</h5>
+
+        <p class="text-justify">Um <span class="def">complexo de cadeias</span> é uma sequência de módulos $\cdots, A_{-1}, A_{0}, A_1, \cdots$  conextados por morfismos chamados de <span class="def">morfismos de fronteira</span> (nome familiar, não?) da seguinte forma:</p>
+
+        <img class="w-75 rounded mx-auto d-block" src="01/complexo.png" alt="Responsive image">
+
+        <p class="text-justify">Além disso, pedimos que $d_{n-1} \circ d_n = 0$ ou, equivalentemente, que $\textrm{Im } d_n \subset \ker d_{n-1}$.</p>
+
+        <p class="text-justify">Perceba que como todo grupo abeliano é um $\mathbb{Z}-$módulo, para cada espaço topológico $X$ associamos um complexo de cadeia:</p>
+
+        <img class="w-75 rounded mx-auto d-block" src="01/complexo-singular.png" alt="Responsive image">
+
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+
+	  </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
