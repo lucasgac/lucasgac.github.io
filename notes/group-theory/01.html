@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../reals.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+    <title>Definição e Exemplos</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+      .def {
+        color: rgb(255,0,0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a priary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Definição e Exemplos</h1>
+        </div>
+      </div>
+      <div class="container">
+        <h5 class="text-center">Grupos</h5>
+
+        <p class="text-justify">Em teoria das categorias vimos que um grupoide é uma categoria onde todo morfismo é um isomorfismo. Se $G$ é um grupoide com apenas um elemento, podemos construir o conjunto $\textrm{Hom}_G(\ast, \ast) = \textrm{Aut}_G(\ast)$ e este possui toda a informação possível de obter da categoria $G$, pois já sabemos quem é seu único elemento $\ast$ e então basta conhecermos seus morfismos. Perceba também que por definição de categoria esse conjunto possui uma operação de composição, um morfismo identidade $1_\ast$ e para todo morfismo $g$ existe um morfismo inverso $g^{-1}$, já que $G$ é um grupoide. Essas propriedades motivarão a nossa definição de grupo.</p>
+
+        <p class="text-justify">Um <span class="def">grupo</span> é um par $(G, \cdot)$ onde $G$ é um conjunto e $\cdot \colon G \times G \to G$ é uma <span class="text-justify">operação binária</span> (uma função $\cdot$ que toma dois elementos $g$ e $h$ de $G$ e retorna outro elemento $g \cdot h$ em $G$), que em conjunto satisfazem 3 propriedades:</p>
+        <ol>
+            <li><p class="text-justify">para todos $g,h,i \in G$, temos $g \cdot (h \cdot i) = (g \cdot h) \cdot i$;</p></li>
+            <li><p class="text-justify">existe um único $1_G \in G$ tal que $1_G \cdot g = g \cdot 1_G = g$ para todo $g \in G$;</p></li>
+            <li><p class="text-justify">para todo $h \in G$, existe um único $h^{-1} \in G$ tal que $h \cdot h^{-1} = h^{-1} \cdot h = 1_G$.</p></li>
+        </ol>
+        <p class="text-justify">Um hábito comum é denotar o <span class="def">produto</span> $g \cdot h$ pela <span class="def">concatenação</span> $gh$.</p>
+
+        <p class="text-justify"><b>Exemplo 01:</b> um exemplo importante é o <span class="def">grupo trivial</span>, que é o conjunto $G = \{1\}$ munido da única operação binária possível, que é definida por $1 \cdot 1 = 1$.</p>
+
+        <p class="text-justify"><b>Exemplo 02:</b> outros exemplos importantes são $(\mathbb{Z}, +)$, $(\mathbb{Q}, +)$, $(\mathbb{R}, +)$, $(\mathbb{C}, +)$ ou também $(\mathbb{Q}\setminus\{0\}, \cdot)$, $(\mathbb{R}\setminus\{0\}, \cdot)$, $(\mathbb{C}\setminus\{0\}, \cdot)$ (onde $\cdot$ aqui é a operação de produto usual dos conjuntos).</p>
+
+        <p class="text-justify">Note que a definição de grupo nos permite apenas multiplicar dois elementos de uma vez, portanto ao escrevermos coisas como $g \cdot h \cdot i$ criamos uma certa sensação de ambiguidade. Porém, a mesma definição de grupo nos garante que $g \cdot (h \cdot i) = (g \cdot h) \cdot i$ e portanto a escrita $g \cdot h \cdot i$ perde sua ambiguidade, pois não faz diferença qual das operações você realiza primeiro. De forma análoga, para qualquer $n \in \mathbb{Z}_{> 0}$, dados $g_1, \dots, g_n \in G$ podemos escrever $g_1g_2g_3\cdots g_n$ sem medo de criar alguma ambiguidade.</p>
+
+        <p class="text-justify">Uma convenção de notação se faz necessária: se definimos $g^0$ por $1_G$, $g^n$ por $g^{n-1}g$ e $g^{-n}$ por $(g^{-1})^n$ para $n > 0$ inteiro, é fácil checar por indução que $g^{m + n} = g^mg^n$ para quaisquer $m, n \in \mathbb{Z}$.
+        </p>
+
+        <p class="text-justify"><b>Proposição 03:</b> vale a propriedade do cancelamento para grupos: dado $G$ um grupo e $g, h, i \in G$, se $gi = gh$ então $i = h$ e se $ig = hg$, então também temos $i = h$.
+
+        <p class="text-justify"><i>Demonstração:</i> vamos fazer a demonstração do primeiro caso: se $gi = gh$ podemos multiplicar ambos os lados por $g^{-1}$ pela esquerda e assim teremos $g^{-1}gi = g^{-1}gh$ e portanto $1_Gi = 1_Gh$, assim $i = h$. $\blacksquare$</p>
+        
+        <p class="text-justify">Diremos que um grupo $G$ é <span class="def">abeliano</span> ou <span class="def">comutativo</span> se para todos $g,h \in G$ temos $gh = hg$. Mais geralmente, em qualquer grupo $G$ não necessariamente abeliano, se dois elementos satisfazem a condição previamente dada diremos que estes elementos <span class="def">comutam</span>. Quando pensamos em grupos não-comutativos, os primeiros exemplos que aparecem na mente geralmente envolvem algum tipo de multiplicação, por isso, é costumeiro denotar operações de grupos não-comutativos por um ponto e multiplicações repetidas de um mesmo elemento por potências. Agora, em grupos comutativos, vamos as vezes mudar um pouco a notação e denotas a operação por $+$. Mais que isso, vamos denotar $g^m$ por $mg$, para todo $m \in \mathbb{Z}$, assim como a identidade por $0_G$. Basta que tomemos cuidado com uma coisa: mesmo que o cancelamento funcione em grupos, não é o caso que se $ng = mg$, tenhamos $n = m$, afinal o cancelamento nessa notação se traduziria para a lei $g + h = g + i \implies h = i$, e analogamente para o cancelamento à direita. Essa notação não será usual para grupos de maneira geral, mas sim para grupos que aparecem em certas situações, como $R-$módulos, corpos e anéis.</p>
+
+        <p class="text-justify">Diremos que um elemento $g \in G$ tem <span class="def">ordem finita</span> se existe $n \in \mathbb{Z}_{\geq 0}$ tal que $g^n = 1_G$. Nesse caso, denotaremos a <span class="def">ordem</span> de $g$ por $|g|$, que é o menor número positivo $m$ tal que $g^m = 1_G$. Se $g$ não tem ordem finita, escreveremos $|g| = \infty$.</p>
+
+        <p class="text-justify"><b>Lema 04:</b> </p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+      </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -93,12 +93,12 @@
 
         <p class="text-justify">Se existe um subespaço afim $A$ tal que $e_0, \dots, e_n \in A$, tome o espaço $A - e_0$. Perceba que como $\dim A = n - 1$ e $A \simeq A - e_0$, temos que $\dim A - e_0 = n-1$. Além disso, $e_1 - e_0, \dots, e_n - e_0$ são $n$ elementos de um espaço vetorial $(n-1)-$dimensional, portanto obrigatoriamente são linearmente dependentes. $\blacksquare$</p>
 
-        <p class="text-justify">Um <span class="def">$n-$simplexo $\Delta^n$</span> é uma envoltória conexa de vetores $e_0, \dots, e_n$ satisfazendo alguma das condições da proposição acima. Mais especificamente, podemos escrever $\Delta^n = [e_0, \dots, e_n] = \{\sum t_ie_i \colon t_i \geq 0, \sum t_i = 1\}$. Chamaremos de <span class="def">$n-$simplexo canônico</span> o simplexo gerado pela base canônica.</p>
+        <p class="text-justify">Um <span class="def">$n-$simplexo</span> é uma envoltória convexa de vetores $e_0, \dots, e_n$ satisfazendo alguma das condições da proposição acima. Mais especificamente, podemos escrever $[e_0, \dots, e_n] = \{\sum t_ie_i \colon t_i \geq 0, \sum t_i = 1\}$. Chamaremos de <span class="def">$n-$simplexo canônico</span> o simplexo gerado pela base canônica, denotando-o por $\Delta^n$.</p>
 
         <img class="w-75 rounded mx-auto d-block" src="01/simplex.png" alt="Responsive image">
         <p class="text-center">Os $4$ primeiros simplexos canônicos em espaços euclideanos.</p>
 
-        <p class="text-justify">Para cada $n \geq 0$, defina o <span class="def">$n-$ésimo grupo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X)$</span> como sendo $\textrm{Free}_{\textrm{Ab}}(\sigma \colon \Delta^n \to X \mid \sigma$ é contínuo$)$. Chamaremos um mapa $\sigma \colon \Delta^n \to X$ de <span class="def">$n-$simplexo singular</span>. A palavra "singular" no nome do mapa vem deste não ser necessariamente injetor, pois isso faz com que possamos ter singularidades, como a que está no desenho abaixo. Além disso, se $n < 0$, vamos definir $\mathcal{C}_n^{\textrm{sing}}(X)$ como sendo o grupo trivial.</p>
+        <p class="text-justify">Para cada $n \geq 0$, defina o <span class="def">$n-$ésimo grupo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X)$</span> como sendo $\textrm{Free}_{\textrm{Ab}}(\sigma \colon M \to X \mid \sigma$ é contínuo e $M$ é um $n-$simplexo$)$. Chamaremos um mapa $\sigma \colon M \to X$ de <span class="def">$n-$simplexo singular</span>. A palavra "singular" no nome do mapa vem deste não ser necessariamente injetor, pois isso faz com que possamos ter singularidades, como a que está no desenho abaixo. Além disso, se $n < 0$, vamos definir $\mathcal{C}_n^{\textrm{sing}}(X)$ como sendo o grupo trivial.</p>
 
         <img class="w-50 rounded mx-auto d-block" src="01/singularidade.png" alt="Responsive image">
         <p class="text-center">O mapa neste caso pega um segmento ligando duas das arestas de $\Delta^2$ e o leva para apenas um ponto, criando a singularidade.</p>
@@ -108,19 +108,34 @@
         <hr>
         <h5 class="text-center">Álgebra Homológica</h5>
 
-        <p class="text-justify">Um <span class="def">complexo de cadeias</span> é uma sequência de $R-$módulos ($R$ geralmente será $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ ou $\mathbb{Z}_2$.) $\cdots, A_{-1}, A_{0}, A_1, \cdots$  conextados por morfismos chamados de <span class="def">morfismos de fronteira</span> (nome familiar, não?) da seguinte forma:</p>
+        <p class="text-justify">Um <span class="def">complexo de cadeia</span> é uma sequência de $R-$módulos ($R$ geralmente será $\mathbb{Z}, \mathbb{Q}, \mathbb{R}, \mathbb{C}$ ou $\mathbb{Z}_2$.) $\dots, A_{-1}, A_{0}, A_1, \dots$  conectados por morfismos chamados de <span class="def">morfismos de fronteira</span> (nome familiar, não?) da seguinte forma:</p>
 
         <img class="w-75 rounded mx-auto d-block" src="01/complexo.png" alt="Responsive image">
 
-        <p class="text-justify">Além disso, pedimos que $d_{n-1} \circ d_n = 0$ ou, equivalentemente, que $\textrm{Im } d_n \subset \ker d_{n-1}$. Diremos que um complexo de cadeias é <span class="def">exato</span> quando $\textrm{Im } d_n = \ker d_{n-1}$. No contexto de complexos de cadeias, podemos definir o que é um <span class="def">morfismo de complexos</span>, que dará uma estrutura de categoria para a classe de todos os complexos de $R-$módulos, para um $R$ fixado. Se denotarmos o complexo de cadeia dos anéis $\dots, A_{-1}, A_0, A_1, \dots$ por $A_*$, um morfismo $f \colon A_* \to B_*$ é uma família de mapas $f_i \colon A_i \to B_i$ tais que </p>
+        <p class="text-justify">Além disso, pedimos que $d_{n-1} \circ d_n = 0$ ou, equivalentemente, que $\textrm{Im } d_n \subset \ker d_{n-1}$. Diremos que um complexo de cadeia é <span class="def">exato</span> quando $\textrm{Im } d_n = \ker d_{n-1}$. No contexto de complexos de cadeias, podemos definir o que é um <span class="def">morfismo de complexos</span>, que dará uma estrutura de categoria para a classe de todos os complexos de $R-$módulos, para um $R$ fixado. Se denotarmos o complexo de cadeia dos anéis $\dots, A_{-1}, A_0, A_1, \dots$ por $A_*$, um morfismo $f \colon A_* \to B_*$ é uma família de mapas $f_i \colon A_i \to B_i$ tais que o diagrama abaixo comuta</p>
 
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
+        <img class="w-75 rounded mx-auto d-block" src="01/morfismo-complexos.png" alt="Responsive image">
+
+        <p class="text-justify">Um outro jeito de pensarmos no morfismo $f$ é definindo $A_\ast$ como a soma direta $\oplus_i A_i$. Nesse caso, poderíamos definir $f$ como sendo o mapa $x_i \in A_i \mapsto f_i(x_i)$ e portanto podemos enxergar cada $f_i$ como $f|_{A_i}$. Isso será importante para uma questão de notação que encontraremos ao analisarmos o próximo operador importante entre cadeias, que será um tipo de morfismo.</p>
+
+        <p class="text-justify">Se em $B_\ast$ tomarmos cada $B_i$ como sendo $A_{i-1}$ podemos construir o morfismo $d \colon A_\ast \to B_\ast$, que seria a família dos morfismos de fronteira $d_i \colon A_i \to A_{i-1}$. Perceba que esse mapa $d$ é de fato um morfismo de complexos, pois o diagrama abaixo comuta trivialmente. O argumento da restrição feito no exemplo acima pode ser copiado aqui, e é por isso que usualmente quando queremos escrever $d_{n+1} \circ d_n$ escrevemos $d^2$ e, além disso, é comum também escrevermos $d$ para representar qualquer um dos morfismos de fronteira, como veremos no último operador importante, que será explicado a seguir.</p>
+
+        <img class="w-75 rounded mx-auto d-block" src="01/morfismo-singular.png" alt="Responsive image">
+
+        <p class="text-justify">O último operador importante do qual vamos tratar é a <span class="def">homotopia de morfismos de cadeias</span>. Dados dois morfismos de cadeias $f,g \colon A_\ast, B_\ast$, podemos criar o mapa $h \colon A_\ast \to B_\ast$, que é também uma família de mapas $h_i$, mas que agora satisfazem $h_i \colon A_i \to B_{i+1}$. Além disso, pediremos que $h$ satisfaça $f - g = hd + dh$ ou, com a notação um pouco mais explicita, $f_i - g_i = h_i \circ d'_{i+1} + d_{i} \circ h_{i+1}$. O diagrama abaixo ilustra o processo, porém, devemos tomar o cuidado de notar que o diagrama não é comutativo neste caso.</p>
+
+        <img class="w-75 rounded mx-auto d-block" src="01/homotopia-morfismos.png" alt="Responsive image">
+
+        <p class="text-justify">Já conhecidos os principais operadores, podemos falar de exatidão. Dado um complexo de cadeia, gostaríamos de achar um jeito de medir o quão exato este é, ou seja, achar algum parâmetro que indicasse o nível de exatidão, o quão perto estamos de ter a imagem igual ao kernel. De fato, esse indicador existe e se chama grupo de homologia. Se $\dots, A_{-1}, A_0, A_1, \dots$ é um complexo de cadeias, definimos por $H_n(A_\ast) = \ker{A_n \to A_{n-1}}/\textrm{Im }A_{n+1} \to A_n$ o <span class="def">grupo de homologia de $A_\ast$</span>.</p>
+        
+        <hr>
+        <h5 class="text-center">Homologia Singular</h5>
+
+        <p class="text-justify">Agora que já conhecemos os grupos de cadeia singular, vamos provar que estes formam um complexo de cadeia. Primeiro, perceba que cada $\mathcal{C}_n^{\textrm{sing}}$ é um grupo abeliano, portanto um $\mathbb{Z}-$módulo. Basta então mostrarmos que os morfismos de fronteira dos grupos de cadeia são de fato morfismos de cadeia de complexo. Para isso, precisamos definir quem são os morfismos de fronteira: defina $d_n \colon \mathcal{C}_n^{\textrm{sing}}(X) \to \mathcal{C}_{n-1}^{\textrm{sing}}(X)$</p>
+
+        <p class="text-justify"><b>Proposição 02:</b> $d^2 = 0$</p>
+        <p class="text-justify"><i>Demonstração:</i> vamos relembrar que $d_n = $</p>
+
         <p class="text-justify"></p>
         <p class="text-justify"></p>
         <p class="text-justify"></p>

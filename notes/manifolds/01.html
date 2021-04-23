@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../reals.ico">
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+
+    <title>Variedades Topológicas</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="../../jumbotron.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <style type="text/css">
+      .def {
+        color: rgb(255,0,0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html">Página Principal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="../main.html">Notas de Aula</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../about-me.html">Sobre Mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Artigos / Trabalhos</a>
+          </li>
+        </ul>
+        <!-- <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+      </div>
+    </nav>
+
+    <main role="main">
+      <!-- Main jumbotron for a priary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3 text-center">Variedades Topológicas</h1>
+        </div>
+      </div>
+
+      <div class="container">
+        <h5 class="text-center">Definição e Exemplos</h5>
+
+        <p class="text-justify">Um espaço topológico $X$ é dito <span class="def">localmente euclideano de dimensão $n$</span> se todo ponto $p \in X$ possui uma vizinhança $U$ tal que existe um mapa $\phi \colon U \to \mathbb{R}^n$ tal que $\phi(U)$ é aberto e homeomorfo a $U$ por $\phi$. Chamamos um par $(U, \phi \colon U \to \mathbb{R}^n)$ de <span class="def">carta</span>, $U$ será chamada de <span class="def">vizinhança coordenada</span> ou de <span class="def">aberto coordenado</span>, enquanto $\phi$ será chamado de <span class="def">mapa coordenado em $U$</span> ou de <span class="def">sistema de coordenadas em $U$</span>. Diremos que essa carta está <span class="def">centrada em $p$</span> se $\phi(p) = 0$.</p>
+
+        <p class="text-justify">Diremos que um espaço topológico $M$ é uma <span class="def">variedade topológica de dimensão $n$</span> se $M$ é localmente euclideano de dimensão $n$, Hausdorff e possui base enumerável. Note que para a dimensão de uma variável estar bem definida precisaríamos garantir que se $n \neq m$, então nenhum aberto de $\mathbb{R}^n$ é homeomorfo a algum aberto de $\mathbb{R}^m$. Esse é o teorema da invariância de dimensão, que possui uma demonstração complicada o suficiente para não ser de nosso interesse. Porém, como o objeto de estudo aqui serão principalmente as variedades suaves, podemos ficar tranquilos, já que existe um análogo com uma demonstração muito mais razoável para este caso. Um outro ponto que precisa ser feito é que o conceito de dimensão só está bem definido em variedades conexas, já que diferentes componentes conexas podem ter diferentes dimensões.</p>
+
+        <p class="text-justify"><b>Exemplo 01:</b> o espaço euclideano $n-$dimensional $\mathbb{R}^n$ é uma variedade coberta por uma única carta $(\mathbb{R}^n, Id_{\mathbb{R}^n})$. Além disso, todo subconjunto $U$ aberto de $\mathbb{R}^n$ é uma variedade coberta por $(U, Id_U)$.</p>
+
+        <p class="text-justify">É importante relembrar que ser Hausdorff e possui base enumerável são propriedades hereditárias, ou seja, qualquer subespaço de um espaço que as satisfaça, também as satisfara. Em particular, segue que qualquer subespaço de $\mathbb{R}^n$ será Hausdorff e possuirá base enumerável.</p>
+
+        <p class="text-justify"><b>Exemplo 02:</b> o gráfico do mapa $x \mapsto x^{2/3}$ é uma <span class="def">cúspide</span>, que por ser um subespaço de $\mathbb{R}^2$, é Hausdorff e possui base enumerável. Além disso, é localmente euclideana pois é homeomorfa a $\mathbb{R}$ pelo mapa $(x, x^{2/3}) \mapsto x$. Por outro lado, $\{0\} \times \mathbb{R} \cup \mathbb{R} \times \{0\}$, ou seja, a cruz dos eixos coordenados em $\mathbb{R}^2$, não é uma variedade. Apesar de ser Hausdorff e possuir base enumerável, se existisse um homeomorfismo $\phi$ entre uma vizinhança $U$ de $(0,0)$ e uma bola $B(p;\epsilon)$ de $\mathbb{R}^n$, então $\phi' \colon U \setminus \{(0,0)\} \to B(p;\epsilon) \setminus \{p\}$ também seria um homeomorfismo. Porém, note que se $n \geq 2$, $B(p;\epsilon) \setminus \{p\}$ é conexo e se $n = 1$, este possui duas componentes conexas, ao passo que $U \setminus \{(0,0)\}$ possui quatro componentes conexas. Portanto, é impossível que esses sejam homeomorfos.</p>
+
+        <hr>
+        <h5 class="text-center">Cartas Compatíveis</h5>
+
+        <p class="text-justify">Se $(U, \phi \colon U \to \mathbb{R}^n)$ e $(V, \psi \colon V \to \mathbb{R}^n)$ são cartas de uma variedade topológica $M$, como homeomorfismos são mapas abertos e $U \cap V$ é um aberto tanto em $U$ quanto em $V$, segue que $\phi(U \cap V)$ e $\psi(U \cap V)$ são abertos de $\mathbb{R}^n$. Diremos que as cartas são <span class="def">$C^\infty-$compatíveis</span> se $\phi \circ \psi^{-1} \colon \psi(U \cap V) \to \phi(U \cap V)$ e $\psi \circ \phi^{-1} \colon \phi(U \cap V) \to \psi(U \cap V)$ são $C^\infty$. Estes mapas são chamados de <span class="def">funções de transição</span> entre os mapas. Se $U \cap V$ é vazio, então as duas cartas são automaticamente $C^\infty-$compatíveis.</p>
+
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+        <p class="text-justify"></p>
+      </div> <!-- /container -->
+    </main>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
