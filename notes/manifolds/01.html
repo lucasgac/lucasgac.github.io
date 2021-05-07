@@ -79,15 +79,33 @@
 
         <p class="text-justify"><b>Exemplo 02:</b> o gráfico do mapa $x \mapsto x^{2/3}$ é uma <span class="def">cúspide</span>, que por ser um subespaço de $\mathbb{R}^2$, é Hausdorff e possui base enumerável. Além disso, é localmente euclideana pois é homeomorfa a $\mathbb{R}$ pelo mapa $(x, x^{2/3}) \mapsto x$. Por outro lado, $\{0\} \times \mathbb{R} \cup \mathbb{R} \times \{0\}$, ou seja, a cruz dos eixos coordenados em $\mathbb{R}^2$, não é uma variedade. Apesar de ser Hausdorff e possuir base enumerável, se existisse um homeomorfismo $\phi$ entre uma vizinhança $U$ de $(0,0)$ e uma bola $B(p;\epsilon)$ de $\mathbb{R}^n$, então $\phi' \colon U \setminus \{(0,0)\} \to B(p;\epsilon) \setminus \{p\}$ também seria um homeomorfismo. Porém, note que se $n \geq 2$, $B(p;\epsilon) \setminus \{p\}$ é conexo e se $n = 1$, este possui duas componentes conexas, ao passo que $U \setminus \{(0,0)\}$ possui quatro componentes conexas. Portanto, é impossível que esses sejam homeomorfos.</p>
 
+        <img class="w-50 rounded mx-auto d-block" src="01/cusp-axis.png" alt="Responsive image">
+
         <hr>
         <h5 class="text-center">Cartas Compatíveis</h5>
 
         <p class="text-justify">Se $(U, \phi \colon U \to \mathbb{R}^n)$ e $(V, \psi \colon V \to \mathbb{R}^n)$ são cartas de uma variedade topológica $M$, como homeomorfismos são mapas abertos e $U \cap V$ é um aberto tanto em $U$ quanto em $V$, segue que $\phi(U \cap V)$ e $\psi(U \cap V)$ são abertos de $\mathbb{R}^n$. Diremos que as cartas são <span class="def">$C^\infty-$compatíveis</span> se $\phi \circ \psi^{-1} \colon \psi(U \cap V) \to \phi(U \cap V)$ e $\psi \circ \phi^{-1} \colon \phi(U \cap V) \to \psi(U \cap V)$ são $C^\infty$. Estes mapas são chamados de <span class="def">funções de transição</span> entre os mapas. Se $U \cap V$ é vazio, então as duas cartas são automaticamente $C^\infty-$compatíveis.</p>
 
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
+        <img class="w-50 rounded mx-auto d-block" src="01/compatible.png" alt="Responsive image">
+
+        <p class="text-justify">Como estamos interessados somente em cartas $C^\infty-$compatíveis, diremos a partir de agora que as cartas são apenas compatíveis, omitindo o $C^\infty$. Diremos que um <span class="def">atlas $C^{\infty}$</span> ou apenas <span class="def">atlas</span> em um espaço $M$ localmente euclideano é uma coleção $\frak{U}$ $=$ $\{(U_\alpha, \phi_\alpha)\}$ de cartas duas a duas compatíveis que cobre $M$, ou seja, $M = \bigcup_\alpha U_\alpha$.</p>
+
+        <p class="text-justify"><b>Exemplo 03:</b> O círculo unitário $\mathbb{S}^1$ dentro de $\mathbb{C}$ pode ser descrito como o conjunto $\{e^{it} \in \mathbb{C} \colon 0 \leq t \leq 2\pi\}$. Sejam então $U_1 = \mathbb{S}^1 \setminus \{-1\}$ e $U_2 = \mathbb{S}^1 \setminus \{1\}$ e, para $\alpha \in \{1,2\}$ defina $\phi_\alpha \colon U_\alpha \to \mathbb{R}$ como sendo o mapa $e^{it} \mapsto t$. Como ambos os mapas são restrições do mapa $f(z) = (\log z)/i$ e assim são homeomorfismos com as respectivas imagens. Portanto, $(U_\alpha, \phi_\alpha)$ é uma carta para $\alpha \in \{1,2\}$.</p>
+
+        <p class="text-justify">A intersecção $U_1 \cap U_2$ possui duas componentes conexas $$A = \{e^{it} \colon -\pi < t < 0\} \textrm{ e}$$ $$B = \{e^{it} \colon 0 < t < \pi\}$$ tais que $$\phi_1(U_1 \cap U_2) = \phi_1(A \sqcup B) = \phi_1(A) \sqcup \phi_1(B) = ]-\pi, 0[ \sqcup ]0, \pi[ \textrm{ e}$$ $$\phi_2(U_1 \cap U_2) = \phi_2(A \sqcup B) = \phi_2(A) \sqcup \phi_2(B) = ]\pi, 2\pi[ \sqcup ]0, \pi[.$$ Agora que já conhecemos ambos os conjuntos, podemos construir as funções de transição:
+        $$\phi_2 \circ \phi_1^{-1}(t) = \left\{
+            \begin{array}{ll}
+                t + 2\pi & \mbox{se } -\pi \leq t \leq 0, \\
+                t & \mbox{se } 0 \leq t \leq \pi.
+            \end{array}
+        \right. \quad \textrm{e} \quad \phi_1 \circ \phi_2^{-1}(t) = \left\{
+          \begin{array}{ll}
+              t - 2\pi  & \mbox{se } \pi \leq t \leq 2\pi, \\
+              t & \mbox{se } 0 \leq t \leq \pi.
+          \end{array}
+        \right.$$ Como esses mapas são $C^\infty$, as cartas $(U_1, \phi_1)$ e $(U_2, \phi_2)$ são compatíveis e portanto formar um atlas em $\mathbb{S}^1$.</p>
+
+        <p class="text-justify">Uma propriedade interessante de analisar é a transitividade da compatibilidade entre cartas. É facil perceber que a compatibilidade é reflexiva e simétrica, porém, não é transitiva, uma vez que se $(U_1, \phi_1)$ é compatível com $(U_2, \phi_2)$ e $(U_2, \phi_2)$ é compatível com $(U_3, \phi_3)$, </p>
         <p class="text-justify"></p>
         <p class="text-justify"></p>
         <p class="text-justify"></p>

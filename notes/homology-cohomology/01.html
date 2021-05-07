@@ -93,12 +93,12 @@
 
         <p class="text-justify">Se existe um subespaço afim $A$ tal que $e_0, \dots, e_n \in A$, tome o espaço $A - e_0$. Perceba que como $\dim A = n - 1$ e $A \simeq A - e_0$, temos que $\dim A - e_0 = n-1$. Além disso, $e_1 - e_0, \dots, e_n - e_0$ são $n$ elementos de um espaço vetorial $(n-1)-$dimensional, portanto obrigatoriamente são linearmente dependentes. $\blacksquare$</p>
 
-        <p class="text-justify">Um <span class="def">$n-$simplexo</span> é uma envoltória convexa de vetores $e_0, \dots, e_n$ satisfazendo alguma das condições da proposição acima. Mais especificamente, podemos escrever $[e_0, \dots, e_n] = \{\sum t_ie_i \colon t_i \geq 0, \sum t_i = 1\}$. Chamaremos de <span class="def">$n-$simplexo canônico</span> o simplexo gerado pela base canônica, denotando-o por $\Delta^n$.</p>
+        <p class="text-justify">Um <span class="def">$n-$simplexo</span> é uma envoltória convexa de vetores $e_0, \dots, e_n$ satisfazendo alguma das condições da proposição acima. Mais especificamente, podemos escrever $[e_0, \dots, e_n] = \{\sum t_ie_i \colon t_i \geq 0, \sum t_i = 1\}$. Chamaremos de <span class="def">$n-$simplexo canônico</span> o simplexo gerado pela base canônica de $V$, denotando-o por $\Delta^n(V)$ ou apenas $\Delta^n$ se $V = \mathbb{R}^{n+1}$.</p>
 
         <img class="w-75 rounded mx-auto d-block" src="01/simplex.png" alt="Responsive image">
         <p class="text-center">Os $4$ primeiros simplexos canônicos em espaços euclideanos.</p>
 
-        <p class="text-justify">Para cada $n \geq 0$, defina o <span class="def">$n-$ésimo grupo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X)$</span> como sendo $\textrm{Free}_{\textrm{Ab}}(\sigma \colon M \to X \mid \sigma$ é contínuo e $M$ é um $n-$simplexo$)$. Chamaremos um mapa $\sigma \colon M \to X$ de <span class="def">$n-$simplexo singular</span>. A palavra "singular" no nome do mapa vem deste não ser necessariamente injetor, pois isso faz com que possamos ter singularidades, como a que está no desenho abaixo. Além disso, se $n < 0$, vamos definir $\mathcal{C}_n^{\textrm{sing}}(X)$ como sendo o grupo trivial.</p>
+        <p class="text-justify">Para cada $n \geq 0$, defina o <span class="def">$n-$ésimo grupo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X)$</span> como sendo $\textrm{Free}_{\textrm{Ab}}(\sigma \colon \Delta^n \to X \mid \sigma$ é contínuo$)$. Chamaremos um mapa $\sigma \colon \Delta^n \to X$ de <span class="def">$n-$simplexo singular</span>. A palavra "singular" no nome do mapa vem deste não ser necessariamente injetor, pois isso faz com que possamos ter singularidades, como a que está no desenho abaixo. Além disso, se $n < 0$, vamos definir $\mathcal{C}_n^{\textrm{sing}}(X)$ como sendo o grupo trivial.</p>
 
         <img class="w-50 rounded mx-auto d-block" src="01/singularidade.png" alt="Responsive image">
         <p class="text-center">O mapa neste caso pega um segmento ligando duas das arestas de $\Delta^2$ e o leva para apenas um ponto, criando a singularidade.</p>
@@ -122,7 +122,7 @@
 
         <img class="w-75 rounded mx-auto d-block" src="01/morfismo-singular.png" alt="Responsive image">
 
-        <p class="text-justify">O último operador importante do qual vamos tratar é a <span class="def">homotopia de morfismos de cadeias</span>. Dados dois morfismos de cadeias $f,g \colon A_\ast, B_\ast$, podemos criar o mapa $h \colon A_\ast \to B_\ast$, que é também uma família de mapas $h_i$, mas que agora satisfazem $h_i \colon A_i \to B_{i+1}$. Além disso, pediremos que $h$ satisfaça $f - g = hd + dh$ ou, com a notação um pouco mais explicita, $f_i - g_i = h_i \circ d'_{i+1} + d_{i} \circ h_{i+1}$. O diagrama abaixo ilustra o processo, porém, devemos tomar o cuidado de notar que o diagrama não é comutativo neste caso.</p>
+        <p class="text-justify">O último operador importante do qual vamos tratar é a <span class="def">homotopia de morfismos de cadeias</span>. Dados dois morfismos de cadeias $f,g \colon A_\ast \to B_\ast$, podemos criar o mapa $h \colon A_\ast \to B_\ast$, que é também uma família de mapas $h_i$, mas que agora satisfazem $h_i \colon A_i \to B_{i+1}$. Além disso, pediremos que $h$ satisfaça $f - g = hd + dh$ ou, com a notação um pouco mais explicita, $f_i - g_i = h_i \circ d'_{i+1} + d_{i} \circ h_{i+1}$. O diagrama abaixo ilustra o processo, porém, devemos tomar o cuidado de notar que o diagrama não é comutativo neste caso.</p>
 
         <img class="w-75 rounded mx-auto d-block" src="01/homotopia-morfismos.png" alt="Responsive image">
 
@@ -131,26 +131,51 @@
         <hr>
         <h5 class="text-center">Homologia Singular</h5>
 
-        <p class="text-justify">Agora que já conhecemos os grupos de cadeia singular, vamos provar que estes formam um complexo de cadeia. Primeiro, perceba que cada $\mathcal{C}_n^{\textrm{sing}}$ é um grupo abeliano, portanto um $\mathbb{Z}-$módulo. Basta então mostrarmos que os morfismos de fronteira dos grupos de cadeia são de fato morfismos de cadeia de complexo. Para isso, precisamos definir quem são os morfismos de fronteira: defina $d_n \colon \mathcal{C}_n^{\textrm{sing}}(X) \to \mathcal{C}_{n-1}^{\textrm{sing}}(X)$</p>
+        <p class="text-justify">Agora que já conhecemos os grupos de cadeia singular, vamos provar que estes formam um complexo de cadeia. Primeiro, perceba que cada $\mathcal{C}_n^{\textrm{sing}}$ é um grupo abeliano, portanto um $\mathbb{Z}-$módulo. Basta então mostrarmos que os morfismos de fronteira dos grupos de cadeia são de fato morfismos de cadeia de complexo. Para isso, precisamos definir quem são os morfismos de fronteira: defina $d_n \colon \mathcal{C}_n^{\textrm{sing}}(X) \to \mathcal{C}_{n-1}^{\textrm{sing}}(X)$ por $\sigma \mapsto \sum (-1)^i \sigma|_{[e_0, \dots, e_{i-1}, e_{i+1}, \dots, e_n]}$, para $\sigma \colon \Delta^{n} = [e_0, \dots, e_n] \to X$. Por convenção, vamos representar este sigma por $(e_0, \dots, e_n)$ e também vamos representar $\sigma|_{[e_0, \dots, e_{i-1}, e_{i+1}, \dots, e_n]}$ por $(e_0, \dots, \hat{e_i}, \dots, e_n)$.</p>
 
         <p class="text-justify"><b>Proposição 02:</b> $d^2 = 0$</p>
-        <p class="text-justify"><i>Demonstração:</i> vamos relembrar que $d_n = $</p>
+        <p class="text-justify"><i>Demonstração:</i> temos $d^2(e_0, \dots, e_n) = \sum (-1)^i d(e_0, \dots, \hat{e_i}, \dots, e_n)$ e portanto precisamos calcular cada um dos termos da série. Para isso, perceba que
+        $$\begin{array}{ll}
+          d(e_0, \dots, \hat{e_i}, \dots, e_n) =&(\hat{e_0}, e_1, \dots, \hat{e_i}, \dots, e_n) - (e_0, \hat{e_1}, e_2, \dots, \hat{e_i}, \dots, e_n) + \cdots\\
+          &\cdots + (-1)^{i-1}(e_0, \dots, \hat{e_{i-1}}, \hat{e_i}, \dots, e_n) + (-1)^i(e_0, \dots, \hat{e_i}, \hat{e_{i+1}}, \dots, e_n) + \cdots \\
+          &\cdots + (-1)^{n-1}(e_0, \dots, \hat{e_i}, \dots, \hat{e_n}).
+        \end{array}$$
+        Portanto, segue que $d(e_0, \dots, \hat{e_i}, \dots, e_n)$ $=$ $\sum_{j = 0}^{i-1} (-1)^j(e_0, \dots, \hat{e_j}, \dots, \hat{e_i}, \dots, e_n)$ $+$ $\sum_{j = i}^{n-1} (-1)^j(e_0, \dots, \hat{e_i}, \dots, \hat{e_{j+1}}, \dots, e_n)$. Voltando para a nossa expressão inicial obtemos que 
+        $$\begin{array}{ll}
+        d^2(e_0, \dots, e_n) &= \sum_{i}\sum_{j \colon j < i}(-1)^{i+j}(e_0, \dots, \hat{e_j}, \dots, \hat{e_i}, \dots, e_n) + \sum_{i}\sum_{j \colon i < j}(-1)^{i+j-1}(e_0, \dots, \hat{e_i}, \dots, \hat{e_j}, \dots, e_n) \\
+        &= \sum_{i}\sum_{j \colon j < i}(-1)^{i+j}(e_0, \dots, \hat{e_j}, \dots, \hat{e_i}, \dots, e_n) - \sum_{i}\sum_{j \colon i < j}(-1)^{i+j}(e_0, \dots, \hat{e_i}, \dots, \hat{e_j}, \dots, e_n) = 0. \blacksquare
+        \end{array}$$</p>
 
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
-        <p class="text-justify"></p>
+        <p class="text-justify">Uma questão interessante que pode aparecer é: este mapa está bem-definido? A imagem de um mapa $\sigma \in \mathcal{C}_n^{\textrm{sing}}(X)$ de fato pertence ao grupo $\mathcal{C}_{n-1}^{\textrm{sing}}(X)$. Pode parecer que não, pois o conjunto de vetores $\{e_0, \dots, e_{i-1}, e_{i+1}, \dots, e_n\}$ não é necessariamente a base canônica de um espaço euclideano. O que acontece é que podemos identificar cada face $[e_0, \dots, e_{i-1}, e_{i+1}, \dots, e_n]$ de $\Delta^n$ com $\Delta^{n-1}$ utilizando o isomorfismo linear que preserva a ordem dos vértices.</p>
+
+        <p class="text-justify">Assim, provamos que os grupos de cadeia singular formam um complexo de cadeia e portanto para cada $n$ temos o grupo de homologia $H_n^{\textrm{sing}}(X)$, que chamaremos de <span class="def">n-ésimo grupo de homologia singular de $X$</span>.</p>
+        
+        <p class="text-justify">A próxima tarefa agora é calcular algum grupo de homologia a partir da definição. Isso será feito pois fornece motivação pra duas coisas: primeiro, construir um grupo de homologia através da nossa definição faz com que acreditemos um pouquinho mais na não-inutilidade desse treco. Segundo, essa construção será razoavelmente difícil para um grupo que deveria ser não muito complicado, o que irá motivar a invenção de uma "nova definição" de homologia: os axiomas de Eilenberg-Steenrod.</p>
+
+        <p class="text-justify">Vamos agora calcular o $0-$ésimo grupo de homologia de um espaço qualquer $X$. Primeiramente, vamos supor que $X$ é conexo por caminhos e observar que esse grupo é $\mathbb{Z}$. Note que $H_0^{\textrm{sing}}(X) = \ker d_0 / \textrm{Im } d_1$ e como $\mathcal{C}_{-1}^{\textrm{sing}}$ é trivial, $\ker d_0 = \mathcal{C}_0^{\textrm{sing}}$. Perceba agora que $\Delta^0 = \{1\}$, portanto podemos enxergar $\mathcal{C}_0^{\textrm{sing}}$ como sendo o grupo livre gerado por $X$, já que temos uma correspondência entre os pontos $x \in X$ e os mapas $f \colon \{1\} \to X$ dados por $f(1) = x$.</p>
+
+        <p class="text-justify">Seja $\phi \colon \mathcal{C}_0^{\textrm{sing}}(X) \to \mathbb{Z}$ o mapa $\sum t_i e_i \to \sum t_i$ onde cada $e_i \in X$ (lembrando que $\mathcal{C}_0^{\textrm{sing}}(X) = \textrm{Free}_{\textrm{Ab}}(X)$). Esse mapa é sobrejetor, pois dado $z \in \mathbb{Z}$ podemos tomar $zx$ para algum $x \in X$ e $\phi(zx) = z$. Agora, dados $\sum a_i e_i, \sum b_j f_j \in \mathcal{C}_0^{\textrm{sing}}(X)$, podemos juntar ambos os somatórios em apenas um da forma $\sum c_k g_k$ com os $c_k$'s variando em $\{a_i\} \cup \{b_j\}$ e os $g_i$'s variando em $\{e_i\} \cup \{f_j\}$. Assim, temos $\phi(\sum c_k g_k)$ $=$ $\sum c_k$ $=$ $\sum a_i + \sum b_j$ $=$ $\phi(\sum a_i e_i) + \phi(\sum b_j f_j)$. Por fim, podemos provar que $\ker \phi = d_1(\mathcal{C}_1^{\textrm{sing}}(X))$ e assim teremos um isomorfismo de grupos $\ker d_0 / \textrm{Im } d_1 \simeq \mathbb{Z}$.</p>
+
+        <p class="text-justify">Para isso, vamos entender qual é o mapa $d_1$. Perceba que $\mathcal{C}_{1}^{\textrm{sing}}(X)$ é o grupo gerado por todos os caminhos em $X$, já que $\Delta^1$ nada mais é que o segmento de reta $\{(t,1 - t) \mid t \in [0,1]\}$ e esse segmento é isomorfo ao intervalo $[0,1]$ pelo mapa $f(t) = (t, 1-t)$. Agora, dado um caminho $\gamma$ com $\gamma(0,1) = a$ e $\gamma(1,0) = b$ para $a,b \in X$, perceba que o mapa $d_1$ satisfaz $d_1(\gamma) = b - a$, já que $b$ é a imagem da envoltória do vetor $(1,0)$ pelo mapa $\phi$ e, analogamente, $a$ é a imagem da envoltória do vetor $(0,1)$ pelo mapa $\phi$.</p>
+        
+        <p class="text-justify">Assim, os elementos da imagem de $d_1$ são nada mais nada menos que os elementos da forma $\sum t_i(b_i - a_i)$ para $a_i,b_i \in X$ e $t_i \in \mathbb{Z}$ tais que existe um caminho conectando $a_i$ em $b_i$. Se $X$ é conexo por caminhos, quaisquer dois pontos são conectados por um caminho, portanto $\textrm{Im } d_1 = \{\sum t_i(b_i - a_i) \mid a_i,b_i \in X, t_i \in \mathbb{Z}\}$. Perceba que se $k \in \ker \phi$, $k = \sum a_i e_i$ com $\sum a_i = 0$. Podemos separar os valores positivos e negativos de maneira que tenhamos pares da forma $ke_j - ke_l$. Quando eu digo separar eu quero dizer de fato decompor, por exemplo: se $k = 4e_0 + 3e_1 - 5e_2 - 2e_3$, podemos fazer a separação da forma $k = 4(e_0 - e_2) + (e_1 - e_2) + 2(e_1 - e_3)$. O que garante que essa separação pode ser feita é justamente a soma dos coeficientes de $0$. Assim, todo elemento do kernel é também um elemento da imagem de $d_1$.</p>
+
+        <p class="text-justify">Reciprocamente, todo elemento da imagem de $d_1$ está no kernel pois $\phi(\sum t_i(b_i - a_i)) = \sum t_i(1 - 1) = 0$ e assim temos que $\ker \phi = \textrm{Im } d_1$ e portanto $\ker d_0 / \textrm{Im } d_1 \simeq \mathbb{Z}$. Note que tivemos todo esse trabalho apenas para conseguirmos $H_0^{\textrm{sing}}$ de um espaço conexo por caminhos. O que acontece se $X$ não satisfizes essa hipótese? Bom, as coisas ficam um pouco mais complicadas, mas nada que um resultado adicional não resolva.</p>
+
+        <p class="text-justify"><b>Lema 03:</b> se $X = X_1 \sqcup X_2$ com $X_1$ e $X_2$ conexos por caminhos, então $H_n^{\textrm{sing}}(X) = H_n^{\textrm{sing}}(X_1) \oplus H_n^{\textrm{sing}}(X_2)$</p>
+        <p class="text-justify"><i>Demonstração:</i> para facilitar um pouco nossa vida e também fazer as coisas da maneira mais usual possível, vamos introduzir as notações $\partial_n$ para o morfismo de fronteira $d_n$, $Z_n(X)$ para $\ker \partial_n$, que chamaremos de <span class="def">n-ésimo ciclo de cadeia</span> e $B_n(X)$ para $\textrm{Im } \partial_{n+1}$, que chamaremos de <span class="def">n-ésima fronteira de cadeia</span>.</p>
+
+        <p class="text-justify">Note que como todo simplexo é conexo por caminhos, suas imagens são também, portanto estas não podem ter uma parte em $X_1$ e uma parte em $X_2$. Assim, podemos separar $\mathcal{C}_ n^{\textrm{sing}}(X)$ em $\mathcal{C}_ n^{\textrm{sing}}(X_1) \oplus \mathcal{C}_ n^{\textrm{sing}}(X_2)$. Mais ainda, perceba que $\partial_n(\mathcal{C}_ n^{\textrm{sing}}(X_i)) \subset \mathcal{C}_ n^{\textrm{sing}}(X_i)$ para $i = 1,2$, afinal, se a imagem está em uma componente conexa, o seu bordo também deve estar. Por um motivo semelhante temos $Z_n(X)$ $=$ $Z_n(X_1) \oplus Z_n(X_2)$ e $B_n(X)$ $=$ $B_n(X_1) \oplus B_n(X_2).$ Assim, temos $$H_n^{\textrm{sing}}(X) = \frac{Z_n(X)}{B_n(X)} = \frac{Z_n(X_1) \oplus Z_n(X_2)}{B_n(X_1) \oplus B_n(X_2)} = \frac{Z_n(X_1)}{B_n(X_1)} \oplus \frac{Z_n(X_2)}{B_n(X_2)} = H_n^{\textrm{sing}}(X_1) \oplus H_n^{\textrm{sing}}(X_2). \blacksquare$$</p>
+
+        <p class="text-justify">Por fim, esse resultado termina nosso problema, já que se $X$ possui $n$ componentes conexas por caminhos, podemos escrever $X = X_1 \sqcup X_2 \sqcup \cdots \sqcup X_n$ e assim $H_n^{\textrm{sing}}(X) = \bigoplus_{i = 1}^n H_n^{\textrm{sing}}(X_i) = \bigoplus_{i = 1}^n \mathbb{Z}$. Perceba então que o $0-$ésimo grupo de homologia é unicamente determinado pelo número de componentes conexas por caminhos do espaço $X$, então é um invariante por homeomorfismos. De maneira mais geral, todos os grupos de homologia serão invariantes</p>
+
+        <hr>
+        <h5 class="text-center">Homotopia Relativa</h5>
+
+        <p class="text-justify">Um <span class="def">par de espaços $(X,A)$</span> é um par de espaços topológicos $X$ e $A$ tais que $A \subset X$. Definimos também mapas entre pares de espaços: uma aplicação contínua $f \colon (X, A) \to (Y, B)$ é uma aplicação contínua $f \colon X \to Y$ tal que $f(A) \subset B$.</p>
+        
+        <p class="text-justify">Agora que já conhecemos os pares, podemos definir o que seria o <span class="def">$n-$ésimo grupo relativo de cadeia singular $\mathcal{C}_n^{\textrm{sing}}(X,A)$</span>, que nada mais é que o quociente $\mathcal{C}_n^{\textrm{sing}}(X) / \mathcal{C}_n^{\textrm{sing}}(A)$. Intuitivamente o que isso quer dizer é que na homologia relativa ao subespaço $A$ queremos considerar que simplexos cujos bordos estejam em $A$ não terão bordo. Note que ao fazer isso estamos "quocientando" os simplexos pelos seus bordos e, o que vai acontecer de fato, é a igualdade $\mathcal{C}_n^{\textrm{sing}}(X,A) = \mathcal{C}_n^{\textrm{sing}}(X/A)$.</p>
+
         <p class="text-justify"></p>
         <p class="text-justify"></p>
         <p class="text-justify"></p>
